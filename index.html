@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakuhn – Babymode & Geburtsgeschenke</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF5EE;
+    --warm: #F2E8D9;
+    --blush: #E8C5A8;
+    --terracotta: #C97B4B;
+    --bark: #7A4F2F;
+    --sage: #8BA888;
+    --sage-light: #C5D9C4;
+    --midnight: #2A1F15;
+    --text: #3D2B1A;
+    --text-light: #7A6655;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,245,238,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(201,123,75,0.15);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.7rem;
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--bark);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo .raccoon-icon { font-size: 2rem; }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: #fff !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--bark) !important; color: #fff !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 70% 50%, var(--sage-light) 0%, transparent 70%);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem 5rem 6rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--warm);
+    border: 1px solid var(--blush);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--terracotta);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--midnight);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-primary:hover { background: var(--bark); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--bark);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid var(--blush);
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-outline:hover { border-color: var(--terracotta); transform: translateY(-2px); }
+
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    padding: 4rem 5rem 4rem 2rem;
+    position: relative;
+    animation: fadeIn 1s 0.2s ease both;
+  }
+
+  /* Mascot SVG area */
+  .mascot-wrap {
+    position: relative;
+    width: 380px; height: 420px;
+  }
+
+  .mascot-blob {
+    position: absolute;
+    width: 340px; height: 340px;
+    background: linear-gradient(135deg, var(--blush), var(--sage-light));
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+    top: 40px; left: 20px;
+    animation: morph 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes morph {
+    0% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+    100% { border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%; }
+  }
+
+  .mascot-svg {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* ─── BADGES ─── */
+  .badge-strip {
+    background: var(--bark);
+    padding: 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .badge-track {
+    display: inline-flex; gap: 3rem;
+    animation: scroll-track 20s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blush);
+    letter-spacing: 0.03em;
+  }
+
+  @keyframes scroll-track {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .badge-track span { opacity: 0.6; }
+
+  /* ─── CATEGORIES ─── */
+  .section { padding: 7rem 6rem; }
+  .section-sm { padding: 5rem 6rem; }
+
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--midnight);
+    margin-bottom: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  .section-sub {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 3.5rem;
+  }
+
+  .cats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cat-card {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .cat-card:hover { transform: translateY(-6px); }
+
+  .cat-card:nth-child(1) { grid-row: span 2; }
+
+  .cat-bg {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cat-card:nth-child(1) .cat-bg { min-height: 470px; }
+
+  .cat-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(42,31,21,0.7) 0%, transparent 55%);
+    z-index: 1;
+  }
+
+  .cat-emoji {
+    font-size: 3.5rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -70%);
+    z-index: 0;
+    opacity: 0.15;
+  }
+
+  .cat-content { position: relative; z-index: 2; }
+
+  .cat-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .cat-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .cat-arrow {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    transition: background 0.2s;
+  }
+  .cat-card:hover .cat-arrow { background: var(--terracotta); }
+
+  /* card color themes */
+  .cat-c1 { background: linear-gradient(135deg, #C97B4B, #E8C5A8); }
+  .cat-c2 { background: linear-gradient(135deg, #8BA888, #C5D9C4); }
+  .cat-c3 { background: linear-gradient(135deg, #B5A0C8, #DDD0EC); }
+  .cat-c4 { background: linear-gradient(135deg, #D9A85A, #F0D4A0); }
+  .cat-c5 { background: linear-gradient(135deg, #A88B8B, #D4BFBF); }
+
+  /* ─── GIFTS ─── */
+  .gifts-section {
+    background: var(--warm);
+    padding: 7rem 6rem;
+  }
+
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .gift-card {
+    background: var(--cream);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .gift-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(42,31,21,0.12);
+  }
+
+  .gift-img {
+    height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+    background: linear-gradient(135deg, var(--warm), var(--blush));
+    position: relative; overflow: hidden;
+  }
+
+  .gift-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 60%);
+  }
+
+  .gift-info { padding: 1.2rem 1.4rem 1.5rem; }
+
+  .gift-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--midnight);
+    margin-bottom: 0.3rem;
+  }
+
+  .gift-price {
+    font-size: 0.9rem;
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .gift-btn {
+    display: block; width: 100%;
+    margin-top: 0.9rem;
+    padding: 0.6rem;
+    background: var(--warm);
+    border: 1px solid var(--blush);
+    border-radius: 10px;
+    color: var(--bark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .gift-btn:hover { background: var(--terracotta); color: #fff; border-color: transparent; }
+
+  /* ─── ABOUT ─── */
+  .about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    padding: 7rem 6rem;
+    align-items: center;
+  }
+
+  .about-left {
+    position: relative;
+  }
+
+  .about-card {
+    background: var(--warm);
+    border-radius: 32px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-card::before {
+    content: '🦝';
+    position: absolute;
+    font-size: 8rem;
+    bottom: -1rem; right: -1rem;
+    opacity: 0.08;
+  }
+
+  .about-big-num {
+    font-family: 'Fraunces', serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .about-num-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+
+  .about-stats {
+    display: flex; gap: 2rem;
+  }
+
+  .stat-item { }
+  .stat-val {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--midnight);
+  }
+  .stat-lbl {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.1rem;
+  }
+
+  .about-right { }
+
+  .about-right .section-sub { max-width: none; }
+
+  .promise-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .promise-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+
+  .promise-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--sage-light);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .promise-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--midnight);
+    margin-bottom: 0.15rem;
+  }
+  .promise-text span {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testi-section {
+    background: var(--midnight);
+    padding: 6rem;
+    position: relative; overflow: hidden;
+  }
+
+  .testi-section::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
+    opacity: 0.15;
+  }
+
+  .testi-section .section-label { color: var(--blush); }
+  .testi-section .section-title { color: #fff; }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 1.8rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .testi-stars { color: var(--blush); font-size: 1.1rem; margin-bottom: 1rem; }
+
+  .testi-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blush), var(--sage-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .testi-name { font-size: 0.85rem; font-weight: 500; color: #fff; }
+  .testi-meta { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+  /* ─── NEWSLETTER ─── */
+  .nl-section {
+    padding: 6rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .nl-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, var(--sage-light) 0%, transparent 70%);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .nl-section .section-title, .nl-section .section-sub {
+    margin-left: auto; margin-right: auto;
+    text-align: center;
+    max-width: 560px;
+  }
+
+  .nl-form {
+    display: flex; gap: 0.8rem;
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--warm);
+    border: 1px solid var(--blush);
+    border-radius: 100px;
+    padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+  }
+
+  .nl-form input {
+    flex: 1;
+    background: none;
+    border: none; outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .nl-form input::placeholder { color: var(--text-light); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--bark);
+    color: rgba(255,255,255,0.75);
+    padding: 4rem 6rem 2.5rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    max-width: 260px;
+  }
+
+  .footer-heading {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #fff; }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 7rem 2rem 3rem; }
+    .hero-right { padding: 2rem; }
+    .section, .gifts-section, .about-section, .testi-section, .nl-section { padding: 4rem 2rem; }
+    .section-sm { padding: 3rem 2rem; }
+    .cats-grid { grid-template-columns: 1fr 1fr; }
+    .cat-card:nth-child(1) { grid-row: auto; }
+    .gifts-grid { grid-template-columns: 1fr 1fr; }
+    .about-section { grid-template-columns: 1fr; gap: 3rem; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    footer { padding: 3rem 2rem 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .cats-grid { grid-template-columns: 1fr; }
+    .gifts-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 2.6rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="raccoon-icon">🦝</span>
+    rakuhn
+  </a>
+  <ul class="nav-links">
+    <li><a href="#kategorien">Sortiment</a></li>
+    <li><a href="#geschenke">Geschenke</a></li>
+    <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🦝 Liebevoll handgepickt</div>
+    <h1 class="hero-title">
+      Kleine<br><em>Wunder</em><br>verdienen<br>das Beste.
+    </h1>
+    <p class="hero-sub">
+      Babymode und Geburtsgeschenke, die mit Herz ausgewählt werden – für die schönsten ersten Momente im Leben.
+    </p>
+    <div class="hero-actions">
+      <a href="#kategorien" class="btn-primary">Sortiment entdecken →</a>
+      <a href="#geschenke" class="btn-outline">🎁 Geschenke finden</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="mascot-wrap">
+      <div class="mascot-blob"></div>
+      <!-- Raccoon SVG Mascot -->
+      <svg class="mascot-svg" viewBox="0 0 380 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- Body (onesie/romper) -->
+        <ellipse cx="190" cy="310" rx="95" ry="90" fill="#E8C5A8"/>
+        <!-- Onesie details -->
+        <path d="M120 290 Q190 330 260 290 Q260 370 190 390 Q120 370 120 290Z" fill="#C97B4B"/>
+        <!-- Onesie buttons -->
+        <circle cx="190" cy="345" r="4" fill="#FAF5EE"/>
+        <circle cx="190" cy="360" r="4" fill="#FAF5EE"/>
+        <circle cx="190" cy="375" r="4" fill="#FAF5EE"/>
+        <!-- Onesie collar -->
+        <path d="M155 285 Q190 305 225 285" stroke="#FAF5EE" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Legs -->
+        <ellipse cx="155" cy="395" rx="30" ry="20" fill="#E8C5A8"/>
+        <ellipse cx="225" cy="395" rx="30" ry="20" fill="#E8C5A8"/>
+        <!-- Arms -->
+        <ellipse cx="110" cy="310" rx="22" ry="35" fill="#E8C5A8" transform="rotate(-15 110 310)"/>
+        <ellipse cx="270" cy="310" rx="22" ry="35" fill="#E8C5A8" transform="rotate(15 270 310)"/>
+        <!-- Little paws -->
+        <ellipse cx="100" cy="338" rx="18" ry="12" fill="#C8A882"/>
+        <ellipse cx="280" cy="338" rx="18" ry="12" fill="#C8A882"/>
+        <!-- HEAD -->
+        <ellipse cx="190" cy="210" rx="90" ry="85" fill="#D4A574"/>
+        <!-- Raccoon mask (dark eye patches) -->
+        <ellipse cx="160" cy="205" rx="32" ry="25" fill="#5C3D2A"/>
+        <ellipse cx="220" cy="205" rx="32" ry="25" fill="#5C3D2A"/>
+        <!-- Lighter face center -->
+        <ellipse cx="190" cy="220" rx="40" ry="35" fill="#E8C8A0"/>
+        <!-- Ears -->
+        <ellipse cx="120" cy="140" rx="28" ry="32" fill="#D4A574"/>
+        <ellipse cx="260" cy="140" rx="28" ry="32" fill="#D4A574"/>
+        <!-- Inner ears -->
+        <ellipse cx="120" cy="140" rx="16" ry="20" fill="#C97B4B" opacity="0.6"/>
+        <ellipse cx="260" cy="140" rx="16" ry="20" fill="#C97B4B" opacity="0.6"/>
+        <!-- EYES -->
+        <ellipse cx="162" cy="203" rx="14" ry="15" fill="#fff"/>
+        <ellipse cx="218" cy="203" rx="14" ry="15" fill="#fff"/>
+        <!-- Pupils -->
+        <circle cx="164" cy="205" r="9" fill="#2A1F15"/>
+        <circle cx="220" cy="205" r="9" fill="#2A1F15"/>
+        <!-- Eye shine -->
+        <circle cx="168" cy="201" r="4" fill="#fff"/>
+        <circle cx="224" cy="201" r="4" fill="#fff"/>
+        <!-- Nose -->
+        <ellipse cx="190" cy="228" rx="10" ry="7" fill="#9E5E3A"/>
+        <!-- Nostrils -->
+        <circle cx="186" cy="228" r="2.5" fill="#7A3C1E"/>
+        <circle cx="194" cy="228" r="2.5" fill="#7A3C1E"/>
+        <!-- Mouth (cute smile) -->
+        <path d="M178 237 Q190 248 202 237" stroke="#7A3C1E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Cheek blushes -->
+        <ellipse cx="140" cy="225" rx="18" ry="12" fill="#E8907A" opacity="0.4"/>
+        <ellipse cx="240" cy="225" rx="18" ry="12" fill="#E8907A" opacity="0.4"/>
+        <!-- Raccoon tail stripes (peeking behind) -->
+        <path d="M285 340 Q320 320 315 360 Q330 350 320 385 Q305 375 295 380 Q310 360 285 340Z" fill="#D4A574"/>
+        <path d="M297 342 Q318 330 316 356" stroke="#5C3D2A" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <!-- Baby hat -->
+        <ellipse cx="190" cy="135" rx="72" ry="22" fill="#8BA888"/>
+        <path d="M118 135 Q150 95 190 90 Q230 95 262 135 Z" fill="#8BA888"/>
+        <!-- Hat pom-pom -->
+        <circle cx="190" cy="85" r="16" fill="#C5D9C4"/>
+        <circle cx="190" cy="85" r="10" fill="#8BA888"/>
+        <!-- Sparkles -->
+        <text x="50" y="180" font-size="22" opacity="0.6">✦</text>
+        <text x="305" y="160" font-size="18" opacity="0.5">✦</text>
+        <text x="80" y="380" font-size="14" opacity="0.4">·</text>
+        <text x="310" y="390" font-size="14" opacity="0.4">·</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING BADGE -->
+<div class="badge-strip">
+  <div class="badge-track">
+    <span>🌿 Nachhaltige Materialien</span> · <span>🎁 Liebevolle Geburtsgeschenke</span> · <span>👶 Neugeborenen-Kollektionen</span> · <span>🦝 Handverlesene Qualität</span> · <span>🌿 Nachhaltige Materialien</span> · <span>🎁 Liebevolle Geburtsgeschenke</span> · <span>👶 Neugeborenen-Kollektionen</span> · <span>🦝 Handverlesene Qualität</span> · <span>🌿 Nachhaltige Materialien</span> · <span>🎁 Liebevolle Geburtsgeschenke</span> · <span>👶 Neugeborenen-Kollektionen</span> · <span>🦝 Handverlesene Qualität</span> ·
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section" id="kategorien">
+  <div class="section-label">Unsere Kollektionen</div>
+  <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
+  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei Rakuhn findest du das Richtige für jeden Anlass.</p>
+
+  <div class="cats-grid">
+    <div class="cat-card">
+      <div class="cat-bg cat-c1">
+        <div class="cat-emoji">👶</div>
+        <div class="cat-content">
+          <div class="cat-title">Neugeborene</div>
+          <div class="cat-desc">Zarte Erstlingsausstattung für die allerersten Tage</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c2">
+        <div class="cat-emoji">🌸</div>
+        <div class="cat-content">
+          <div class="cat-title">Mädchen</div>
+          <div class="cat-desc">Süße Kleider & Sets für kleine Prinzessinnen</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c3">
+        <div class="cat-emoji">⭐</div>
+        <div class="cat-content">
+          <div class="cat-title">Jungs</div>
+          <div class="cat-desc">Coole Outfits für kleine Abenteurer</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c4">
+        <div class="cat-emoji">🎀</div>
+        <div class="cat-content">
+          <div class="cat-title">Accessoires</div>
+          <div class="cat-desc">Mützen, Socken, Lätzchen & mehr</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c5">
+        <div class="cat-emoji">🎁</div>
+        <div class="cat-content">
+          <div class="cat-title">Saisonales</div>
+          <div class="cat-desc">Aktuelle Highlights der Saison</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFTS -->
+<section class="gifts-section" id="geschenke">
+  <div class="section-label">Geburtsgeschenke</div>
+  <h2 class="section-title">Die <em>perfekte Freude</em><br>zur Geburt</h2>
+  <p class="section-sub">Jedes unserer Geschenksets wird mit Liebe zusammengestellt und schön verpackt – fertig zum Verschenken.</p>
+
+  <div class="gifts-grid">
+    <div class="gift-card">
+      <div class="gift-img">🎀</div>
+      <div class="gift-info">
+        <div class="gift-name">Willkommensset "Kleiner Stern"</div>
+        <div class="gift-price">ab 39,90 €</div>
+        <button class="gift-btn">In den Warenkorb</button>
+      </div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-img">🌿</div>
+      <div class="gift-info">
+        <div class="gift-name">Natur-Set "Waldkind"</div>
+        <div class="gift-price">ab 49,90 €</div>
+        <button class="gift-btn">In den Warenkorb</button>
+      </div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-img">☁️</div>
+      <div class="gift-info">
+        <div class="gift-name">Kuschelset "Wolke 7"</div>
+        <div class="gift-price">ab 59,90 €</div>
+        <button class="gift-btn">In den Warenkorb</button>
+      </div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-img">🦝</div>
+      <div class="gift-info">
+        <div class="gift-name">Rakuhn Signature-Box</div>
+        <div class="gift-price">ab 79,90 €</div>
+        <button class="gift-btn">In den Warenkorb</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="ueber-mich">
+  <dmichclass="about-left">
+    <div class="about-card">
+      <div class="about-big-num">2'000+</div>
+      <div class="about-num-label">Glückliche Familien</div>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-val">98%</div>
+          <div class="stat-lbl">Empfehlen uns weiter</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">5★</div>
+          <div class="stat-lbl">Durchschnittl. Bewertung</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">3 Tage</div>
+          <div class="stat-lbl">Lieferzeit DE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-right">
+    <div class="section-label">Über Rakuhn</div>
+    <h2 class="section-title">Mit <em>Herz</em> für die<br>kleinsten Momente</h2>
+    <p class="section-sub">Bei Rakuhn glauben wir, dass jede Kindheit mit Qualität, Liebe und einem Hauch Magie beginnen sollte. Darum wählen wir jedes Stück persönlich aus – weich, sicher und wunderschön.</p>
+
+    <ul class="promise-list">
+      <li class="promise-item">
+        <div class="promise-icon">🌿</div>
+        <div class="promise-text">
+          <strong>Nachhaltige Qualität</strong>
+          <span>Wir setzen auf OEKO-TEX-zertifizierte und schadstofffreie Materialien – gut für Babyhaut und die Umwelt.</span>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-icon">🎁</div>
+        <div class="promise-text">
+          <strong>Fertig zum Verschenken</strong>
+          <span>Alle Geschenksets kommen liebevoll verpackt und mit persönlicher Karte – kein Stress, nur Freude.</span>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-icon">💌</div>
+        <div class="promise-text">
+          <strong>Persönliche Beratung</strong>
+          <span>Unser Team hilft dir bei der Auswahl – für das perfekte Geschenk, ganz auf dein Budget zugeschnitten.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="section-label">Stimmen unserer Kund:innen</div>
+  <h2 class="section-title" style="color:#fff;">Was <em style="color:var(--blush);">Familien</em> sagen</h2>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Das Geschenkset für unsere Nichte war einfach zauberhaft. Die Verpackung so liebevoll – alle waren begeistert. Nicht das letzte Mal bei Rakuhn!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <div class="testi-name">Sandra M.</div>
+          <div class="testi-meta">Tante von 3 Nichten</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Die Qualität der Strampler ist unglaublich weich. Mein Sohn trägt sie seit Wochen – und sie sehen immer noch aus wie neu. Absolute Kaufempfehlung!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div>
+          <div class="testi-name">Tobias K.</div>
+          <div class="testi-meta">Stolzer Papa</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Schnelle Lieferung, tolle Verpackung und wunderschöne Sachen. Die Beratung war super freundlich. Genau das, was man sich von einem kleinen Shop wünscht!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <div class="testi-name">Lena W.</div>
+          <div class="testi-meta">Mama von Zwillingen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-section">
+  <div class="section-label" style="text-align:center;">Bleib auf dem Laufenden</div>
+  <h2 class="section-title" style="margin:0 auto 1rem;">Neue <em>Kollektionen</em><br>zuerst entdecken</h2>
+  <p class="section-sub" style="margin:0 auto 2.5rem; text-align:center;">Trag dich ein und erhalte Neuigkeiten, exklusive Rabatte und Inspiration direkt in dein Postfach.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="Deine E-Mail-Adresse">
+    <button class="btn-primary" style="white-space:nowrap">Anmelden ✦</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">🦝 Rakuhn</div>
+      <p class="footer-tagline">Liebevoll ausgewählte Babymode und Geburtsgeschenke – weil jeder Anfang besonders ist.</p>
+    </div>
+
+    <div>
+      <div class="footer-heading">Shop</div>
+      <ul class="footer-links">
+        <li><a href="#">Neugeborene</a></li>
+        <li><a href="#">Mädchen</a></li>
+        <li><a href="#">Jungs</a></li>
+        <li><a href="#">Accessoires</a></li>
+        <li><a href="#">Geschenksets</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-heading">Info</div>
+      <ul class="footer-links">
+        <li><a href="#">Über uns</a></li>
+        <li><a href="#">Versand & Rückgabe</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Nachhaltigkeit</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-heading">Kontakt</div>
+      <ul class="footer-links">
+        <li><a href="mailto:hallo@rakuhn.de">hallo@rakuhn.de</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Rakuhn. Alle Rechte vorbehalten.</span>
+    <span>Made with 🤍 für kleine Wunder</span>
+  </div>
+</footer>
+
+<script>
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.cat-card, .gift-card, .testi-card, .promise-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Newsletter form
+  document.querySelector('.nl-form button').addEventListener('click', () => {
+    const input = document.querySelector('.nl-form input');
+    if (input.value.includes('@')) {
+      input.value = '✓ Danke! Du bist dabei.';
+      input.disabled = true;
+    } else {
+      input.style.borderColor = 'var(--terracotta)';
+      input.placeholder = 'Bitte gültige E-Mail eingeben';
+    }
+  });
+</script>
+</body>
+</html>
