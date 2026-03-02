@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAKUHN – Agentur für digitale Exzellenz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg:        #0b1220;
+      --panel:     #111b2e;
+      --panel2:    #0f172a;
+      --text:      #e6eefc;
+      --muted:     #a9b7d0;
+      --accent:    #60a5fa;
+      --green:     #22c55e;
+      --border:    rgba(255,255,255,.08);
+      --shadow:    0 10px 30px rgba(0,0,0,.4);
+      --radius:    16px;
+      --nav-h:     70px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION ── */
+    #mainNav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      height: var(--nav-h);
+      background: rgba(11,18,32,.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      transition: background .3s;
+    }
+    #mainNav .container {
+      width: 100%; max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--text) !important;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .navbar-brand span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+
+    /* ── HERO ── */
+    #page-top {
+      min-height: 100vh;
+      padding-top: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #page-top::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(96,165,250,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.16), transparent 55%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; padding: 0 24px; }
+    .hero-lead {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      animation: fadeUp .7s ease both;
+    }
+    .hero-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 28px;
+      animation: fadeUp .7s .15s ease both;
+    }
+    .hero-heading .hl { color: var(--accent); }
+    .hero-sub {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 520px;
+      margin: 0 auto 42px;
+      animation: fadeUp .7s .3s ease both;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 44px;
+      border-radius: 50px;
+      background: var(--accent);
+      color: #0b1220;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      box-shadow: 0 0 30px rgba(96,165,250,.35);
+      animation: fadeUp .7s .45s ease both;
+    }
+    .btn-primary:hover {
+      background: #93c5fd;
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(96,165,250,.5);
+    }
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: .8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .scroll-hint i { display: block; font-size: 1.2rem; margin-top: 6px; }
+
+    /* ── SECTIONS ── */
+    .page-section {
+      padding: 110px 24px;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    .section-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 18px;
+    }
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--green));
+      border-radius: 2px;
+    }
+    .section-subheading {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--panel2); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 45%), var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 30px;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(96,165,250,.15);
+      border-color: rgba(96,165,250,.3);
+    }
+    .service-icon {
+      width: 80px; height: 80px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(96,165,250,.2), rgba(34,197,94,.15));
+      border: 1px solid rgba(96,165,250,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+    .service-card h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .service-card p { color: var(--muted); font-size: .95rem; line-height: 1.7; }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--bg); }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      aspect-ratio: 16/10;
+      cursor: pointer;
+    }
+    .portfolio-bg {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+      opacity: .25;
+      background: linear-gradient(135deg, rgba(96,165,250,.12), rgba(34,197,94,.08));
+      transition: opacity .3s;
+    }
+    .portfolio-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(11,18,32,.95));
+      padding: 24px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all .3s;
+    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; transform: translateY(0); }
+    .portfolio-item:hover .portfolio-bg { opacity: .5; }
+    .portfolio-overlay h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .portfolio-overlay p { color: var(--muted); font-size: .88rem; margin-top: 6px; }
+    .portfolio-label {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: rgba(96,165,250,.15);
+      border: 1px solid rgba(96,165,250,.3);
+      color: var(--accent);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    /* ── ABOUT / TIMELINE ── */
+    #about { background: var(--panel2); }
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--green));
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 56px;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
+    .timeline-item:nth-child(odd) .timeline-card { align-items: flex-end; }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 15px rgba(96,165,250,.5);
+      top: 4px;
+    }
+    .timeline-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .timeline-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .timeline-card h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .timeline-card p { color: var(--muted); font-size: .92rem; }
+
+    /* ── TEAM ── */
+    #team { background: var(--bg); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+    .team-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 45%), var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(96,165,250,.12);
+    }
+    .team-avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, rgba(96,165,250,.25), rgba(34,197,94,.2));
+      border: 2px solid rgba(96,165,250,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem;
+      color: var(--accent);
+    }
+    .team-card h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .team-card .role {
+      color: var(--accent);
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 6px 0 12px;
+    }
+    .team-card p { color: var(--muted); font-size: .88rem; }
+    .social-links { margin-top: 14px; display: flex; gap: 12px; justify-content: center; }
+    .social-links a {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-size: .85rem;
+      text-decoration: none;
+      transition: color .2s, border-color .2s;
+    }
+    .social-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--panel2);
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(800px 400px at 0% 100%, rgba(96,165,250,.12), transparent 60%),
+        radial-gradient(600px 400px at 100% 0%, rgba(34,197,94,.1), transparent 60%);
+    }
+    .contact-form {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group input,
+    .form-group textarea {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-size: .95rem;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(96,165,250,.15);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); }
+    .form-group textarea { height: 140px; resize: vertical; }
+    .form-submit { grid-column: 1 / -1; text-align: center; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 42px 24px;
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-social { display: flex; gap: 14px; }
+    .footer-social a {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-size: .9rem;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .footer-social a:hover { color: var(--accent); border-color: var(--accent); background: rgba(96,165,250,.08); }
+    .footer-copy { color: var(--muted); font-size: .85rem; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--panel2); padding: 20px 24px; border-bottom: 1px solid var(--border); gap: 18px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .timeline::before { left: 0; }
+      .timeline-item, .timeline-item:nth-child(odd) { flex-direction: column; text-align: left; padding-left: 28px; }
+      .timeline-item:nth-child(odd) .timeline-card { align-items: flex-start; }
+      .timeline-dot { left: 0; transform: none; }
+      .contact-form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top">RAK<span>U</span>HN</a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="page-top">
+    <div class="hero-content">
+      <p class="hero-lead">Digitale Exzellenz seit 2012</p>
+      <h1 class="hero-heading">Wir bauen<br><span class="hl">Dinge,</span><br>die bleiben.</h1>
+      <p class="hero-sub">RAKUHN steht für hochwertige Digitalstrategien, kraftvolles Design und Technologien, die Wirkung erzielen.</p>
+      <a href="#services" class="btn-primary">Unsere Leistungen</a>
+    </div>
+    <div class="scroll-hint">
+      Mehr entdecken
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Unsere Leistungen</h2>
+        <p class="section-subheading">Was wir für Sie tun – konsequent, klar und ergebnisorientiert.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h4>Branding & Design</h4>
+          <p>Identitäten, die im Gedächtnis bleiben. Wir entwickeln visuelle Markensysteme mit Persönlichkeit und Durchschlagskraft.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h4>Webentwicklung</h4>
+          <p>Moderne, performante Weblösungen – von der Konzeption bis zum Launch. Skalierbar, sicher und benutzerfreundlich.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+          <h4>Digitalmarketing</h4>
+          <p>Strategien, die Reichweite in Wirkung verwandeln. SEO, Kampagnen, Content – alles aus einer Hand.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h4>App-Entwicklung</h4>
+          <p>Native und hybride Apps für iOS und Android. Intuitive UX trifft auf stabile Architektur.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h4>Analytics & Daten</h4>
+          <p>Daten richtig lesen, kluge Entscheidungen treffen. Wir machen aus Zahlen echte Erkenntnisse.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>IT-Sicherheit</h4>
+          <p>Digitale Infrastruktur, die standhält. Penetration Testing, Compliance und sichere Architekturen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="page-section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Ausgewählte Projekte</h2>
+        <p class="section-subheading">Referenzen, auf die wir stolz sind. Ergebnisse, die für sich sprechen.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="portfolio-bg"><i class="fas fa-store"></i></div>
+          <span class="portfolio-label">E-Commerce</span>
+          <div class="portfolio-overlay">
+            <h4>NordStyle Shop</h4>
+            <p>Komplette Relaunch-Strategie & Shopify-Implementierung für Premium-Fashion-Brand.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-bg"><i class="fas fa-hospital"></i></div>
+          <span class="portfolio-label">Healthcare</span>
+          <div class="portfolio-overlay">
+            <h4>MedConnect Platform</h4>
+            <p>Patient-Management-App mit DSGVO-konformer Datenarchitektur und EHR-Integration.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-bg"><i class="fas fa-industry"></i></div>
+          <span class="portfolio-label">Industrie</span>
+          <div class="portfolio-overlay">
+            <h4>FactoryOS Dashboard</h4>
+            <p>Real-time IoT-Dashboard zur Produktionsüberwachung für mittelständischen Hersteller.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-bg"><i class="fas fa-graduation-cap"></i></div>
+          <span class="portfolio-label">EdTech</span>
+          <div class="portfolio-overlay">
+            <h4>LearnPath LMS</h4>
+            <p>Adaptives Lernmanagementsystem mit KI-gestützter Kursempfehlung für 50.000+ Nutzer.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-bg"><i class="fas fa-leaf"></i></div>
+          <span class="portfolio-label">Sustainability</span>
+          <div class="portfolio-overlay">
+            <h4>GreenTrack App</h4>
+            <p>CO₂-Tracking-App mit Gamification-Elementen und Community-Features.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-bg"><i class="fas fa-music"></i></div>
+          <span class="portfolio-label">Entertainment</span>
+          <div class="portfolio-overlay">
+            <h4>SoundSpace Rebrand</h4>
+            <p>Markenstrategie, Corporate Design und Website für unabhängiges Musiklabel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / TIMELINE -->
+  <section class="page-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Unsere Geschichte</h2>
+        <p class="section-subheading">Von einer kleinen Agentur zu einem führenden Digitalpartner – mit Fokus auf echte Wirkung.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <p class="timeline-date">2012</p>
+            <h4>Gründung</h4>
+            <p>RAKUHN startet als zwei-köpfiges Studio in Frankfurt mit dem Anspruch, digitale Lösungen anders zu denken.</p>
+          </div>
+          <div style="flex:1"></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div style="flex:1"></div>
+          <div class="timeline-card">
+            <p class="timeline-date">2015</p>
+            <h4>Erster Großauftrag</h4>
+            <p>Unser erster Fortune-500-Kunde – eine vollständige Digitalstrategie und Website-Relaunch in 12 Wochen.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <p class="timeline-date">2018</p>
+            <h4>Team-Ausbau</h4>
+            <p>Wachstum auf 20 Mitarbeiter. Eröffnung eines zweiten Standorts in Berlin und Ausweitung auf internationale Kunden.</p>
+          </div>
+          <div style="flex:1"></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div style="flex:1"></div>
+          <div class="timeline-card">
+            <p class="timeline-date">2023</p>
+            <h4>KI-Integration</h4>
+            <p>Launch unseres AI-Labs: wir integrieren KI-gestützte Lösungen in alle Leistungsbereiche und treiben Innovation voran.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="page-section" id="team">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Das Team</h2>
+        <p class="section-subheading">Menschen mit Expertise, Leidenschaft und dem Antrieb, Dinge wirklich gut zu machen.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-user"></i></div>
+          <h4>Ralf Kuhn</h4>
+          <p class="role">Gründer & CEO</p>
+          <p>Visionär, Stratege und Antreiber. Ralf gründete RAKUHN mit dem Ziel, Technologie menschlicher zu machen.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-user"></i></div>
+          <h4>Anna Schreiber</h4>
+          <p class="role">Head of Design</p>
+          <p>Designerin mit Gespür für Ästhetik und Nutzererfahrung. Ihre Arbeiten wurden mehrfach ausgezeichnet.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-user"></i></div>
+          <h4>Mark Fischer</h4>
+          <p class="role">Lead Developer</p>
+          <p>Full-Stack-Entwickler mit Fokus auf skalierbare Architekturen und sauberen Code – kein Kompromiss.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><i class="fas fa-user"></i></div>
+          <h4>Laura Metz</h4>
+          <p class="role">Strategy Director</p>
+          <p>Digitale Strategin, die Marktchancen früher sieht als andere. Ihr Fokus: messbarer Geschäftserfolg.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Kontakt aufnehmen</h2>
+        <p class="section-subheading">Haben Sie ein Projekt im Kopf? Wir freuen uns auf das Gespräch.</p>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <input type="text" placeholder="Ihr Name *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Ihre E-Mail *" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Telefonnummer" />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Betreff" />
+        </div>
+        <div class="form-group full">
+          <textarea placeholder="Ihre Nachricht *" required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Nachricht senden</button>
+          <div id="form-success" style="display:none; color: var(--green); margin-top: 18px; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; letter-spacing: 1px;">
+            <i class="fas fa-check-circle"></i> Nachricht erfolgreich gesendet!
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">RAK<span>U</span>HN</div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-xing"></i></a>
+      </div>
+      <p class="footer-copy">Copyright &copy; RAKUHN 2026 &nbsp;·&nbsp; <a href="#" style="color:var(--muted); text-decoration:none;">Datenschutz</a> &nbsp;·&nbsp; <a href="#" style="color:var(--muted); text-decoration:none;">Impressum</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth highlight active nav item on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
+      });
+      // Compact nav on scroll
+      const nav = document.getElementById('mainNav');
+      nav.style.background = window.scrollY > 50 ? 'rgba(11,18,32,.97)' : 'rgba(11,18,32,.85)';
+    });
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => document.getElementById('form-success').style.display = 'none', 5000);
+    }
+
+    // Scroll-reveal animation for cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .portfolio-item, .team-card, .timeline-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity .5s ease, transform .5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>rakuhn – Babymode & Geburtsgeschenke</title>
+<title>Rakuhn – Babymode & Geburtsgeschenke</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -589,15 +589,14 @@
   .testi-name { font-size: 0.85rem; font-weight: 500; color: #fff; }
   .testi-meta { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
 
-  /* ─── KONTAKT ─── */
-  .contact-section {
+  /* ─── NEWSLETTER ─── */
+  .nl-section {
     padding: 6rem;
     text-align: center;
     position: relative;
-    background: var(--warm);
   }
 
-  .contact-section::before {
+  .nl-section::before {
     content: '';
     position: absolute; inset: 0;
     background: radial-gradient(ellipse 60% 60% at 50% 50%, var(--sage-light) 0%, transparent 70%);
@@ -605,75 +604,32 @@
     pointer-events: none;
   }
 
-  .contact-section .section-label,
-  .contact-section .section-title,
-  .contact-section .section-sub {
+  .nl-section .section-title, .nl-section .section-sub {
     margin-left: auto; margin-right: auto;
     text-align: center;
     max-width: 560px;
   }
 
-  .contact-form {
-    max-width: 700px;
+  .nl-form {
+    display: flex; gap: 0.8rem;
+    max-width: 480px;
     margin: 0 auto;
-    position: relative; z-index: 1;
+    background: var(--warm);
+    border: 1px solid var(--blush);
+    border-radius: 100px;
+    padding: 0.4rem 0.4rem 0.4rem 1.5rem;
   }
 
-  .contact-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .contact-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .contact-field input,
-  .contact-field textarea {
-    width: 100%;
-    background: var(--cream);
-    border: 1.5px solid var(--blush);
-    border-radius: 14px;
-    padding: 0.9rem 1.2rem;
+  .nl-form input {
+    flex: 1;
+    background: none;
+    border: none; outline: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     color: var(--text);
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
-  .contact-field input::placeholder,
-  .contact-field textarea::placeholder {
-    color: var(--text-light);
-  }
-
-  .contact-field input:focus,
-  .contact-field textarea:focus {
-    border-color: var(--terracotta);
-    box-shadow: 0 0 0 3px rgba(201,123,75,0.12);
-  }
-
-  .contact-field textarea {
-    resize: vertical;
-    min-height: 140px;
-  }
-
-  .contact-submit {
-    margin-top: 0.5rem;
-  }
-
-  .contact-success {
-    display: none;
-    margin-top: 1.2rem;
-    color: var(--sage);
-    font-size: 0.95rem;
-    font-weight: 500;
-  }
+  .nl-form input::placeholder { color: var(--text-light); }
 
   /* ─── FOOTER ─── */
   footer {
@@ -751,7 +707,7 @@
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 7rem 2rem 3rem; }
     .hero-right { padding: 2rem; }
-    .section, .gifts-section, .about-section, .testi-section, .contact-section { padding: 4rem 2rem; }
+    .section, .gifts-section, .about-section, .testi-section, .nl-section { padding: 4rem 2rem; }
     .section-sm { padding: 3rem 2rem; }
     .cats-grid { grid-template-columns: 1fr 1fr; }
     .cat-card:nth-child(1) { grid-row: auto; }
@@ -769,7 +725,6 @@
     .hero-title { font-size: 2.6rem; }
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-    .contact-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -891,7 +846,7 @@
 <section class="section" id="kategorien">
   <div class="section-label">Unsere Kollektionen</div>
   <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
-  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei rakuhn findest du das Richtige für jeden Anlass.</p>
+  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei Rakuhn findest du das Richtige für jeden Anlass.</p>
 
   <div class="cats-grid">
     <div class="cat-card">
@@ -988,7 +943,7 @@
     <div class="gift-card">
       <div class="gift-img">🦝</div>
       <div class="gift-info">
-        <div class="gift-name">rakuhn Signature-Box</div>
+        <div class="gift-name">Rakuhn Signature-Box</div>
         <div class="gift-price">ab 79,90 €</div>
         <button class="gift-btn">In den Warenkorb</button>
       </div>
@@ -1020,9 +975,9 @@
   </div>
 
   <div class="about-right">
-    <div class="section-label">Über rakuhn</div>
+    <div class="section-label">Über Rakuhn</div>
     <h2 class="section-title">Mit <em>Herz</em> für die<br>kleinsten Momente</h2>
-    <p class="section-sub">Bei rakuhn glauben wir, dass jede Kindheit mit Qualität, Liebe und einem Hauch Magie beginnen sollte. Darum wählen wir jedes Stück persönlich aus – weich, sicher und wunderschön.</p>
+    <p class="section-sub">Bei Rakuhn glauben wir, dass jede Kindheit mit Qualität, Liebe und einem Hauch Magie beginnen sollte. Darum wählen wir jedes Stück persönlich aus – weich, sicher und wunderschön.</p>
 
     <ul class="promise-list">
       <li class="promise-item">
@@ -1058,24 +1013,24 @@
   <div class="testi-grid">
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Das Geschenkset für unsere Nichte war einfach zauberhaft. Die Verpackung so liebevoll – alle waren begeistert. Nicht das letzte Mal bei rakuhn!"</p>
+      <p class="testi-text">"Das Geschenkset für unsere Nichte war einfach zauberhaft. Die Verpackung so liebevoll – alle waren begeistert. Nicht das letzte Mal bei Rakuhn!"</p>
       <div class="testi-author">
         <div class="testi-avatar">👩</div>
         <div>
-          <div class="testi-name">Jasmin R.</div>
-          <div class="testi-meta">Geburtsgeschenke</div>
+          <div class="testi-name">Sandra M.</div>
+          <div class="testi-meta">Tante von 3 Nichten</div>
         </div>
       </div>
     </div>
 
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Die Qualität der Hosen ist unglaublich gut. Der Kleine trägt sie seit Wochen – und sie sehen immer noch aus wie neu. Absolute Kaufempfehlung!"</p>
+      <p class="testi-text">"Die Qualität der Strampler ist unglaublich weich. Mein Sohn trägt sie seit Wochen – und sie sehen immer noch aus wie neu. Absolute Kaufempfehlung!"</p>
       <div class="testi-author">
         <div class="testi-avatar">👨</div>
         <div>
-          <div class="testi-name">Noemi R.</div>
-          <div class="testi-meta">Stolze Nachbarin</div>
+          <div class="testi-name">Tobias K.</div>
+          <div class="testi-meta">Stolzer Papa</div>
         </div>
       </div>
     </div>
@@ -1086,44 +1041,22 @@
       <div class="testi-author">
         <div class="testi-avatar">👩</div>
         <div>
-          <div class="testi-name">Simon R.</div>
-          <div class="testi-meta">Papa von Zwillingen</div>
+          <div class="testi-name">Lena W.</div>
+          <div class="testi-meta">Mama von Zwillingen</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KONTAKTFORMULAR -->
-<section class="contact-section" id="kontakt-formular">
-  <div class="section-label" style="text-align:center;">Wir freuen uns auf dich</div>
-  <h2 class="section-title" style="margin:0 auto 1rem;">Kontakt <em>aufnehmen</em></h2>
-  <p class="section-sub" style="margin:0 auto 2.5rem; text-align:center;">Hast du ein Projekt oder eine Frage? Schreib uns – wir melden uns so schnell wie möglich bei dir.</p>
-
-  <div class="contact-form">
-    <div class="contact-row">
-      <div class="contact-field">
-        <input type="text" id="cf-name" placeholder="Ihr Name *" required>
-      </div>
-      <div class="contact-field">
-        <input type="email" id="cf-email" placeholder="Ihre E-Mail *" required>
-      </div>
-    </div>
-    <div class="contact-row">
-      <div class="contact-field">
-        <input type="tel" id="cf-phone" placeholder="Telefonnummer">
-      </div>
-      <div class="contact-field">
-        <input type="text" id="cf-subject" placeholder="Betreff">
-      </div>
-    </div>
-    <div class="contact-field">
-      <textarea id="cf-message" placeholder="Ihre Nachricht *" required></textarea>
-    </div>
-    <div class="contact-submit">
-      <button class="btn-primary" id="cf-submit" style="padding: 1rem 2.5rem; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase;">Nachricht senden ✦</button>
-    </div>
-    <p class="contact-success" id="cf-success">✓ Vielen Dank! Wir melden uns bald bei dir.</p>
+<!-- NEWSLETTER -->
+<section class="nl-section">
+  <div class="section-label" style="text-align:center;">Bleib auf dem Laufenden</div>
+  <h2 class="section-title" style="margin:0 auto 1rem;">Neue <em>Kollektionen</em><br>zuerst entdecken</h2>
+  <p class="section-sub" style="margin:0 auto 2.5rem; text-align:center;">Trag dich ein und erhalte Neuigkeiten, exklusive Rabatte und Inspiration direkt in dein Postfach.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="Deine E-Mail-Adresse">
+    <button class="btn-primary" style="white-space:nowrap">Anmelden ✦</button>
   </div>
 </section>
 
@@ -1131,7 +1064,7 @@
 <footer id="kontakt">
   <div class="footer-top">
     <div>
-      <div class="footer-brand">🦝 rakuhn</div>
+      <div class="footer-brand">🦝 Rakuhn</div>
       <p class="footer-tagline">Liebevoll ausgewählte Babymode und Geburtsgeschenke – weil jeder Anfang besonders ist.</p>
     </div>
 
@@ -1159,7 +1092,7 @@
     <div>
       <div class="footer-heading">Kontakt</div>
       <ul class="footer-links">
-        <li><a href="/cdn-cgi/l/email-protection#f199909d9d9eb183909a84999fdf9594"><span class="__cf_email__" data-cfemail="5b333a3737341b293a302e3335753f3e">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:hallo@rakuhn.de">hallo@rakuhn.de</a></li>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Pinterest</a></li>
         <li><a href="#">Impressum</a></li>
@@ -1169,12 +1102,12 @@
   </div>
 
   <div class="footer-bottom">
-    <span>© 2025 rakuhn. Alle Rechte vorbehalten.</span>
+    <span>© 2025 Rakuhn. Alle Rechte vorbehalten.</span>
     <span>Made with 🤍 für kleine Wunder</span>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Smooth reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1192,20 +1125,15 @@
     observer.observe(el);
   });
 
-  // Kontaktformular
-  document.getElementById('cf-submit').addEventListener('click', () => {
-    const name = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const message = document.getElementById('cf-message').value.trim();
-    if (name && email.includes('@') && message) {
-      document.getElementById('cf-success').style.display = 'block';
-      document.getElementById('cf-name').value = '';
-      document.getElementById('cf-email').value = '';
-      document.getElementById('cf-phone').value = '';
-      document.getElementById('cf-subject').value = '';
-      document.getElementById('cf-message').value = '';
+  // Newsletter form
+  document.querySelector('.nl-form button').addEventListener('click', () => {
+    const input = document.querySelector('.nl-form input');
+    if (input.value.includes('@')) {
+      input.value = '✓ Danke! Du bist dabei.';
+      input.disabled = true;
     } else {
-      alert('Bitte fülle alle Pflichtfelder aus (Name, E-Mail, Nachricht).');
+      input.style.borderColor = 'var(--terracotta)';
+      input.placeholder = 'Bitte gültige E-Mail eingeben';
     }
   });
 </script>

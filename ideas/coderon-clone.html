@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coderon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --bg2: #161616;
+      --bg3: #1e1e1e;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #f0c040;
+      --accent2: #e05a5a;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,15,15,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--accent);
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: .85rem; font-weight: 500; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-search {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 16px;
+      color: var(--text); font-size: .85rem; outline: none;
+      width: 180px; transition: border-color .2s;
+    }
+    .nav-search:focus { border-color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; min-height: 520px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-left {
+      padding: 80px 64px;
+      display: flex; flex-direction: column; justify-content: center;
+      background: linear-gradient(135deg, #0f0f0f 60%, #1a1408 100%);
+    }
+    .hero-eyebrow {
+      font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px; font-weight: 600;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem; line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-title span { color: var(--accent); }
+    .hero-sub { color: var(--muted); max-width: 420px; margin-bottom: 36px; }
+    .btn {
+      display: inline-block;
+      background: var(--accent); color: #0f0f0f;
+      padding: 12px 28px; border-radius: 30px;
+      font-weight: 700; font-size: .85rem; letter-spacing: .06em;
+      text-transform: uppercase; transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(240,192,64,.25); color: #0f0f0f; }
+    .hero-right {
+      background: var(--bg2);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      overflow: hidden;
+    }
+    .hero-img {
+      background: var(--bg3);
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: .7; }
+    .hero-img .placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; background: var(--bg3);
+    }
+
+    /* LAYOUT */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; margin-bottom: 32px;
+      border-left: 4px solid var(--accent); padding-left: 16px;
+    }
+
+    /* BLOG GRID */
+    .blog-section { padding: 80px 0; }
+    .blog-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
+    .posts { display: flex; flex-direction: column; gap: 40px; }
+    .post-card {
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 24px; border-bottom: 1px solid var(--border); padding-bottom: 40px;
+    }
+    .post-thumb {
+      border-radius: var(--radius); overflow: hidden;
+      background: var(--bg3); aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; flex-shrink: 0;
+    }
+    .post-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .post-tag {
+      display: inline-block; font-size: .7rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; line-height: 1.4; margin-bottom: 10px;
+    }
+    .post-title:hover { color: var(--accent); }
+    .post-excerpt { color: var(--muted); font-size: .9rem; margin-bottom: 12px; }
+    .post-meta { font-size: .78rem; color: var(--muted); }
+    .load-more {
+      margin-top: 32px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--text); padding: 10px 32px; border-radius: 30px;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      font-size: .85rem; letter-spacing: .06em; text-transform: uppercase;
+      transition: border-color .2s, color .2s;
+    }
+    .load-more:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 48px; }
+    .newsletter-box {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+    }
+    .newsletter-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; margin-bottom: 12px;
+    }
+    .newsletter-box p { color: var(--muted); font-size: .88rem; margin-bottom: 20px; }
+    .newsletter-box input {
+      width: 100%; background: var(--bg3);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 14px; color: var(--text); font-size: .9rem;
+      margin-bottom: 12px; outline: none; transition: border-color .2s;
+    }
+    .newsletter-box input:focus { border-color: var(--accent); }
+    .newsletter-box .btn { width: 100%; text-align: center; display: block; }
+
+    .featured-posts h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; margin-bottom: 20px;
+      border-left: 3px solid var(--accent); padding-left: 12px;
+    }
+    .feat-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+    .feat-thumb {
+      width: 64px; height: 64px; border-radius: 8px;
+      background: var(--bg3); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+    }
+    .feat-title { font-size: .9rem; font-weight: 500; line-height: 1.4; margin-bottom: 4px; }
+    .feat-title:hover { color: var(--accent); }
+    .feat-date { font-size: .75rem; color: var(--muted); }
+
+    .topics h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; margin-bottom: 16px;
+      border-left: 3px solid var(--accent); padding-left: 12px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--muted);
+      transition: all .2s; cursor: pointer;
+    }
+    .tag:hover { background: var(--accent); color: #0f0f0f; border-color: var(--accent); }
+
+    /* HACKERS HAVEN */
+    .haven-section { padding: 80px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+    .haven-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .haven-col { border-right: 1px solid var(--border); padding: 0 32px 0 0; margin-right: 0; }
+    .haven-col:first-child { padding-left: 0; }
+    .haven-col:last-child { border-right: none; padding-right: 0; }
+    .haven-cat {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 24px; padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .haven-cat-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: var(--bg3); display: flex; align-items: center;
+      justify-content: center; font-size: 1.4rem;
+    }
+    .haven-cat-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.05rem;
+    }
+    .haven-post { padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .haven-post:last-child { border-bottom: none; }
+    .haven-post a { font-size: .88rem; line-height: 1.4; display: block; }
+    .haven-post a:hover { color: var(--accent); }
+
+    /* VIDEOS */
+    .videos-section { padding: 80px 0; }
+    .videos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .video-card {
+      background: var(--bg2); border-radius: var(--radius);
+      overflow: hidden; border: 1px solid var(--border);
+      transition: transform .2s, border-color .2s;
+    }
+    .video-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .video-thumb {
+      aspect-ratio: 16/9; background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; position: relative;
+    }
+    .play-btn {
+      position: absolute; width: 48px; height: 48px;
+      background: rgba(240,192,64,.9); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: #0f0f0f;
+    }
+    .video-info { padding: 20px; }
+    .video-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; line-height: 1.4;
+    }
+    .video-info h3:hover { color: var(--accent); }
+
+    /* GALLERY */
+    .gallery-section { padding: 80px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto auto;
+      gap: 4px;
+    }
+    .gallery-item {
+      aspect-ratio: 1; background: var(--bg3);
+      overflow: hidden; border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; position: relative; cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-caption {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.7);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .3s; padding: 16px;
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+    .gallery-caption p { font-size: .82rem; text-align: center; color: #eee; }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .nav-logo { display: block; margin-bottom: 16px; font-size: 1.3rem; }
+    .footer-brand p { color: var(--muted); font-size: .88rem; max-width: 260px; }
+    .footer-col h4 {
+      font-size: .75rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px; font-weight: 700;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: var(--muted); font-size: .88rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--text); }
+    .footer-recent-item { display: flex; gap: 10px; margin-bottom: 14px; }
+    .footer-recent-thumb {
+      width: 44px; height: 44px; border-radius: 6px;
+      background: var(--bg3); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .footer-recent-title { font-size: .82rem; line-height: 1.4; margin-bottom: 2px; }
+    .footer-recent-date { font-size: .72rem; color: var(--muted); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 28px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { font-size: .82rem; color: var(--muted); }
+    .footer-bottom a { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .haven-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .videos-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 0 16px; }
+      .nav-search { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero-left { padding: 48px 24px; }
+      .hero-title { font-size: 2.2rem; }
+      .haven-grid { grid-template-columns: 1fr; }
+      .videos-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Coderon</a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Archive</a></li>
+    <li><a href="#">Get Theme</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <input class="nav-search" type="text" placeholder="Search posts…" />
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">My creative space</p>
+    <h1 class="hero-title">Hi! I'm <span>Alex</span> 👋</h1>
+    <p class="hero-sub">A digital explorer, coder, and Linux advocate. This blog is my personal knowledge base on productivity, programming, and the freedom of information.</p>
+    <a href="#" class="btn">Let's Work Together</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img"><div class="placeholder">🎮</div></div>
+    <div class="hero-img"><div class="placeholder">🕹️</div></div>
+    <div class="hero-img"><div class="placeholder">⌨️</div></div>
+    <div class="hero-img"><div class="placeholder">🎧</div></div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section class="blog-section">
+  <div class="container">
+    <h2 class="section-title">The Binary Journal</h2>
+    <div class="blog-grid">
+      <!-- POSTS -->
+      <div>
+        <div class="posts">
+
+          <article class="post-card">
+            <div class="post-thumb">💻</div>
+            <div>
+              <span class="post-tag">Programming</span>
+              <h2 class="post-title"><a href="#">Avoiding Common JavaScript Mistakes and Writing Clean Code</a></h2>
+              <p class="post-excerpt">Starting out in programming is thrilling, yet the number of languages available makes it difficult to decide where to begin.</p>
+              <div class="post-meta">05 Jan, 2025 &nbsp;·&nbsp; 3 min read</div>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-thumb">🐧</div>
+            <div>
+              <span class="post-tag">Linux</span>
+              <h2 class="post-title"><a href="#">Setting Up the Perfect Programming Environment on Ubuntu</a></h2>
+              <p class="post-excerpt">Rooted in the principles of free software, Linux has evolved from a student's project into a cornerstone of modern technology.</p>
+              <div class="post-meta">04 Jan, 2025 &nbsp;·&nbsp; 3 min read</div>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-thumb">🔐</div>
+            <div>
+              <span class="post-tag">Security</span>
+              <h2 class="post-title"><a href="#">Why Two-Factor Authentication Is a Must-Have Tool</a></h2>
+              <p class="post-excerpt">Protect your digital world with practical guides and insights into cybersecurity.</p>
+              <div class="post-meta">03 Jan, 2025 &nbsp;·&nbsp; 3 min read</div>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-thumb">🎮</div>
+            <div>
+              <span class="post-tag">Games</span>
+              <h2 class="post-title"><a href="#">Top Indie Games Every Geek Should Try</a></h2>
+              <p class="post-excerpt">In recent years, indie games have transformed the gaming industry, offering unique experiences that often surpass mainstream titles.</p>
+              <div class="post-meta">02 Jan, 2025 &nbsp;·&nbsp; 4 min read</div>
+            </div>
+          </article>
+        </div>
+        <button class="load-more">Load More</button>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="newsletter-box">
+          <h3>Stay inspired weekly ✌️</h3>
+          <p>Every Sunday, actionable tips for productivity, practical life advice, and top-notch insights right to your inbox.</p>
+          <input type="email" placeholder="Email address" />
+          <a href="#" class="btn">Join Now</a>
+        </div>
+
+        <div class="featured-posts">
+          <h3>Featured posts</h3>
+          <div class="feat-item">
+            <div class="feat-thumb">🐧</div>
+            <div>
+              <a href="#" class="feat-title">Why I Switched to Arch Linux and Never Looked Back</a>
+              <div class="feat-date">15 Dec, 2024</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-thumb">⚡</div>
+            <div>
+              <a href="#" class="feat-title">Automating Routine Tasks with Bash Scripts</a>
+              <div class="feat-date">15 Nov, 2024</div>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-thumb">🎮</div>
+            <div>
+              <a href="#" class="feat-title">How Games Keep Players Engaged and Motivated</a>
+              <div class="feat-date">19 Oct, 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topics">
+          <h3>Topics</h3>
+          <div class="tags">
+            <span class="tag">Games</span>
+            <span class="tag">Movies</span>
+            <span class="tag">Security</span>
+            <span class="tag">Productivity</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Programming</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- HACKER'S HAVEN -->
+<section class="haven-section">
+  <div class="container">
+    <h2 class="section-title">Hacker's Haven</h2>
+    <div class="haven-grid">
+      <div class="haven-col">
+        <div class="haven-cat">
+          <div class="haven-cat-icon">💻</div>
+          <span class="haven-cat-name">Programming</span>
+        </div>
+        <div class="haven-post"><a href="#">Avoiding Common JavaScript Mistakes and Writing Clean Code</a></div>
+        <div class="haven-post"><a href="#">My Top 10 Code Editors for Developers</a></div>
+        <div class="haven-post"><a href="#">Automating Routine Tasks with Bash Scripts</a></div>
+        <div class="haven-post"><a href="#">Choosing Your First Programming Language</a></div>
+      </div>
+      <div class="haven-col">
+        <div class="haven-cat">
+          <div class="haven-cat-icon">🐧</div>
+          <span class="haven-cat-name">Linux</span>
+        </div>
+        <div class="haven-post"><a href="#">Setting Up the Perfect Programming Environment on Ubuntu</a></div>
+        <div class="haven-post"><a href="#">Why I Switched to Arch Linux and Never Looked Back</a></div>
+        <div class="haven-post"><a href="#">Top 7 Terminal Commands Every Linux User Should Know</a></div>
+        <div class="haven-post"><a href="#">Customizing the Terminal and Productivity Tools</a></div>
+      </div>
+      <div class="haven-col">
+        <div class="haven-cat">
+          <div class="haven-cat-icon">⚡</div>
+          <span class="haven-cat-name">Productivity</span>
+        </div>
+        <div class="haven-post"><a href="#">Top 5 Productivity Tools I Use Daily</a></div>
+        <div class="haven-post"><a href="#">Staying Focused and Avoiding Burnout</a></div>
+        <div class="haven-post"><a href="#">Time Management Techniques for Developers</a></div>
+        <div class="haven-post"><a href="#">Digital Minimalism Principles for IT Professionals</a></div>
+      </div>
+      <div class="haven-col">
+        <div class="haven-cat">
+          <div class="haven-cat-icon">🔐</div>
+          <span class="haven-cat-name">Security</span>
+        </div>
+        <div class="haven-post"><a href="#">Why Two-Factor Authentication Is a Must-Have Tool</a></div>
+        <div class="haven-post"><a href="#">Tips for Safeguarding Mobile Devices and Cloud Storage</a></div>
+        <div class="haven-post"><a href="#">Which Browsers Truly Protect Your Privacy?</a></div>
+        <div class="haven-post"><a href="#">Keeping Your Files and Messages Secure</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST VIDEOS -->
+<section class="videos-section">
+  <div class="container">
+    <h2 class="section-title">Latest Videos</h2>
+    <div class="videos-grid">
+      <div class="video-card">
+        <div class="video-thumb">
+          🔐
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="video-info">
+          <h3><a href="#">Why Two-Factor Authentication Is a Must-Have Tool</a></h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          ⚡
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="video-info">
+          <h3><a href="#">Top 5 Productivity Tools I Use Daily</a></h3>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          🖥️
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="video-info">
+          <h3><a href="#">Automating Routine Tasks with Bash Scripts</a></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BYTE FRAME GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+    <h2 class="section-title">Byte Frame</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background:#1a1a2e;">
+        😴
+        <div class="gallery-caption"><p>Small steps lead to big results.</p></div>
+      </div>
+      <div class="gallery-item" style="background:#1a2e1a;">
+        🌿
+        <div class="gallery-caption"><p>A peaceful moment during a serene evening.</p></div>
+      </div>
+      <div class="gallery-item" style="background:#2e1a1a;">
+        ⭐
+        <div class="gallery-caption"><p>True friends shine brightest when the world feels dark.</p></div>
+      </div>
+      <div class="gallery-item" style="background:#1a1a1a;">
+        🖥️
+        <div class="gallery-caption"><p>Every click opens a new chapter in an endless story.</p></div>
+      </div>
+      <div class="gallery-item" style="background:#1a1a2e;">
+        🎮
+        <div class="gallery-caption"><p>Every level is a new opportunity to test your limits.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Coderon</a>
+        <p>Here, I share ideas, tools, and methods that help me balance productivity with creativity while keeping control over my digital world.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">Archive</a></li>
+          <li><a href="#">Get Theme</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Elements</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recent Posts</h4>
+        <div class="footer-recent-item">
+          <div class="footer-recent-thumb">💻</div>
+          <div>
+            <div class="footer-recent-title"><a href="#">Avoiding Common JavaScript Mistakes</a></div>
+            <div class="footer-recent-date">05 Jan, 2025</div>
+          </div>
+        </div>
+        <div class="footer-recent-item">
+          <div class="footer-recent-thumb">🐧</div>
+          <div>
+            <div class="footer-recent-title"><a href="#">Perfect Programming Environment on Ubuntu</a></div>
+            <div class="footer-recent-date">04 Jan, 2025</div>
+          </div>
+        </div>
+        <div class="footer-recent-item">
+          <div class="footer-recent-thumb">🔐</div>
+          <div>
+            <div class="footer-recent-title"><a href="#">Why Two-Factor Authentication Matters</a></div>
+            <div class="footer-recent-date">03 Jan, 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2025 © <a href="#">Coderon</a>. Crafted &amp; Designed by <a href="#">Artem Sheludko</a>.</p>
+      <div class="tags">
+        <span class="tag">Games</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Security</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
