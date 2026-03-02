@@ -284,88 +284,138 @@
     margin-bottom: 3.5rem;
   }
 
-  .cats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+  /* ─── CAROUSEL ─── */
+  .carousel-section {
+    padding: 7rem 0 7rem;
+    background: var(--cream);
   }
 
-  .cat-card {
-    border-radius: 24px;
-    overflow: hidden;
+  .carousel-header {
+    padding: 0 6rem 3.5rem;
+  }
+
+  .carousel-wrapper {
     position: relative;
-    cursor: pointer;
-    transition: transform 0.3s;
   }
 
-  .cat-card:hover { transform: translateY(-6px); }
+  .carousel-track-outer {
+    overflow: hidden;
+    padding: 1rem 6rem 1.5rem;
+  }
 
-  .cat-card:nth-child(1) { grid-row: span 2; }
-
-  .cat-bg {
-    width: 100%;
-    height: 100%;
-    min-height: 220px;
+  .carousel-track {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
+    gap: 1.8rem;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: grab;
+    user-select: none;
   }
 
-  .cat-card:nth-child(1) .cat-bg { min-height: 470px; }
+  .carousel-track:active { cursor: grabbing; }
 
-  .cat-bg::before {
+  .carousel-item {
+    flex: 0 0 calc(33.333% - 1.2rem);
+    min-width: 0;
+  }
+
+  .carousel-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--warm);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(42,31,21,0.1);
+  }
+
+  .carousel-img {
+    height: 280px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem;
+    position: relative; overflow: hidden;
+  }
+
+  .carousel-img::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(42,31,21,0.7) 0%, transparent 55%);
-    z-index: 1;
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.35), transparent 60%);
+    pointer-events: none;
   }
 
-  .cat-emoji {
-    font-size: 3.5rem;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -70%);
-    z-index: 0;
-    opacity: 0.15;
+  .carousel-info {
+    padding: 1.2rem 1.4rem 1.5rem;
+    text-align: center;
   }
 
-  .cat-content { position: relative; z-index: 2; }
-
-  .cat-title {
+  .carousel-name {
     font-family: 'Fraunces', serif;
-    font-size: 1.4rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: #fff;
-    margin-bottom: 0.3rem;
+    color: var(--midnight);
+    margin-bottom: 0.35rem;
   }
 
-  .cat-desc {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.75);
+  .carousel-price {
+    font-size: 0.9rem;
+    color: var(--terracotta);
+    font-weight: 500;
   }
 
-  .cat-arrow {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(8px);
+  .carousel-btn-wrap {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+  }
+
+  .carousel-arrow {
+    width: 46px; height: 46px;
     border-radius: 50%;
-    color: #fff;
-    font-size: 1rem;
-    margin-top: 0.8rem;
-    transition: background 0.2s;
+    background: var(--cream);
+    border: 1.5px solid var(--blush);
+    color: var(--bark);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
   }
-  .cat-card:hover .cat-arrow { background: var(--terracotta); }
 
-  /* card color themes */
-  .cat-c1 { background: linear-gradient(135deg, #C97B4B, #E8C5A8); }
-  .cat-c2 { background: linear-gradient(135deg, #8BA888, #C5D9C4); }
-  .cat-c3 { background: linear-gradient(135deg, #B5A0C8, #DDD0EC); }
-  .cat-c4 { background: linear-gradient(135deg, #D9A85A, #F0D4A0); }
-  .cat-c5 { background: linear-gradient(135deg, #A88B8B, #D4BFBF); }
+  .carousel-arrow:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: #fff;
+    transform: scale(1.07);
+  }
+
+  .carousel-dots {
+    display: flex; gap: 0.45rem; align-items: center;
+  }
+
+  .carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--blush);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .carousel-dot.active {
+    background: var(--terracotta);
+    transform: scale(1.3);
+  }
+
+  @media (max-width: 1024px) {
+    .carousel-header { padding: 0 2rem 3rem; }
+    .carousel-track-outer { padding: 1rem 2rem 1.5rem; }
+    .carousel-item { flex: 0 0 calc(50% - 0.9rem); }
+  }
+
+  @media (max-width: 600px) {
+    .carousel-item { flex: 0 0 calc(85%); }
+    .carousel-section { padding: 4rem 0; }
+  }
 
   /* ─── GIFTS ─── */
   .gifts-section {
@@ -446,6 +496,7 @@
     gap: 6rem;
     padding: 7rem 6rem;
     align-items: center;
+    background: var(--warm);
   }
 
   .about-left {
@@ -782,9 +833,9 @@
     rakuhn
   </a>
   <ul class="nav-links">
-    <li><a href="#kategorien">Sortiment</a></li>
-    <li><a href="#geschenke">Geschenke</a></li>
     <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#kategorien">Sortiment</a></li>
+    <li><a href="#geschenke">Geschenkesets</a></li>
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
 </nav>
@@ -792,7 +843,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">🦝 Liebevoll handgepickt</div>
+    <div class="hero-tag">🦝 Mit Liebe genäht</div>
     <h1 class="hero-title">
       Kleine<br><em>Wunder</em><br>verdienen<br>das Beste.
     </h1>
@@ -801,7 +852,7 @@
     </p>
     <div class="hero-actions">
       <a href="#kategorien" class="btn-primary">Sortiment entdecken →</a>
-      <a href="#geschenke" class="btn-outline">🎁 Geschenke finden</a>
+      <!-- <a href="#geschenke" class="btn-outline">🎁 Geschenke finden</a> -->
     </div>
   </div>
 
@@ -887,72 +938,91 @@
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<section class="section" id="kategorien">
-  <div class="section-label">Unsere Kollektionen</div>
-  <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
-  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei rakuhn findest du das Richtige für jeden Anlass.</p>
+<!-- CATEGORIES CAROUSEL -->
+<section class="carousel-section" id="kategorien">
+  <div class="carousel-header">
+    <div class="section-label">Unsere Kollektionen</div>
+    <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
+    <p class="section-sub">Von zarten Wickeltaschen bis zu liebevollen Geschenksets – bei rakuhn findest du das Richtige für jeden Anlass.</p>
+  </div>
 
-  <div class="cats-grid">
-    <div class="cat-card">
-      <div class="cat-bg cat-c1">
-        <div class="cat-emoji">👶</div>
-        <div class="cat-content">
-          <div class="cat-title">Neugeborene</div>
-          <div class="cat-desc">Zarte Erstlingsausstattung für die allerersten Tage</div>
-          <div class="cat-arrow">→</div>
+  <div class="carousel-wrapper">
+    <div class="carousel-track-outer" id="carouselOuter">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="carousel-img" style="background: linear-gradient(135deg, #C97B4B, #E8C5A8);">🎁</div>
+            <div class="carousel-info">
+              <div class="carousel-name">Geschenksets</div>
+              <div class="carousel-price">ab 29,90 €</div>
+            </div>
+          </div>
         </div>
+
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="carousel-img" style="background: linear-gradient(135deg, #8BA888, #C5D9C4);">👖</div>
+            <div class="carousel-info">
+              <div class="carousel-name">Hosen</div>
+              <div class="carousel-price">ab 19,90 €</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="carousel-img" style="background: linear-gradient(135deg, #D9A85A, #F0D4A0);">🧣</div>
+            <div class="carousel-info">
+              <div class="carousel-name">Halstücher</div>
+              <div class="carousel-price">ab 9,90 €</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="carousel-img" style="background: linear-gradient(135deg, #A88B8B, #D4BFBF);">👜</div>
+            <div class="carousel-info">
+              <div class="carousel-name">Wickeltaschen</div>
+              <div class="carousel-price">ab 49,90 €</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="carousel-img" style="background: linear-gradient(135deg, #B5A0C8, #DDD0EC);">🧸</div>
+            <div class="carousel-info">
+              <div class="carousel-name">Schnuffeltücher</div>
+              <div class="carousel-price">ab 14,90 €</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-card">
+            <div class="carousel-img" style="background: linear-gradient(135deg, #C97B4B88, #E8C5A8);">🎟️</div>
+            <div class="carousel-info">
+              <div class="carousel-name">Gutscheine</div>
+              <div class="carousel-price">ab 20,00 €</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="cat-card">
-      <div class="cat-bg cat-c2">
-        <div class="cat-emoji">🌸</div>
-        <div class="cat-content">
-          <div class="cat-title">Mädchen</div>
-          <div class="cat-desc">Süße Kleider & Sets für kleine Prinzessinnen</div>
-          <div class="cat-arrow">→</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-bg cat-c3">
-        <div class="cat-emoji">⭐</div>
-        <div class="cat-content">
-          <div class="cat-title">Jungs</div>
-          <div class="cat-desc">Coole Outfits für kleine Abenteurer</div>
-          <div class="cat-arrow">→</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-bg cat-c4">
-        <div class="cat-emoji">🎀</div>
-        <div class="cat-content">
-          <div class="cat-title">Accessoires</div>
-          <div class="cat-desc">Mützen, Socken, Lätzchen & mehr</div>
-          <div class="cat-arrow">→</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cat-card">
-      <div class="cat-bg cat-c5">
-        <div class="cat-emoji">🎁</div>
-        <div class="cat-content">
-          <div class="cat-title">Saisonales</div>
-          <div class="cat-desc">Aktuelle Highlights der Saison</div>
-          <div class="cat-arrow">→</div>
-        </div>
-      </div>
+    <div class="carousel-btn-wrap">
+      <button class="carousel-arrow" id="carouselPrev">←</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-arrow" id="carouselNext">→</button>
     </div>
   </div>
 </section>
 
 <!-- GIFTS -->
-<section class="gifts-section" id="geschenke">
+<!-- <section class="gifts-section" id="geschenke">
   <div class="section-label">Geburtsgeschenke</div>
   <h2 class="section-title">Die <em>perfekte Freude</em><br>zur Geburt</h2>
   <p class="section-sub">Jedes unserer Geschenksets wird mit Liebe zusammengestellt und schön verpackt – fertig zum Verschenken.</p>
@@ -994,11 +1064,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ABOUT -->
 <section class="about-section" id="ueber-mich">
-  <dmichclass="about-left">
+  <!-- <div class="about-left">
     <div class="about-card">
       <div class="about-big-num">2'000+</div>
       <div class="about-num-label">Glückliche Familien</div>
@@ -1017,7 +1087,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="about-right">
     <div class="section-label">Über rakuhn</div>
@@ -1096,9 +1166,9 @@
 
 <!-- KONTAKTFORMULAR -->
 <section class="contact-section" id="kontakt-formular">
-  <div class="section-label" style="text-align:center;">Wir freuen uns auf dich</div>
+  <div class="section-label" style="text-align:center;">Ich freue mich auf deine Anfrage</div>
   <h2 class="section-title" style="margin:0 auto 1rem;">Kontakt <em>aufnehmen</em></h2>
-  <p class="section-sub" style="margin:0 auto 2.5rem; text-align:center;">Hast du ein Projekt oder eine Frage? Schreib uns – wir melden uns so schnell wie möglich bei dir.</p>
+  <p class="section-sub" style="margin:0 auto 2.5rem; text-align:center;">Möchtest du etwas bestellen? Schreib mir einfach – ich melde mich so schnell wie möglich bei dir.</p>
 
   <div class="contact-form">
     <div class="contact-row">
@@ -1135,7 +1205,7 @@
       <p class="footer-tagline">Liebevoll ausgewählte Babymode und Geburtsgeschenke – weil jeder Anfang besonders ist.</p>
     </div>
 
-    <div>
+    <!-- <div>
       <div class="footer-heading">Shop</div>
       <ul class="footer-links">
         <li><a href="#">Neugeborene</a></li>
@@ -1144,7 +1214,7 @@
         <li><a href="#">Accessoires</a></li>
         <li><a href="#">Geschenksets</a></li>
       </ul>
-    </div>
+    </div> -->
 
     <div>
       <div class="footer-heading">Info</div>
@@ -1159,9 +1229,9 @@
     <div>
       <div class="footer-heading">Kontakt</div>
       <ul class="footer-links">
-        <li><a href="/cdn-cgi/l/email-protection#f199909d9d9eb183909a84999fdf9594"><span class="__cf_email__" data-cfemail="5b333a3737341b293a302e3335753f3e">[email&#160;protected]</span></a></li>
+        <li><a href="#">Email</a></li>
         <li><a href="#">Instagram</a></li>
-        <li><a href="#">Pinterest</a></li>
+        <li><a href="#">Facebook</a></li>
         <li><a href="#">Impressum</a></li>
         <li><a href="#">Datenschutz</a></li>
       </ul>
@@ -1191,6 +1261,66 @@
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+
+  // Carousel
+  const track = document.getElementById('carouselTrack');
+  const dotsContainer = document.getElementById('carouselDots');
+  const items = track.querySelectorAll('.carousel-item');
+  let currentIndex = 0;
+
+  function getVisible() {
+    const w = track.parentElement.offsetWidth;
+    if (w < 600) return 1;
+    if (w < 1024) return 2;
+    return 3;
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const visible = getVisible();
+    const total = items.length - visible + 1;
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    const visible = getVisible();
+    const max = items.length - visible;
+    currentIndex = Math.max(0, Math.min(index, max));
+    const itemW = items[0].offsetWidth + 28; // gap 1.8rem ≈ 28px
+    track.style.transform = `translateX(-${currentIndex * itemW}px)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  document.getElementById('carouselPrev').addEventListener('click', () => goTo(currentIndex - 1));
+  document.getElementById('carouselNext').addEventListener('click', () => goTo(currentIndex + 1));
+
+  // Touch/drag swipe
+  let startX = 0, isDragging = false;
+  track.addEventListener('mousedown', e => { isDragging = true; startX = e.clientX; });
+  track.addEventListener('mousemove', e => { if (!isDragging) return; });
+  track.addEventListener('mouseup', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.clientX;
+    if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
+  });
+  track.addEventListener('mouseleave', () => { isDragging = false; });
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
+  });
+
+  buildDots();
+  window.addEventListener('resize', () => { buildDots(); goTo(currentIndex); });
 
   // Kontaktformular
   document.getElementById('cf-submit').addEventListener('click', () => {
