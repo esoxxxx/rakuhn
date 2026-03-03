@@ -3,8 +3,23 @@
   <div class="section-label">Geburtsgeschenke</div>
   <h2 class="section-title">Die <em>perfekte Freude</em><br>zur Geburt</h2>
   <p class="section-sub">Jedes meiner Geschenksets wird mit Liebe zusammengestellt und schön verpackt – fertig zum Verschenken.</p>
-
+ 
   <div class="gifts-grid">
+
+  {% for gift in collections.gifts %}
+    <div class="gift-card">
+      <div class="gift-img">{{ gift.data.icon }}</div>
+      <div class="gift-info">
+        <div class="gift-name">{{ gift.data.name }}</div>
+        <div class="gift-price">{{ gift.data.price }}</div>
+        <button class="gift-btn">In den Warenkorb</button>
+      </div>
+    </div>
+  {% endfor %}
+
+  </div>
+
+  {# <div class="gifts-grid">
     <div class="gift-card">
       <div class="gift-img">🎀</div>
       <div class="gift-info">
@@ -40,5 +55,5 @@
         <button class="gift-btn">In den Warenkorb</button>
       </div>
     </div>
-  </div>
+  </div> #}
 </section>
