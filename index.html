@@ -7,16 +7,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #ffffff;
-    --warm: #f9fafb;
-    --blush: #dde3f5;
-    --terracotta: #5b6ef5;
-    --bark: #3a4ac4;
-    --sage: #6b7280;
-    --sage-light: #eef2ff;
-    --midnight: #1a1f36;
-    --text: #1e2340;
-    --text-light: #6b7280;
+    /* Backgrounds */
+    --bg-primary:   #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-subtle:    #eef2ff;
+    --bg-dark:      #1a1f36;
+
+    /* Borders */
+    --border:       #dde3f5;
+
+    /* Brand / Accent */
+    --accent:       #5b6ef5;
+    --accent-dark:  #2436bb;
+    --accent-light: #a5b4fc;
+
+    /* Text */
+    --text-primary:   #1e2340;
+    --text-secondary: #6b7280;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +32,7 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
+    background: var(--bg-primary);
     color: var(--text);
     overflow-x: hidden;
   }
@@ -35,7 +42,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.2rem 4rem;
-    background: rgba(255,255,255,0.92);
+    background: var(--bg-primary);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(91,110,245,0.12);
   }
@@ -45,7 +52,7 @@
     font-family: 'Fraunces', serif;
     font-size: 1.6rem;
     font-weight: 800;
-    color: var(--bark);
+    color: var(--text-primary);
     text-decoration: none;
     letter-spacing: -0.02em;
   }
@@ -59,17 +66,17 @@
   .nav-links a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-light);
+    color: var(--text-secondary);
     text-decoration: none;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--terracotta); }
+  .nav-links a:hover { color: var(--accent); }
 
   .nav-cta {
-    background: var(--terracotta);
+    background: var(--accent);
     color: #fff !important;
     padding: 0.55rem 1.4rem;
     border-radius: 100px;
@@ -77,7 +84,7 @@
     transition: background 0.2s !important;
   }
 
-  .nav-cta:hover { background: var(--bark) !important; color: #fff !important; }
+  .nav-cta:hover { background: var(--accent-dark) !important; color: #fff !important; }
 
   /* ─── HERO ─── */
   .hero {
@@ -107,13 +114,13 @@
 
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--warm);
-    border: 1px solid var(--blush);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     border-radius: 100px;
     padding: 0.4rem 1rem;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--terracotta);
+    color: var(--accent);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
@@ -127,7 +134,7 @@
     font-weight: 800;
     line-height: 1.0;
     letter-spacing: -0.03em;
-    color: var(--midnight);
+    color: var(--bg-dark);
     margin-bottom: 1.5rem;
     animation: fadeUp 0.8s 0.1s ease both;
   }
@@ -135,13 +142,13 @@
   .hero-title em {
     font-style: italic;
     font-weight: 300;
-    color: var(--terracotta);
+    color: var(--accent);
   }
 
   .hero-sub {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: var(--text-light);
+    color: var(--text-secondary);
     max-width: 440px;
     margin-bottom: 2.5rem;
     animation: fadeUp 0.8s 0.2s ease both;
@@ -153,7 +160,7 @@
   }
 
   .btn-primary {
-    background: var(--terracotta);
+    background: var(--accent);
     color: #fff;
     padding: 0.9rem 2rem;
     border-radius: 100px;
@@ -165,23 +172,23 @@
     transition: background 0.2s, transform 0.15s;
     display: inline-flex; align-items: center; gap: 0.4rem;
   }
-  .btn-primary:hover { background: var(--bark); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
 
   .btn-outline {
     background: transparent;
-    color: var(--bark);
+    color: var(--accent-dark);
     padding: 0.9rem 2rem;
     border-radius: 100px;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
     text-decoration: none;
-    border: 2px solid var(--blush);
+    border: 2px solid var(--border);
     cursor: pointer;
     transition: border-color 0.2s, transform 0.15s;
     display: inline-flex; align-items: center; gap: 0.4rem;
   }
-  .btn-outline:hover { border-color: var(--terracotta); transform: translateY(-2px); }
+  .btn-outline:hover { border-color: var(--accent); transform: translateY(-2px); }
 
   .hero-right {
     display: flex; align-items: center; justify-content: center;
@@ -223,9 +230,9 @@
 
   /* ─── BADGES ─── */
   .badge-strip {
-    background: var(--sage-light);
-    border-top: 1px solid var(--blush);
-    border-bottom: 1px solid var(--blush);
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     padding: 1.1rem 0;
     overflow: hidden;
   }
@@ -238,7 +245,7 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 0.88rem;
     font-weight: 500;
-    color: var(--bark);
+    color: var(--accent-dark);
     letter-spacing: 0.03em;
     padding: 0 2rem;
   }
@@ -251,7 +258,7 @@
   }
 
   .badge-track .sep {
-    color: var(--blush);
+    color: var(--border);
     font-size: 1.2rem;
     line-height: 1;
   }
@@ -265,7 +272,7 @@
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--terracotta);
+    color: var(--accent);
     margin-bottom: 0.8rem;
   }
 
@@ -275,18 +282,18 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    color: var(--midnight);
+    color: var(--bg-dark);
     margin-bottom: 1rem;
   }
 
   .section-title em {
     font-style: italic;
     font-weight: 300;
-    color: var(--terracotta);
+    color: var(--accent);
   }
 
   .section-sub {
-    color: var(--text-light);
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.7;
     max-width: 520px;
@@ -368,7 +375,7 @@
     margin-top: 0.8rem;
     transition: background 0.2s;
   }
-  .cat-card:hover .cat-arrow { background: var(--terracotta); }
+  .cat-card:hover .cat-arrow { background: var(--accent); }
 
   /* card color themes */
   .cat-c1 { background: linear-gradient(135deg, #5b6ef5, #a5b4fc); }
@@ -379,7 +386,7 @@
 
   /* ─── GIFTS ─── */
   .gifts-section {
-    background: var(--sage-light);
+    background: var(--bg-subtle);
     padding: 7rem 6rem;
   }
 
@@ -392,7 +399,7 @@
 
   .gift-card {
     background: #ffffff;
-    border: 1px solid var(--blush);
+    border: 1px solid var(--border);
     border-radius: 20px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -408,7 +415,7 @@
     height: 200px;
     display: flex; align-items: center; justify-content: center;
     font-size: 4rem;
-    background: linear-gradient(135deg, var(--sage-light), var(--blush));
+    background: linear-gradient(135deg, var(--bg-subtle), var(--border));
     position: relative; overflow: hidden;
   }
 
@@ -424,13 +431,13 @@
     font-family: 'Fraunces', serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--midnight);
+    color: var(--bg-dark);
     margin-bottom: 0.3rem;
   }
 
   .gift-price {
     font-size: 0.9rem;
-    color: var(--terracotta);
+    color: var(--accent);
     font-weight: 500;
   }
 
@@ -438,17 +445,17 @@
     display: block; width: 100%;
     margin-top: 0.9rem;
     padding: 0.6rem;
-    background: var(--sage-light);
-    border: 1px solid var(--blush);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
     border-radius: 10px;
-    color: var(--bark);
+    color: var(--accent-dark);
     font-family: 'DM Sans', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
     transition: background 0.2s;
   }
-  .gift-btn:hover { background: var(--terracotta); color: #fff; border-color: transparent; }
+  .gift-btn:hover { background: var(--accent); color: #fff; border-color: transparent; }
 
   /* ─── ABOUT ─── */
   .about-section {
@@ -457,7 +464,7 @@
     gap: 6rem;
     padding: 7rem 6rem;
     align-items: center;
-    background: var(--warm);
+    background: var(--bg-secondary);
   }
 
   .about-left {
@@ -465,8 +472,8 @@
   }
 
   .about-card {
-    background: var(--sage-light);
-    border: 1px solid var(--blush);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
     border-radius: 32px;
     padding: 3rem;
     position: relative;
@@ -485,14 +492,14 @@
     font-family: 'Fraunces', serif;
     font-size: 5rem;
     font-weight: 800;
-    color: var(--terracotta);
+    color: var(--accent);
     line-height: 1;
     margin-bottom: 0.3rem;
   }
 
   .about-num-label {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin-bottom: 2rem;
   }
 
@@ -505,11 +512,11 @@
     font-family: 'Fraunces', serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--midnight);
+    color: var(--bg-dark);
   }
   .stat-lbl {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin-top: 0.1rem;
   }
 
@@ -529,7 +536,7 @@
 
   .promise-icon {
     width: 40px; height: 40px; flex-shrink: 0;
-    background: var(--blush);
+    background: var(--border);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.1rem;
@@ -538,18 +545,18 @@
   .promise-text strong {
     display: block;
     font-size: 0.95rem;
-    color: var(--midnight);
+    color: var(--bg-dark);
     margin-bottom: 0.15rem;
   }
   .promise-text span {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     line-height: 1.5;
   }
 
   /* ─── TESTIMONIALS ─── */
   .testi-section {
-    background: var(--midnight);
+    background: var(--bg-dark);
     padding: 6rem;
     position: relative; overflow: hidden;
   }
@@ -558,7 +565,7 @@
     content: '';
     position: absolute; top: -100px; right: -100px;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
     opacity: 0.12;
   }
 
@@ -607,13 +614,13 @@
     padding: 6rem;
     text-align: center;
     position: relative;
-    background: var(--cream);
+    background: var(--bg-primary);
   }
 
   .contact-section::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 60% at 50% 50%, var(--sage-light) 0%, transparent 70%);
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, var(--bg-subtle) 0%, transparent 70%);
     opacity: 0.6;
     pointer-events: none;
   }
@@ -650,7 +657,7 @@
   .contact-field textarea {
     width: 100%;
     background: #ffffff;
-    border: 1.5px solid var(--blush);
+    border: 1.5px solid var(--border);
     border-radius: 14px;
     padding: 0.9rem 1.2rem;
     font-family: 'DM Sans', sans-serif;
@@ -662,12 +669,12 @@
 
   .contact-field input::placeholder,
   .contact-field textarea::placeholder {
-    color: var(--text-light);
+    color: var(--text-secondary);
   }
 
   .contact-field input:focus,
   .contact-field textarea:focus {
-    border-color: var(--terracotta);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(91,110,245,0.12);
   }
 
@@ -683,14 +690,14 @@
   .contact-success {
     display: none;
     margin-top: 1.2rem;
-    color: var(--sage);
+    color: var(--text-secondary);
     font-size: 0.95rem;
     font-weight: 500;
   }
 
   /* ─── FOOTER ─── */
   footer {
-    background: var(--midnight);
+    background: var(--bg-dark);
     color: rgba(255,255,255,0.65);
     padding: 4rem 6rem 2.5rem;
   }
@@ -746,6 +753,67 @@
     font-size: 0.82rem;
   }
 
+  /* ─── BURGER ─── */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px; height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  .burger:hover { background: var(--bg-subtle); }
+  .burger span {
+    display: block;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
+  .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile nav drawer */
+  .nav-drawer {
+    display: none;
+    position: fixed;
+    top: 65px; left: 0; right: 0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(30,35,64,0.08);
+    z-index: 99;
+    padding: 1.2rem 1.5rem 1.5rem;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .nav-drawer.open { display: flex; }
+  .nav-drawer a {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-drawer a:hover { background: var(--bg-subtle); color: var(--accent); }
+  .nav-drawer .nav-cta {
+    margin-top: 0.5rem;
+    background: var(--accent);
+    color: #fff !important;
+    text-align: center;
+  }
+  .nav-drawer .nav-cta:hover { background: var(--accent-dark) !important; }
+
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -775,8 +843,10 @@
     footer { padding: 3rem 2rem 2rem; }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
+    nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
+    .burger { display: flex; }
     .cats-grid { grid-template-columns: 1fr; }
     .gifts-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 2.6rem; }
@@ -794,15 +864,24 @@
     <span class="raccoon-icon">🦝</span>
     rakuhn
   </a>
-  <ul class="nav-links">
-    <li><a href="#ueber-mich">Über mich</a></li>
-    <li><a href="#kategorien">Sortiment</a></li>
-    <li><a href="#geschenke">Geschenkesets</a></li>
-    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#ueber-mich" class="nav-link-item">Über mich</a></li>
+    <li><a href="#kategorien" class="nav-link-item">Sortiment</a></li>
+    <li><a href="#geschenke" class="nav-link-item">Geschenkesets</a></li>
+    <li><a href="#kontakt" class="nav-cta nav-link-item">Kontakt</a></li>
   </ul>
+  <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#ueber-mich" class="nav-drawer-link">Über mich</a>
+  <a href="#kategorien" class="nav-drawer-link">Sortiment</a>
+  <a href="#geschenke" class="nav-drawer-link">Geschenkesets</a>
+  <a href="#kontakt" class="nav-cta nav-drawer-link">Kontakt</a>
+</div>
 <section class="hero">
   <div class="hero-left">
     <div class="hero-tag">🦝 Mit Liebe genäht</div>
@@ -1181,7 +1260,23 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Smooth reveal on scroll
+  // Burger menu
+  const burger = document.getElementById('burgerBtn');
+  const drawer = document.getElementById('navDrawer');
+  burger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-drawer-link').forEach(link => {
+    link.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
