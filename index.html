@@ -10,20 +10,23 @@
     /* Backgrounds */
     --bg-primary:   #ffffff;
     --bg-secondary: #f9fafb;
-    --bg-subtle:    #eef2ff;
-    --bg-dark:      #1a1f36;
+    --bg-subtle:    #ffffff; /* Hintergrundblush und Kartenhintergrund */
+    --bg-dark:      #fe8148; /* Badge-Streifen-Hintergrund */
 
     /* Borders */
-    --border:       #dde3f5;
+    --border:       #e7c8c5;
 
     /* Brand / Accent */
-    --accent:       #5b6ef5;
-    --accent-dark:  #2436bb;
-    --accent-light: #a5b4fc;
+    --accent:       #fea278;
+    --accent-dark:  #fe8148;
+    --accent-light: #ffd1bc;
 
     /* Text */
     --text-primary:   #1e2340;
     --text-secondary: #6b7280;
+    /* --text-on-cards:    #ffffff; */
+    --heading-primary: #000000;
+    --heading-secondary: #434343;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -114,7 +117,7 @@
 
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--bg-secondary);
+    background: lightgray;
     border: 1px solid var(--border);
     border-radius: 100px;
     padding: 0.4rem 1rem;
@@ -134,7 +137,7 @@
     font-weight: 800;
     line-height: 1.0;
     letter-spacing: -0.03em;
-    color: var(--bg-dark);
+    color: var(--heading-primary);
     margin-bottom: 1.5rem;
     animation: fadeUp 0.8s 0.1s ease both;
   }
@@ -229,8 +232,8 @@
   }
 
   /* ─── BADGES ─── */
-  .badge-strip {
-    background: var(--bg-subtle);
+  /* .badge-strip {
+    background: var(--bg-dark);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 1.1rem 0;
@@ -245,7 +248,7 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 0.88rem;
     font-weight: 500;
-    color: var(--accent-dark);
+    color: var(--text-primary);
     letter-spacing: 0.03em;
     padding: 0 2rem;
   }
@@ -261,7 +264,7 @@
     color: var(--border);
     font-size: 1.2rem;
     line-height: 1;
-  }
+  } */
 
   /* ─── CATEGORIES ─── */
   .section { padding: 7rem 6rem; }
@@ -282,7 +285,7 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    color: var(--bg-dark);
+    color: var(--heading-primary);
     margin-bottom: 1rem;
   }
 
@@ -336,7 +339,8 @@
   .cat-bg::before {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(42,31,21,0.7) 0%, transparent 55%);
+    /* background: linear-gradient(to top, var(--bg-subtle) 0%, transparent 55%); */
+    background: linear-gradient(135deg, var(--bg-subtle), var(--border));
     z-index: 1;
   }
 
@@ -378,15 +382,15 @@
   .cat-card:hover .cat-arrow { background: var(--accent); }
 
   /* card color themes */
-  .cat-c1 { background: linear-gradient(135deg, #5b6ef5, #a5b4fc); }
+  /* .cat-c1 { background: linear-gradient(135deg, #5b6ef5, #a5b4fc); }
   .cat-c2 { background: linear-gradient(135deg, #3a4ac4, #7c8ff7); }
   .cat-c3 { background: linear-gradient(135deg, #6d57d8, #b9a8f5); }
   .cat-c4 { background: linear-gradient(135deg, #4258d6, #8fa0f8); }
-  .cat-c5 { background: linear-gradient(135deg, #2e3fb0, #6b7ff0); }
+  .cat-c5 { background: linear-gradient(135deg, #2e3fb0, #6b7ff0); } */
 
   /* ─── GIFTS ─── */
   .gifts-section {
-    background: var(--bg-subtle);
+    background: var(--bg-secondary);
     padding: 7rem 6rem;
   }
 
@@ -431,7 +435,7 @@
     font-family: 'Fraunces', serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--heading-primary);
     margin-bottom: 0.3rem;
   }
 
@@ -512,7 +516,7 @@
     font-family: 'Fraunces', serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--heading-primary);
   }
   .stat-lbl {
     font-size: 0.8rem;
@@ -536,7 +540,7 @@
 
   .promise-icon {
     width: 40px; height: 40px; flex-shrink: 0;
-    background: var(--border);
+    background: var(--accent);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.1rem;
@@ -545,7 +549,7 @@
   .promise-text strong {
     display: block;
     font-size: 0.95rem;
-    color: var(--bg-dark);
+    color: var(--heading-primary);
     margin-bottom: 0.15rem;
   }
   .promise-text span {
@@ -556,7 +560,7 @@
 
   /* ─── TESTIMONIALS ─── */
   .testi-section {
-    background: var(--bg-dark);
+    background: var(--bg-primary);
     padding: 6rem;
     position: relative; overflow: hidden;
   }
@@ -569,8 +573,8 @@
     opacity: 0.12;
   }
 
-  .testi-section .section-label { color: #a5b4fc; }
-  .testi-section .section-title { color: #fff; }
+  .testi-section .section-label { color: var(--heading-secondary); }
+  .testi-section .section-title { color: var(--heading-primary); }
 
   .testi-grid {
     display: grid;
@@ -580,21 +584,21 @@
   }
 
   .testi-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(10, 10, 10, 0.655);
     border-radius: 20px;
     padding: 1.8rem;
     backdrop-filter: blur(10px);
   }
 
-  .testi-stars { color: #a5b4fc; font-size: 1.1rem; margin-bottom: 1rem; }
+  .testi-stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 1rem; }
 
   .testi-text {
     font-family: 'Fraunces', serif;
     font-size: 1rem;
     font-style: italic;
     font-weight: 300;
-    color: rgba(255,255,255,0.85);
+    color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
@@ -602,19 +606,19 @@
   .testi-author { display: flex; align-items: center; gap: 0.8rem; }
   .testi-avatar {
     width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, #a5b4fc, #dde3f5);
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
     display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem;
   }
-  .testi-name { font-size: 0.85rem; font-weight: 500; color: #fff; }
-  .testi-meta { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+  .testi-name { font-size: 0.85rem; font-weight: 500; color: var(--text-primary); }
+  .testi-meta { font-size: 0.78rem; color: var(--text-secondary); }
 
   /* ─── KONTAKT ─── */
   .contact-section {
     padding: 6rem;
     text-align: center;
     position: relative;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
   }
 
   .contact-section::before {
@@ -697,8 +701,8 @@
 
   /* ─── FOOTER ─── */
   footer {
-    background: var(--bg-dark);
-    color: rgba(255,255,255,0.65);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     padding: 4rem 6rem 2.5rem;
   }
 
@@ -715,7 +719,7 @@
     font-family: 'Fraunces', serif;
     font-size: 1.8rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
     display: flex; align-items: center; gap: 0.5rem;
   }
@@ -731,7 +735,7 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
 
@@ -742,11 +746,11 @@
 
   .footer-links a {
     text-decoration: none;
-    color: rgba(255,255,255,0.6);
+    color: var(--text-secondary);
     font-size: 0.88rem;
     transition: color 0.2s;
   }
-  .footer-links a:hover { color: #fff; }
+  .footer-links a:hover { color: var(--text-primary); }
 
   .footer-bottom {
     display: flex; justify-content: space-between; align-items: center;
@@ -884,7 +888,6 @@
 </div>
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">🦝 Mit Liebe genäht</div>
     <h1 class="hero-title">
       Kleine<br><em>Wunder</em><br>verdienen<br>das Beste.
     </h1>
@@ -972,8 +975,8 @@
   </div>
 </section>
 
-<!-- SCROLLING BADGE -->
-<div class="badge-strip">
+<!--  BADGE -->
+<!-- <div class="badge-strip">
   <div class="badge-track">
     <span class="badge-item">🌿 Nachhaltige Materialien</span>
     <span class="sep">·</span>
@@ -985,7 +988,46 @@
     <span class="sep">·</span>
     <span class="badge-item">✦ OEKO-TEX zertifiziert</span>
   </div>
-</div>
+</div> -->
+
+<!-- ABOUT -->
+<section class="about-section" id="ueber-mich">
+  <div class="about-left">
+    <div class="about-card">
+      
+    </div>
+  </div>
+
+  <div class="about-right">
+    <div class="section-label">Über rakuhn</div>
+    <h2 class="section-title">Mit <em>Herz</em> für die<br>kleinsten Momente</h2>
+    <p class="section-sub">Bei rakuhn glauben wir, dass jede Kindheit mit Qualität, Liebe und einem Hauch Magie beginnen sollte. Darum wählen wir jedes Stück persönlich aus – weich, sicher und wunderschön.</p>
+
+    <ul class="promise-list">
+      <li class="promise-item">
+        <div class="promise-icon">🌿</div>
+        <div class="promise-text">
+          <strong>Nachhaltige Qualität</strong>
+          <span>Wir setzen auf OEKO-TEX-zertifizierte und schadstofffreie Materialien – gut für Babyhaut und die Umwelt.</span>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-icon">🎁</div>
+        <div class="promise-text">
+          <strong>Fertig zum Verschenken</strong>
+          <span>Alle Geschenksets kommen liebevoll verpackt und mit persönlicher Karte – kein Stress, nur Freude.</span>
+        </div>
+      </li>
+      <li class="promise-item">
+        <div class="promise-icon">💌</div>
+        <div class="promise-text">
+          <strong>Persönliche Beratung</strong>
+          <span>Unser Team hilft dir bei der Auswahl – für das perfekte Geschenk, ganz auf dein Budget zugeschnitten.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <!-- CATEGORIES -->
 <section class="section" id="kategorien">
@@ -1096,49 +1138,10 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="ueber-mich">
-  <div class="about-left">
-    <div class="about-card">
-      
-    </div>
-  </div>
-
-  <div class="about-right">
-    <div class="section-label">Über rakuhn</div>
-    <h2 class="section-title">Mit <em>Herz</em> für die<br>kleinsten Momente</h2>
-    <p class="section-sub">Bei rakuhn glauben wir, dass jede Kindheit mit Qualität, Liebe und einem Hauch Magie beginnen sollte. Darum wählen wir jedes Stück persönlich aus – weich, sicher und wunderschön.</p>
-
-    <ul class="promise-list">
-      <li class="promise-item">
-        <div class="promise-icon">🌿</div>
-        <div class="promise-text">
-          <strong>Nachhaltige Qualität</strong>
-          <span>Wir setzen auf OEKO-TEX-zertifizierte und schadstofffreie Materialien – gut für Babyhaut und die Umwelt.</span>
-        </div>
-      </li>
-      <li class="promise-item">
-        <div class="promise-icon">🎁</div>
-        <div class="promise-text">
-          <strong>Fertig zum Verschenken</strong>
-          <span>Alle Geschenksets kommen liebevoll verpackt und mit persönlicher Karte – kein Stress, nur Freude.</span>
-        </div>
-      </li>
-      <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
-          <strong>Persönliche Beratung</strong>
-          <span>Unser Team hilft dir bei der Auswahl – für das perfekte Geschenk, ganz auf dein Budget zugeschnitten.</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
 <!-- TESTIMONIALS -->
 <section class="testi-section">
   <div class="section-label">Stimmen unserer Kund:innen</div>
-  <h2 class="section-title" style="color:#fff;">Was <em style="color:#a5b4fc;">Familien</em> sagen</h2>
+  <h2 class="section-title">Was <em>Familien</em> sagen</h2>
 
   <div class="testi-grid">
     <div class="testi-card">
