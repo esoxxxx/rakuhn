@@ -7,16 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #FAF5EE;
-    --warm: #F2E8D9;
-    --blush: #E8C5A8;
-    --terracotta: #C97B4B;
-    --bark: #7A4F2F;
-    --sage: #8BA888;
-    --sage-light: #C5D9C4;
-    --midnight: #2A1F15;
-    --text: #3D2B1A;
-    --text-light: #7A6655;
+    --cream: #ffffff;
+    --warm: #f9fafb;
+    --blush: #dde3f5;
+    --terracotta: #5b6ef5;
+    --bark: #3a4ac4;
+    --sage: #6b7280;
+    --sage-light: #eef2ff;
+    --midnight: #1a1f36;
+    --text: #1e2340;
+    --text-light: #6b7280;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,9 +35,9 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.2rem 4rem;
-    background: rgba(250,245,238,0.88);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(201,123,75,0.15);
+    border-bottom: 1px solid rgba(91,110,245,0.12);
   }
 
   .nav-logo {
@@ -92,7 +92,7 @@
   .hero::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse 70% 80% at 70% 50%, var(--sage-light) 0%, transparent 70%);
+    background: radial-gradient(ellipse 70% 80% at 70% 50%, #dde3f5 0%, transparent 70%);
     opacity: 0.35;
     pointer-events: none;
   }
@@ -199,7 +199,7 @@
   .mascot-blob {
     position: absolute;
     width: 340px; height: 340px;
-    background: linear-gradient(135deg, var(--blush), var(--sage-light));
+    background: linear-gradient(135deg, #c7cffe, #dde3f5);
     border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
     top: 40px; left: 20px;
     animation: morph 8s ease-in-out infinite alternate;
@@ -223,29 +223,38 @@
 
   /* ─── BADGES ─── */
   .badge-strip {
-    background: var(--bark);
-    padding: 1rem 0;
+    background: var(--sage-light);
+    border-top: 1px solid var(--blush);
+    border-bottom: 1px solid var(--blush);
+    padding: 1.1rem 0;
     overflow: hidden;
-    white-space: nowrap;
   }
 
   .badge-track {
-    display: inline-flex; gap: 3rem;
-    animation: scroll-track 20s linear infinite;
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--blush);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--bark);
     letter-spacing: 0.03em;
+    padding: 0 2rem;
   }
 
-  @keyframes scroll-track {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  .badge-track .badge-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
   }
 
-  .badge-track span { opacity: 0.6; }
+  .badge-track .sep {
+    color: var(--blush);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
 
   /* ─── CATEGORIES ─── */
   .section { padding: 7rem 6rem; }
@@ -284,142 +293,93 @@
     margin-bottom: 3.5rem;
   }
 
-  /* ─── CAROUSEL ─── */
-  .carousel-section {
-    padding: 7rem 0 7rem;
-    background: var(--cream);
+  /* ─── CATEGORIES GRID ─── */
+  .cats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 
-  .carousel-header {
-    padding: 0 6rem 3.5rem;
-  }
-
-  .carousel-wrapper {
+  .cat-card {
+    border-radius: 24px;
+    overflow: hidden;
     position: relative;
-  }
-
-  .carousel-track-outer {
-    overflow: hidden;
-    padding: 1rem 6rem 1.5rem;
-  }
-
-  .carousel-track {
-    display: flex;
-    gap: 1.8rem;
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: grab;
-    user-select: none;
-  }
-
-  .carousel-track:active { cursor: grabbing; }
-
-  .carousel-item {
-    flex: 0 0 calc(33.333% - 1.2rem);
-    min-width: 0;
-  }
-
-  .carousel-card {
-    border-radius: 18px;
-    overflow: hidden;
-    background: var(--warm);
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
   }
 
-  .carousel-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(42,31,21,0.1);
+  .cat-card:hover { transform: translateY(-6px); }
+
+  .cat-card:nth-child(1) { grid-row: span 2; }
+
+  .cat-bg {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
   }
 
-  .carousel-img {
-    height: 280px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 5rem;
-    position: relative; overflow: hidden;
-  }
+  .cat-card:nth-child(1) .cat-bg { min-height: 470px; }
 
-  .carousel-img::after {
+  .cat-bg::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.35), transparent 60%);
-    pointer-events: none;
+    background: linear-gradient(to top, rgba(42,31,21,0.7) 0%, transparent 55%);
+    z-index: 1;
   }
 
-  .carousel-info {
-    padding: 1.2rem 1.4rem 1.5rem;
-    text-align: center;
+  .cat-emoji {
+    font-size: 3.5rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -70%);
+    z-index: 0;
+    opacity: 0.15;
   }
 
-  .carousel-name {
+  .cat-content { position: relative; z-index: 2; }
+
+  .cat-title {
     font-family: 'Fraunces', serif;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: var(--midnight);
-    margin-bottom: 0.35rem;
-  }
-
-  .carousel-price {
-    font-size: 0.9rem;
-    color: var(--terracotta);
-    font-weight: 500;
-  }
-
-  .carousel-btn-wrap {
-    display: flex; align-items: center; justify-content: center;
-    gap: 0.8rem;
-    margin-top: 2.5rem;
-  }
-
-  .carousel-arrow {
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    background: var(--cream);
-    border: 1.5px solid var(--blush);
-    color: var(--bark);
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s, border-color 0.2s, transform 0.15s;
-  }
-
-  .carousel-arrow:hover {
-    background: var(--terracotta);
-    border-color: var(--terracotta);
     color: #fff;
-    transform: scale(1.07);
+    margin-bottom: 0.3rem;
   }
 
-  .carousel-dots {
-    display: flex; gap: 0.45rem; align-items: center;
+  .cat-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
   }
 
-  .carousel-dot {
-    width: 8px; height: 8px;
+  .cat-arrow {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
     border-radius: 50%;
-    background: var(--blush);
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    transition: background 0.2s;
   }
+  .cat-card:hover .cat-arrow { background: var(--terracotta); }
 
-  .carousel-dot.active {
-    background: var(--terracotta);
-    transform: scale(1.3);
-  }
-
-  @media (max-width: 1024px) {
-    .carousel-header { padding: 0 2rem 3rem; }
-    .carousel-track-outer { padding: 1rem 2rem 1.5rem; }
-    .carousel-item { flex: 0 0 calc(50% - 0.9rem); }
-  }
-
-  @media (max-width: 600px) {
-    .carousel-item { flex: 0 0 calc(85%); }
-    .carousel-section { padding: 4rem 0; }
-  }
+  /* card color themes */
+  .cat-c1 { background: linear-gradient(135deg, #5b6ef5, #a5b4fc); }
+  .cat-c2 { background: linear-gradient(135deg, #3a4ac4, #7c8ff7); }
+  .cat-c3 { background: linear-gradient(135deg, #6d57d8, #b9a8f5); }
+  .cat-c4 { background: linear-gradient(135deg, #4258d6, #8fa0f8); }
+  .cat-c5 { background: linear-gradient(135deg, #2e3fb0, #6b7ff0); }
 
   /* ─── GIFTS ─── */
   .gifts-section {
-    background: var(--warm);
+    background: var(--sage-light);
     padding: 7rem 6rem;
   }
 
@@ -431,7 +391,8 @@
   }
 
   .gift-card {
-    background: var(--cream);
+    background: #ffffff;
+    border: 1px solid var(--blush);
     border-radius: 20px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -447,7 +408,7 @@
     height: 200px;
     display: flex; align-items: center; justify-content: center;
     font-size: 4rem;
-    background: linear-gradient(135deg, var(--warm), var(--blush));
+    background: linear-gradient(135deg, var(--sage-light), var(--blush));
     position: relative; overflow: hidden;
   }
 
@@ -477,7 +438,7 @@
     display: block; width: 100%;
     margin-top: 0.9rem;
     padding: 0.6rem;
-    background: var(--warm);
+    background: var(--sage-light);
     border: 1px solid var(--blush);
     border-radius: 10px;
     color: var(--bark);
@@ -504,7 +465,8 @@
   }
 
   .about-card {
-    background: var(--warm);
+    background: var(--sage-light);
+    border: 1px solid var(--blush);
     border-radius: 32px;
     padding: 3rem;
     position: relative;
@@ -567,7 +529,7 @@
 
   .promise-icon {
     width: 40px; height: 40px; flex-shrink: 0;
-    background: var(--sage-light);
+    background: var(--blush);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.1rem;
@@ -597,10 +559,10 @@
     position: absolute; top: -100px; right: -100px;
     width: 400px; height: 400px;
     background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
-    opacity: 0.15;
+    opacity: 0.12;
   }
 
-  .testi-section .section-label { color: var(--blush); }
+  .testi-section .section-label { color: #a5b4fc; }
   .testi-section .section-title { color: #fff; }
 
   .testi-grid {
@@ -611,14 +573,14 @@
   }
 
   .testi-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 20px;
     padding: 1.8rem;
     backdrop-filter: blur(10px);
   }
 
-  .testi-stars { color: var(--blush); font-size: 1.1rem; margin-bottom: 1rem; }
+  .testi-stars { color: #a5b4fc; font-size: 1.1rem; margin-bottom: 1rem; }
 
   .testi-text {
     font-family: 'Fraunces', serif;
@@ -633,7 +595,7 @@
   .testi-author { display: flex; align-items: center; gap: 0.8rem; }
   .testi-avatar {
     width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--blush), var(--sage-light));
+    background: linear-gradient(135deg, #a5b4fc, #dde3f5);
     display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem;
   }
@@ -645,14 +607,14 @@
     padding: 6rem;
     text-align: center;
     position: relative;
-    background: var(--warm);
+    background: var(--cream);
   }
 
   .contact-section::before {
     content: '';
     position: absolute; inset: 0;
     background: radial-gradient(ellipse 60% 60% at 50% 50%, var(--sage-light) 0%, transparent 70%);
-    opacity: 0.3;
+    opacity: 0.6;
     pointer-events: none;
   }
 
@@ -687,7 +649,7 @@
   .contact-field input,
   .contact-field textarea {
     width: 100%;
-    background: var(--cream);
+    background: #ffffff;
     border: 1.5px solid var(--blush);
     border-radius: 14px;
     padding: 0.9rem 1.2rem;
@@ -706,7 +668,7 @@
   .contact-field input:focus,
   .contact-field textarea:focus {
     border-color: var(--terracotta);
-    box-shadow: 0 0 0 3px rgba(201,123,75,0.12);
+    box-shadow: 0 0 0 3px rgba(91,110,245,0.12);
   }
 
   .contact-field textarea {
@@ -728,8 +690,8 @@
 
   /* ─── FOOTER ─── */
   footer {
-    background: var(--bark);
-    color: rgba(255,255,255,0.75);
+    background: var(--midnight);
+    color: rgba(255,255,255,0.65);
     padding: 4rem 6rem 2.5rem;
   }
 
@@ -862,15 +824,15 @@
       <!-- Raccoon SVG Mascot -->
       <svg class="mascot-svg" viewBox="0 0 380 420" xmlns="http://www.w3.org/2000/svg">
         <!-- Body (onesie/romper) -->
-        <ellipse cx="190" cy="310" rx="95" ry="90" fill="#E8C5A8"/>
+        <ellipse cx="190" cy="310" rx="95" ry="90" fill="#c7cffe"/>
         <!-- Onesie details -->
-        <path d="M120 290 Q190 330 260 290 Q260 370 190 390 Q120 370 120 290Z" fill="#C97B4B"/>
+        <path d="M120 290 Q190 330 260 290 Q260 370 190 390 Q120 370 120 290Z" fill="#5b6ef5"/>
         <!-- Onesie buttons -->
-        <circle cx="190" cy="345" r="4" fill="#FAF5EE"/>
-        <circle cx="190" cy="360" r="4" fill="#FAF5EE"/>
-        <circle cx="190" cy="375" r="4" fill="#FAF5EE"/>
+        <circle cx="190" cy="345" r="4" fill="#ffffff"/>
+        <circle cx="190" cy="360" r="4" fill="#ffffff"/>
+        <circle cx="190" cy="375" r="4" fill="#ffffff"/>
         <!-- Onesie collar -->
-        <path d="M155 285 Q190 305 225 285" stroke="#FAF5EE" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M155 285 Q190 305 225 285" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
         <!-- Legs -->
         <ellipse cx="155" cy="395" rx="30" ry="20" fill="#E8C5A8"/>
         <ellipse cx="225" cy="395" rx="30" ry="20" fill="#E8C5A8"/>
@@ -916,11 +878,11 @@
         <path d="M285 340 Q320 320 315 360 Q330 350 320 385 Q305 375 295 380 Q310 360 285 340Z" fill="#D4A574"/>
         <path d="M297 342 Q318 330 316 356" stroke="#5C3D2A" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.5"/>
         <!-- Baby hat -->
-        <ellipse cx="190" cy="135" rx="72" ry="22" fill="#8BA888"/>
-        <path d="M118 135 Q150 95 190 90 Q230 95 262 135 Z" fill="#8BA888"/>
+        <ellipse cx="190" cy="135" rx="72" ry="22" fill="#5b6ef5"/>
+        <path d="M118 135 Q150 95 190 90 Q230 95 262 135 Z" fill="#5b6ef5"/>
         <!-- Hat pom-pom -->
-        <circle cx="190" cy="85" r="16" fill="#C5D9C4"/>
-        <circle cx="190" cy="85" r="10" fill="#8BA888"/>
+        <circle cx="190" cy="85" r="16" fill="#a5b4fc"/>
+        <circle cx="190" cy="85" r="10" fill="#5b6ef5"/>
         <!-- Sparkles -->
         <text x="50" y="180" font-size="22" opacity="0.6">✦</text>
         <text x="305" y="160" font-size="18" opacity="0.5">✦</text>
@@ -934,95 +896,84 @@
 <!-- SCROLLING BADGE -->
 <div class="badge-strip">
   <div class="badge-track">
-    <span>🌿 Nachhaltige Materialien</span> · <span>🎁 Liebevolle Geburtsgeschenke</span> · <span>👶 Neugeborenen-Kollektionen</span> · <span>🦝 Handverlesene Qualität</span> · <span>🌿 Nachhaltige Materialien</span> · <span>🎁 Liebevolle Geburtsgeschenke</span> · <span>👶 Neugeborenen-Kollektionen</span> · <span>🦝 Handverlesene Qualität</span> · <span>🌿 Nachhaltige Materialien</span> · <span>🎁 Liebevolle Geburtsgeschenke</span> · <span>👶 Neugeborenen-Kollektionen</span> · <span>🦝 Handverlesene Qualität</span> ·
+    <span class="badge-item">🌿 Nachhaltige Materialien</span>
+    <span class="sep">·</span>
+    <span class="badge-item">🎁 Liebevolle Geburtsgeschenke</span>
+    <span class="sep">·</span>
+    <span class="badge-item">👶 Neugeborenen-Kollektionen</span>
+    <span class="sep">·</span>
+    <span class="badge-item">🦝 Handverlesene Qualität</span>
+    <span class="sep">·</span>
+    <span class="badge-item">✦ OEKO-TEX zertifiziert</span>
   </div>
 </div>
 
-<!-- CATEGORIES CAROUSEL -->
-<section class="carousel-section" id="kategorien">
-  <div class="carousel-header">
-    <div class="section-label">Unsere Kollektionen</div>
-    <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
-    <p class="section-sub">Von zarten Wickeltaschen bis zu liebevollen Geschenksets – bei rakuhn findest du das Richtige für jeden Anlass.</p>
-  </div>
+<!-- CATEGORIES -->
+<section class="section" id="kategorien">
+  <div class="section-label">Unsere Kollektionen</div>
+  <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
+  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei Rakuhn findest du das Richtige für jeden Anlass.</p>
 
-  <div class="carousel-wrapper">
-    <div class="carousel-track-outer" id="carouselOuter">
-      <div class="carousel-track" id="carouselTrack">
-
-        <div class="carousel-item">
-          <div class="carousel-card">
-            <div class="carousel-img" style="background: linear-gradient(135deg, #C97B4B, #E8C5A8);">🎁</div>
-            <div class="carousel-info">
-              <div class="carousel-name">Geschenksets</div>
-              <div class="carousel-price">ab 29,90 €</div>
-            </div>
-          </div>
+  <div class="cats-grid">
+    <div class="cat-card">
+      <div class="cat-bg cat-c1">
+        <div class="cat-emoji">👶</div>
+        <div class="cat-content">
+          <div class="cat-title">Neugeborene</div>
+          <div class="cat-desc">Zarte Erstlingsausstattung für die allerersten Tage</div>
+          <div class="cat-arrow">→</div>
         </div>
-
-        <div class="carousel-item">
-          <div class="carousel-card">
-            <div class="carousel-img" style="background: linear-gradient(135deg, #8BA888, #C5D9C4);">👖</div>
-            <div class="carousel-info">
-              <div class="carousel-name">Hosen</div>
-              <div class="carousel-price">ab 19,90 €</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-card">
-            <div class="carousel-img" style="background: linear-gradient(135deg, #D9A85A, #F0D4A0);">🧣</div>
-            <div class="carousel-info">
-              <div class="carousel-name">Halstücher</div>
-              <div class="carousel-price">ab 9,90 €</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-card">
-            <div class="carousel-img" style="background: linear-gradient(135deg, #A88B8B, #D4BFBF);">👜</div>
-            <div class="carousel-info">
-              <div class="carousel-name">Wickeltaschen</div>
-              <div class="carousel-price">ab 49,90 €</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-card">
-            <div class="carousel-img" style="background: linear-gradient(135deg, #B5A0C8, #DDD0EC);">🧸</div>
-            <div class="carousel-info">
-              <div class="carousel-name">Schnuffeltücher</div>
-              <div class="carousel-price">ab 14,90 €</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-card">
-            <div class="carousel-img" style="background: linear-gradient(135deg, #C97B4B88, #E8C5A8);">🎟️</div>
-            <div class="carousel-info">
-              <div class="carousel-name">Gutscheine</div>
-              <div class="carousel-price">ab 20,00 €</div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <div class="carousel-btn-wrap">
-      <button class="carousel-arrow" id="carouselPrev">←</button>
-      <div class="carousel-dots" id="carouselDots"></div>
-      <button class="carousel-arrow" id="carouselNext">→</button>
+    <div class="cat-card">
+      <div class="cat-bg cat-c2">
+        <div class="cat-emoji">🌸</div>
+        <div class="cat-content">
+          <div class="cat-title">Mädchen</div>
+          <div class="cat-desc">Süße Kleider & Sets für kleine Prinzessinnen</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c3">
+        <div class="cat-emoji">⭐</div>
+        <div class="cat-content">
+          <div class="cat-title">Jungs</div>
+          <div class="cat-desc">Coole Outfits für kleine Abenteurer</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c4">
+        <div class="cat-emoji">🎀</div>
+        <div class="cat-content">
+          <div class="cat-title">Accessoires</div>
+          <div class="cat-desc">Mützen, Socken, Lätzchen & mehr</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-bg cat-c5">
+        <div class="cat-emoji">🎁</div>
+        <div class="cat-content">
+          <div class="cat-title">Saisonales</div>
+          <div class="cat-desc">Aktuelle Highlights der Saison</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- GIFTS -->
-<!-- <section class="gifts-section" id="geschenke">
+<section class="gifts-section" id="geschenke">
   <div class="section-label">Geburtsgeschenke</div>
   <h2 class="section-title">Die <em>perfekte Freude</em><br>zur Geburt</h2>
   <p class="section-sub">Jedes unserer Geschenksets wird mit Liebe zusammengestellt und schön verpackt – fertig zum Verschenken.</p>
@@ -1064,30 +1015,15 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- ABOUT -->
 <section class="about-section" id="ueber-mich">
-  <!-- <div class="about-left">
+  <div class="about-left">
     <div class="about-card">
-      <div class="about-big-num">2'000+</div>
-      <div class="about-num-label">Glückliche Familien</div>
-      <div class="about-stats">
-        <div class="stat-item">
-          <div class="stat-val">98%</div>
-          <div class="stat-lbl">Empfehlen uns weiter</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val">5★</div>
-          <div class="stat-lbl">Durchschnittl. Bewertung</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val">3 Tage</div>
-          <div class="stat-lbl">Lieferzeit DE</div>
-        </div>
-      </div>
+      
     </div>
-  </div> -->
+  </div>
 
   <div class="about-right">
     <div class="section-label">Über rakuhn</div>
@@ -1123,7 +1059,7 @@
 <!-- TESTIMONIALS -->
 <section class="testi-section">
   <div class="section-label">Stimmen unserer Kund:innen</div>
-  <h2 class="section-title" style="color:#fff;">Was <em style="color:var(--blush);">Familien</em> sagen</h2>
+  <h2 class="section-title" style="color:#fff;">Was <em style="color:#a5b4fc;">Familien</em> sagen</h2>
 
   <div class="testi-grid">
     <div class="testi-card">
@@ -1193,7 +1129,7 @@
     <div class="contact-submit">
       <button class="btn-primary" id="cf-submit" style="padding: 1rem 2.5rem; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase;">Nachricht senden ✦</button>
     </div>
-    <p class="contact-success" id="cf-success">✓ Vielen Dank! Wir melden uns bald bei dir.</p>
+    <p class="contact-success" id="cf-success">✓ Vielen Dank! Ich melde mich bei dir.</p>
   </div>
 </section>
 
