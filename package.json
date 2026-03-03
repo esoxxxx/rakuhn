@@ -1,0 +1,25 @@
+{
+  "name": "rakuhn",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000r\u0000a\u0000k\u0000u\u0000h\u0000n\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esoxxxx/rakuhn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/esoxxxx/rakuhn/issues"
+  },
+  "homepage": "https://github.com/esoxxxx/rakuhn#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

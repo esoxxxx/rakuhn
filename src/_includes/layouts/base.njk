@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | rakuhn</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  {% include "sections/header.njk" %}
+  
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "sections/footer.njk" %}
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
