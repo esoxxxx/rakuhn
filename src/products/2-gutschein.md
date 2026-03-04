@@ -6,5 +6,5 @@ emoji: ⭐
 productimages:
     - "../test/img.jpg"
 tags: 
-    - category
+    - product
 ---

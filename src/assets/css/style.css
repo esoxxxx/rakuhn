@@ -379,7 +379,7 @@
     line-height: 1;
   } */
 
-  /* ─── CATEGORIES ─── */
+  /* ─── PRODUCTS ─── */
   .section { padding: 7rem 6rem; }
   .section-sm { padding: 5rem 6rem; }
 
@@ -416,14 +416,14 @@
     margin-bottom: 3.5rem;
   }
 
-  /* ─── CATEGORIES GRID ─── */
-  .cats-grid {
+  /* ─── PRODUCTS GRID ─── */
+  .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 
-  .cat-card {
+  .product-card {
     border-radius: 24px;
     overflow: hidden;
     position: relative;
@@ -431,9 +431,9 @@
     transition: transform 0.3s;
   }
 
-  .cat-card:hover { transform: translateY(-6px); }
+  .product-card:hover { transform: translateY(-6px); }
 
-  .cat-bg {
+  .product-bg {
     width: 100%;
     height: 100%;
     min-height: 220px;
@@ -445,7 +445,7 @@
     overflow: hidden;
   }
 
-  .cat-bg::before {
+  .product-bg::before {
     content: '';
     position: absolute; inset: 0;
     /* background: linear-gradient(to top, var(--bg-subtle) 0%, transparent 55%); */
@@ -453,7 +453,7 @@
     z-index: 1;
   }
 
-  .cat-emoji {
+  .product-emoji {
     font-size: 3.5rem;
     position: absolute;
     top: 50%; left: 50%;
@@ -462,9 +462,9 @@
     opacity: 0.15;
   }
 
-  .cat-content { position: relative; z-index: 2; }
+  .product-content { position: relative; z-index: 2; }
 
-  .cat-title {
+  .product-title {
     font-family: 'Fraunces', serif;
     font-size: 1.4rem;
     font-weight: 600;
@@ -472,12 +472,12 @@
     margin-bottom: 0.3rem;
   }
 
-  .cat-desc {
+  .product-desc {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.75);
   }
 
-  .cat-arrow {
+  .product-arrow {
     display: inline-flex; align-items: center; justify-content: center;
     width: 36px; height: 36px;
     background: var(--accent-light);
@@ -488,14 +488,8 @@
     margin-top: 0.8rem;
     transition: background 0.2s;
   }
-  .cat-card:hover .cat-arrow { background: var(--accent); }
-
-  /* card color themes */
-  /* .cat-c1 { background: linear-gradient(135deg, #5b6ef5, #a5b4fc); }
-  .cat-c2 { background: linear-gradient(135deg, #3a4ac4, #7c8ff7); }
-  .cat-c3 { background: linear-gradient(135deg, #6d57d8, #b9a8f5); }
-  .cat-c4 { background: linear-gradient(135deg, #4258d6, #8fa0f8); }
-  .cat-c5 { background: linear-gradient(135deg, #2e3fb0, #6b7ff0); } */
+  .product-card:hover .product-arrow { background: var(--accent); }
+  
 
   /* ─── GIFTS ─── */
   .gifts-section {
@@ -948,7 +942,7 @@
     .section, .gifts-section, .about-section, .testi-section, .contact-section { padding: 4rem 2rem; }
     .section-sm { padding: 3rem 2rem; }
     .cats-grid { grid-template-columns: 1fr 1fr; }
-    .cat-card:nth-child(1) { grid-row: auto; }
+    .product-card:nth-child(1) { grid-row: auto; }
     .gifts-grid { grid-template-columns: 1fr 1fr; }
     .about-section { grid-template-columns: 1fr; gap: 3rem; }
     .testi-grid { grid-template-columns: 1fr; }

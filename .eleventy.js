@@ -14,9 +14,9 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => a.data.order - b.data.order);
   });
 
-  eleventyConfig.addCollection("categories", function(collection) {
+  eleventyConfig.addCollection("products", function(collection) {
     return collection
-      .getFilteredByTag("category")
+      .getFilteredByTag("product")
       .sort((a, b) => a.data.order - b.data.order);
   });
 
