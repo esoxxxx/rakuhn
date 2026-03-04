@@ -433,8 +433,6 @@
 
   .cat-card:hover { transform: translateY(-6px); }
 
-  .cat-card:nth-child(1) { grid-row: span 2; }
-
   .cat-bg {
     width: 100%;
     height: 100%;
@@ -446,8 +444,6 @@
     position: relative;
     overflow: hidden;
   }
-
-  .cat-card:nth-child(1) .cat-bg { min-height: 470px; }
 
   .cat-bg::before {
     content: '';
@@ -484,7 +480,7 @@
   .cat-arrow {
     display: inline-flex; align-items: center; justify-content: center;
     width: 36px; height: 36px;
-    background: rgba(255,255,255,0.2);
+    background: var(--accent-light);
     backdrop-filter: blur(8px);
     border-radius: 50%;
     color: #fff;

@@ -8,6 +8,18 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => a.data.order - b.data.order);
   });
 
+  eleventyConfig.addCollection("testimonials", function(collection) {
+    return collection
+      .getFilteredByTag("testimonial")
+      .sort((a, b) => a.data.order - b.data.order);
+  });
+
+  eleventyConfig.addCollection("categories", function(collection) {
+    return collection
+      .getFilteredByTag("category")
+      .sort((a, b) => a.data.order - b.data.order);
+  });
+
   return {
     dir: {
       input: "src",
