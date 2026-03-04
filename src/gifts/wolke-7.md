@@ -1,7 +1,7 @@
 ---
 name: Kuschelset "Wolke 7"
 price: 59,00 €
-icon: ☁️
+icon: "/assets/img/products/sets/DSC_0648.JPG"
 tags: 
     - gift
 ---

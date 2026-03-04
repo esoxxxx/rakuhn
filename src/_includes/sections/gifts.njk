@@ -8,11 +8,12 @@
 
   {% for gift in collections.gifts %}
     <div class="gift-card">
-      <div class="gift-img">{{ gift.data.icon }}</div>
+      <img class="gift-img" src="{{ gift.data.icon }}" alt="{{ gift.data.name }}" style="width: 100%; object-fit: cover;">
       <div class="gift-info">
         <div class="gift-name">{{ gift.data.name }}</div>
         <div class="gift-price">{{ gift.data.price }}</div>
-        <button class="gift-btn">In den Warenkorb</button>
+        <button class="gift-btn">Produkt anfragen</button>
+        <button class="gift-btn gift-btn2">Stöbern</button>
       </div>
     </div>
   {% endfor %}

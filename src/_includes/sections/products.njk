@@ -2,18 +2,16 @@
 <section class="section" id="kategorien">
   <div class="section-label">Meine Kollektionen</div>
   <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
-  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei Rakuhn findest du das Richtige für jeden Anlass.</p>
+  <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei rakuhn findest du das Richtige für jeden Anlass.</p>
 
   <div class="products-grid">
 
     {% for product in collections.products %}
     <div class="product-card">
       <div class="product-bg">
-        <div class="product-emoji">{{ product.data.emoji }}</div>
+        <img class="product-heroimage" src="{{ product.data.heroimage }}" alt="{{ product.data.title }}">
         <div class="product-content">
           <div class="product-title">{{ product.data.title }}</div>
-          <div class="product-desc">{{ product.data.description }}</div>
-          <div class="product-arrow">&gt;</div>
         </div>
       </div>
     </div>

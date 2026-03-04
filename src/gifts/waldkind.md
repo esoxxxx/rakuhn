@@ -1,7 +1,7 @@
 ---
 name: Natur-Set "Waldkind"
 price: 39,00 €
-icon: 🌿
+icon: "/assets/img/products/sets/DSC_0648.JPG"
 tags:
     - gift
 ---
