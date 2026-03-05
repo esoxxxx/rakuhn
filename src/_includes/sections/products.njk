@@ -7,12 +7,12 @@
   <div class="gifts-grid">
 
   {% for product in collections.products %}
-    <div class="gift-card" onclick="window.location.href='/products/{{ product.fileSlug }}/';">
-      <img class="gift-img" src="{{ product.data.icon }}" alt="{{ product.data.name }}" style="width: 100%; object-fit: cover;">
+    <div class="gift-card" >
+      <img class="gift-img" src="{{ product.data.icon }}" alt="{{ product.data.name }}" style="width: 100%; object-fit: cover;" onclick="window.location.href='/products/{{ product.fileSlug }}/';">
       <div class="gift-info">
         <div class="gift-name">{{ product.data.name }}</div>
         <div class="gift-price">{{ product.data.price }}</div>
-        <button class="gift-btn">Produkt anfragen</button>
+        <button class="gift-btn" onclick="onClickProduct('{{ product.data.name }}', '{{ product.data.price }}');">Produkt anfragen</button>
         <button class="gift-btn gift-btn2" onclick="window.location.href='/products/{{ product.fileSlug }}/';">Stöbern</button>
       </div>
     </div>

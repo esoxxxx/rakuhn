@@ -30,3 +30,13 @@
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+
+  const onClickProduct = (productname, price) => {
+  
+    const elem_form = document.getElementById('cf-message');
+    elem_form.value = `Hallo, ich interessiere mich für das Produkt "${productname}" zum Preis von ${price}. Könnten Sie mir bitte weitere Informationen zukommen lassen? Vielen Dank!`;
+
+    elem_form.scrollIntoView({ behavior: 'smooth' });
+
+    
+  }
