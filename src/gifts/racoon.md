@@ -1,5 +1,5 @@
 ---
-name: racoon
+name: Geschenkset "Waschbär"
 layout: layouts/gift-detail.njk
 price: 69,00 €
 icon: "/assets/img/products/sets/DSC_0648.JPG"
