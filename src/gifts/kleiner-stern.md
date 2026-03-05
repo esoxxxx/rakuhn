@@ -2,6 +2,7 @@
 name: Kuscheliges Baby-Set
 price: 49,00 €
 icon: "/assets/img/products/sets/DSC_0648.JPG"
+layout: layouts/gift-detail.njk
 tags: 
     - gift
 ---

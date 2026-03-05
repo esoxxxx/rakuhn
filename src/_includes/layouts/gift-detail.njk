@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+---
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">{{ title }}</h1>
+    
+    <div class="gift-description">
+      {{ content | safe }}
+    </div>
+
+    {# Hier holen wir die Bilder basierend auf dem Dateinamen (fileSlug) #}
+    {% set images = gifts[page.fileSlug] %}
+    
+    {% if images %}
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;">
+      {% for img in images %}
+      <div class="gallery-item" style="aspect-ratio: 1/1; overflow: hidden; border-radius: 12px;">
+        <img src="/assets/img/gifts/{{ page.fileSlug }}/{{ img }}" 
+             alt="{{ title }}" 
+             style="width: 100%; height: 100%; object-fit: cover;"
+             loading="lazy">
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+      <p style="text-align: center; margin-top: 20px;">Keine Bilder in /assets/img/gifts/{{ page.fileSlug }} gefunden.</p>
+    {% endif %}
+
+    <p style="text-align: center; margin-top: 50px;">
+      <a href="/#gifts" class="btn-secondary">← Zurück zur Übersicht</a>
+    </p>
+  </div>
+</section>
