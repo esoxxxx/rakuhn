@@ -4,18 +4,24 @@
   <h2 class="section-title">Alles für <em>kleine Entdecker</em></h2>
   <p class="section-sub">Von zarten Stramplern bis zu liebevollen Geschenksets – bei rakuhn findest du das Richtige für jeden Anlass.</p>
 
-  <div class="products-grid">
+  <div class="gifts-grid">
 
-    {% for product in collections.products %}
-    <div class="product-card">
-      <div class="product-bg">
-        <img class="product-heroimage" src="{{ product.data.heroimage }}" alt="{{ product.data.title }}">
-        <div class="product-content">
-          <div class="product-title">{{ product.data.title }}</div>
-        </div>
+  {% for product in collections.products %}
+    <div class="gift-card">
+      <img class="gift-img" src="{{ product.data.icon }}" alt="{{ product.data.name }}" style="width: 100%; object-fit: cover;">
+      <div class="gift-info">
+        <div class="gift-name">{{ product.data.name }}</div>
+        <div class="gift-price">{{ product.data.price }}</div>
+        <button class="gift-btn">Produkt anfragen</button>
+        <button class="gift-btn product-btn2">
+          <div class="gift-content">
+                <a href="/products/{{ product.fileSlug }}/" class="btn-secondary">Stöbern ✦</a>
+          </div>
+          Stöbern
+        </button>
       </div>
     </div>
-    {% endfor %}
+  {% endfor %}
 
   </div>
 </section>
