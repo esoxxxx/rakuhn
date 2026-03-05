@@ -33,10 +33,70 @@
 
   const onClickProduct = (productname, price) => {
   
-    const elem_form = document.getElementById('cf-message');
+    const elem_form = document.getElementById('message');
     elem_form.value = `Hallo, ich interessiere mich für das Produkt "${productname}" zum Preis von ${price}. Könnten Sie mir bitte weitere Informationen zukommen lassen? Vielen Dank!`;
 
-    elem_form.scrollIntoView({ behavior: 'smooth' });
+    const elem_subject = document.getElementById('subject');
+    elem_subject.value = `Bestellanfrage: ${productname}`;
 
-    
+    elem_form.scrollIntoView({ behavior: 'smooth' });
   }
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit');
+  const modal = document.getElementById('success-modal');
+  
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Verhindert das Neuladen der Seite
+
+      // Button-Text ändern, um Aktivität anzuzeigen
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Wird gesendet...";
+      submitBtn.disabled = true;
+
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const response = await fetch('https://api.staticforms.xyz/submit', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Formular leeren und Modal zeigen
+          contactForm.reset();
+          modal.style.display = 'flex';
+        } else {
+          alert("Fehler: " + result.message);
+        }
+      } catch (error) {
+        alert("Es gab ein Problem beim Senden der Nachricht.");
+      } finally {
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+});
+
+
+// In deiner main.js ergänzen:
+window.onclick = function(event) {
+  const modal = document.getElementById('success-modal');
+  if (event.target == modal) {
+    closeModal();
+  }
+}
+
+// Und die bekannte Schließen-Funktion
+function closeModal() {
+  document.getElementById('success-modal').style.display = 'none';
+}

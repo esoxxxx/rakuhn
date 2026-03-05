@@ -4,29 +4,42 @@
   <h2 class="section-title" style="margin:0 auto 1rem;">Kontakt <em>aufnehmen</em></h2>
   <p class="section-sub" style="margin:0 auto 2.5rem; text-align:center;">Möchtest du etwas bestellen? Schreib mir einfach – ich melde mich so schnell wie möglich bei dir.</p>
 
-  <div class="contact-form">
+  <form class="contact-form" id="contact-form">
+    <input type="hidden" name="apiKey" value="sf_lc426dccc09fgh9eahgm5j46">
+    <input type="text" name="honeypot" style="display:none">
+
     <div class="contact-row">
       <div class="contact-field">
-        <input type="text" id="cf-name" placeholder="Ihr Name *" required>
+        <input type="text" id="name" name="name" placeholder="Ihr Name *" required>
       </div>
       <div class="contact-field">
-        <input type="email" id="cf-email" placeholder="Ihre E-Mail *" required>
+        <input type="email" id="email" name="email" placeholder="Ihre E-Mail *" required>
       </div>
     </div>
     <div class="contact-row">
       <div class="contact-field">
-        <input type="tel" id="cf-phone" placeholder="Telefonnummer">
+        <input type="tel" id="phone" name="phone" placeholder="Telefonnummer (optional)">
       </div>
       <div class="contact-field">
-        <input type="text" id="cf-subject" placeholder="Betreff">
+        <input type="text" id="subject" name="subject" placeholder="Betreff">
       </div>
     </div>
     <div class="contact-field">
-      <textarea id="cf-message" placeholder="Ihre Nachricht *" required></textarea>
+      <textarea id="message" name="message" placeholder="Ihre Nachricht *" required></textarea>
     </div>
     <div class="contact-submit">
-      <button class="btn-primary" id="cf-submit" style="padding: 1rem 2.5rem; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase;">Nachricht senden ✦</button>
+      <button type="submit" class="btn-primary" id="submit" style="padding: 1rem 2.5rem; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase;">Nachricht senden ✦</button>
     </div>
-    <p class="contact-success" id="cf-success">✓ Vielen Dank! Ich melde mich bei dir.</p>
-  </div>
+    
+  </form>
+
+  <div id="success-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <button onclick="closeModal()" class="modal-close" aria-label="Schließen">&times;</button>
+        <span class="modal-icon">✉</span>
+        <h3>Vielen Dank!</h3>
+        <p>Deine Nachricht wurde erfolgreich versendet. Ich melde mich so schnell wie möglich bei dir.</p>
+        <p>Liebe Grüße,<br>Ina</p>
+      </div>
+    </div>
 </section>
