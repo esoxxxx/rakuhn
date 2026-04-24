@@ -1,10 +1,10 @@
 ---
-name: Mützen
+name: Windeltaschen
 layout: layouts/product-detail.njk
-price: 20,00 €
-icon: "/assets/img/products/muetzen/20260304_125140.jpg"
+price: 35,00 €
+icon: "/assets/img/products/windeltaschen/20260304_125140.jpg"
 tags:
   - product
 ---
 
-Hier könnte dein Text zur Beschreibung des Produktes stehen!
+Eine Windeltasche braucht jede Mama. Also wieso nicht der frisch gebackenen Mama eine riesige Freude mit einem individuell für sie angefertigtem Mode-Accessoire machen?
