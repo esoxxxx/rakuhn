@@ -2,7 +2,7 @@
 name: Haarbänder
 layout: layouts/product-detail.njk
 price: 13,00 €
-icon: "/assets/img/products/haarbaender/123.jpg"
+icon: "/assets/img/products/haarbaender/DSC_0792.jpeg"
 tags:
   - product
 ---
