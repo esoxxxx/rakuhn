@@ -1,9 +1,13 @@
 ---
-name: Geschenkset "Waschbär"
+name: Geschenkset "Geburt"
 layout: layouts/gift-detail.njk
-price: 30,00 €
-icon: "/assets/img/gifts/racoon-set/DSC_0645(1).jpg"
-tags: 
-    - gift
+price: 35,00 €
+icon: "/assets/img/gifts/racoon-set/rakuhn-baby-geschenk-geschenkset-pumphose-halstuch-stickerei-geburt-dino-weiss.jpeg"
+tags:
+  - gift
 ---
-Geschenk
+
+Das beliebteste Geschenk meiner Kunden ist das Geschenkset "Geburt".<br>
+<br>
+Es enthält eine Pumphose und ein Halstuch. <br>
+Das Highlight dieses Geschenksets ist die Personalisierung mit dem Namen des Kindes, wahlweise auf dem Bündchen der Pumphose der auf dem Halstuch.
