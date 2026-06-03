@@ -2,7 +2,7 @@
 name: Wertgutschein
 layout: layouts/gift-detail.njk
 price: XX €
-icon: "/assets/img/gifts/gutschein/rakuhn-gutschein.png"
+icon: "/assets/img/gifts/gutschein/rakuhn-gutschein.webp"
 order: 3
 tags:
   - gift

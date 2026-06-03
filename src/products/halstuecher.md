@@ -2,7 +2,7 @@
 name: Halstücher
 layout: layouts/product-detail.njk
 price: 10,00 €
-icon: "/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-rund-dreieck-fuchs-tuerkis.jpeg"
+icon: "/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-rund-dreieck-fuchs-tuerkis.webp"
 order: 1
 tags:
   - product
@@ -16,10 +16,10 @@ Das rakuhn Halstuch gibt es in zwei Ausführungen, entweder mit Rundung oder als
 
 <div class="description-img-row">
   <img class="description-img"
-       src="/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-rund-schwan-rosa.jpeg"
+       src="/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-rund-schwan-rosa.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
   <img class="description-img"
-       src="/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-dreieck-fuchs-tuerkis.jpeg"
+       src="/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-dreieck-fuchs-tuerkis.webp"
        alt="Dreieckstuch mit Fuchs-Motiv in Türkis">
 </div>
 <br>

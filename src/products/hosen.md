@@ -2,7 +2,7 @@
 name: Pumphosen
 layout: layouts/product-detail.njk
 price: 20,00 €
-icon: "/assets/img/products/hosen/20230623_115543.jpg"
+icon: "/assets/img/products/hosen/20230623_115543.webp"
 order: 2
 tags:
   - product

@@ -24,7 +24,7 @@ Sebi Fragen:
 [x] Reihenfolge der Produkte ändern: 1. Halstücher, 2. Pumphosen, 3. Haarbänder
 [x] Stöbern und Produkt anfragen Button tauschen
 [x] Verweise auf Insta und facebook mit Links versehen
-[] Bildgröße komprimieren für den Production Build
+[x] Bildgröße komprimieren für den Production Build
 [x] Gutscheinbedingungen auf das Geschenkset Gutschein 
 [x] About me section, teilweise ausgliedern
 [x] About me section, gut aussehend machen Proportionen passen nicht
