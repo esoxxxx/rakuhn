@@ -168,6 +168,31 @@
 
   .nav-logo .raccoon-icon { font-size: 2rem; }
 
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-back-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--text-primary);
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .nav-back-arrow:hover {
+    background: var(--text-primary);
+    color: #fff;
+    transform: translateX(-2px);
+  }
+
   .nav-links {
     display: flex; gap: 2.5rem; list-style: none;
   }

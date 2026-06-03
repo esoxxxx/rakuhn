@@ -49,6 +49,14 @@
   const modal = document.getElementById('success-modal');
   
 
+  const anfrageProdukt = sessionStorage.getItem('anfrage_produkt');
+  if (anfrageProdukt && document.getElementById('message')) {
+    const anfragePreis = sessionStorage.getItem('anfrage_preis') || '';
+    onClickProduct(anfrageProdukt, anfragePreis);
+    sessionStorage.removeItem('anfrage_produkt');
+    sessionStorage.removeItem('anfrage_preis');
+  }
+
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault(); // Verhindert das Neuladen der Seite
