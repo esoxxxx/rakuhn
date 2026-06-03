@@ -22,7 +22,7 @@ Sebi Fragen:
 [x] Verlinkungen im Beschreibungstext auf andere Seite (z.B. von Dreieckstuch zu Seite mit Geschenkset Geburt.)
 [x] Reihenfolge der Produkte ändern: 1. Halstücher, 2. Pumphosen, 3. Haarbänder
 [x] Stöbern und Produkt anfragen Button tauschen
-[] Verweise auf Insta und facebook mit Links versehen
+[x] Verweise auf Insta und facebook mit Links versehen
 [] Alt Beschreibung für Fotos in HTML Tag einfügen (s.u.)?
 
 Fragen HWK:
