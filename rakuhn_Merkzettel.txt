@@ -25,7 +25,7 @@ Sebi Fragen:
 [x] Stöbern und Produkt anfragen Button tauschen
 [x] Verweise auf Insta und facebook mit Links versehen
 [] Bildgröße komprimieren für den Production Build
-[] Gutscheinbedingungen auf das Geschenkset Gutschein 
+[x] Gutscheinbedingungen auf das Geschenkset Gutschein 
 [x] About me section, teilweise ausgliedern
 [x] About me section, gut aussehend machen Proportionen passen nicht
  
