@@ -1,0 +1,45 @@
+Fotozuordnung zu Album auf NAS 
+23.4.2026
+bis
+18.10.25
+
+
+ToDo Webseite:
+Stickerei als Produkt
+Individuelle Anfragen für Produkte die es noch nicht gibt
+Upcycling
+Erinnerungskuscheltier 
+FAQ
+Gutschein Bedingungen
+
+
+Sebi Fragen:
+Button auf der Produktseite selbst einbinden: "Produkt anfragen"
+"zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite
+Wie aktiviere ich tailscale und greife auf Fotos zu? Zugriff nur über Browser oder kann man auch die Photos-App runterladen?
+Produktseite mit einzelnen Fotos im Beschreibungstext gestalten und darunter erst die Galerie
+Reihenfolge der Produkte ändern: 1. Halstücher, 2. Pumphosen, 3. Haarbänder
+Stöbern und Produkt anfragen Button tauschen
+Verlinkungen im Beschreibungstext auf andere Seite (z.B. von Dreieckstuch zu Seite mit Geschenkset Geburt.)
+Zurück-button auch am Anfang der Produktseite oder ein eingeblendeter "zum Seitenanfang-Button" (wie bei Amazon)
+Alt Beschreibung für Fotos in HTML Tag einfügen (s.u.)?
+Verweise auf Insta und facebook mit Links versehen
+
+Fragen HWK:
+
+Affiliate Links
+KI-generierte Inhalte kennzeichnen?
+Müssen AGB von Rechtsanwalt geprüft werden?
+Gutschein Bedingungen?
+
+Merken:
+Bilder auf Webseite (https://www.seobility.net/de/wiki/Bilder_SEO)
+	Dateiname: wichtigsten Keywords enthalten, Kleinbuchstaben,Bindestriche statt Unterstrich
+	kleine Dateigröße
+	Formate PNG, SVG, JPG oder GIF 
+	Bildformat:  4:3
+	immer den Alt-Text (Alternativtext) im HTML-Code pflegen. Dieser sollte kurz den Inhalt des Bildes beschreiben 
+	(z. B. <img src="roter-sportwagen.jpg" alt="Ein roter Sportwagen auf einer kurvigen Küstenstraße">).
+
+HTML auskommentieren
+	Strg + U
