@@ -1,173 +1,101 @@
 <!-- ABOUT -->
 <section class="about-section" id="ueber-mich">
-  <div class="about-left">    
-  <div class="section-label">Über mich</div>
-  <h2 class="section-title">All about me, my story and <em>rakuhn</em></h2>
+
+  <!-- ROW 1: Intro + Foto -->
+  <div class="about-left">
+    <div class="section-label">Über mich</div>
+    <h2 class="section-title">All about me, my story and <em>rakuhn</em></h2>
 
     <div class="about-card">
-      Wer bin ich? 🦝✨ <br>
-      <br>
-      Mein Name ist Ina Kuhn. <br> 
-      Ich bin verheiratet mit einem wunderbaren Ehemann  
-      (der mir diese unglaublich tolle 
-      Webseite programmiert hat). Außerdem bin ich Mama
-      von zwei ziemlich wilden Rabauken 🤗 
-      Zu unserer Familie gehören noch zwei ruhige Zeitgenossen, 
-      Foxy-Roxy und Geralt von Riva, unsere Zwergkaninchen, 
-      auch <em>Minis</em> genannt. <br>
-      <br>
+      <strong>Wer bin ich? 🦝✨</strong><br><br>
+      Mein Name ist Ina Kuhn. Ich bin verheiratet mit einem wunderbaren Ehemann
+      (der mir diese unglaublich tolle Webseite programmiert hat 😄).
+      Außerdem bin ich Mama von zwei ziemlich wilden Rabauken. 🤗<br><br>
+      Zu unserer Familie gehören noch zwei ruhige Zeitgenossen –
+      Foxy-Roxy und Geralt von Riva, unsere Zwergkaninchen,
+      auch <em>Minis</em> genannt.
     </div>
-    <br>
 
-    {#TODO KS: Ich hab um jeden Abschnitt einen Kasten gemacht, indem ich die div class="about-card" kopiert habe, war das richtig? Oder muss jede Klasse einen eigenen Namen bekommen?#}
-    <div class="about-card">
-      Das ist meine Geschichte <br>
-      <br>
-      Mit dem Nähen habe ich schon als kleines Mädchen angefangen. 
-      Kaputte Puppenkleider habe ich von Hand mit Nadel und Faden
-      repariert. Später habe ich mich auf der alten Privileg 
-      Nähmaschine meiner Mutter ausgetobt. 
-      Mein Schulpraktikum in der 7. Klasse habe ich 
-      in der Schneiderei einer lieben Freundin meiner Eltern 
-      absolviert und dabei viel gelernt. Danke Konni!!! 
-      Von da an ging mein ganzes Taschengeld für Stoffe und 
-      Nähutensilien drauf und mein Kleiderschrank 
-      wurde immer voller. 
-      Die Krönung meiner self-made Ausbildung war mein Abikleid, 
-      welches ich anhand des Schnittmusters eines Brautkleides 
-      aus der Burda genäht habe. 
-      <br>
-      <br>
+    <p style="margin-top: 1.2rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+      Weitere Informationen über mich und die Geschichte hinter rakuhn
+      findest du <a href="/ueber-mich/" style="color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px;">hier</a>.
+    </p>
+  </div>
 
-      {#TODO KS: folgenden Absatz bitte kursiv machen und einrücken
-      Tipp: Für eine sauberere Struktur definieren Sie eine Klasse in Ihrer CSS-Datei (z. B. .indent { margin-left: 20px; }) und wenden diese in der .njk-Datei an: <p class="indent">Text</p>.#}
-      <p style="margin-left: 20px;"><em>Funny Sidestory: Trotz sorgfältiger Vorbereitung 
-      und Probenähen mit einem alten Stoff, 
-      wollte 2 Stunden vor dem Abiball der Reißverschluss 
-      immernoch nicht so wie ich. Zum Glück wurde ich von 
-      meiner damaligen Praktikumsgeberin gerettet 
-      und habe dank ihrer Hilfe nur den Abigottesdienst verpasst.</em> 😂
-      </p>
+  <div class="about-photo">
+    <img src="/assets/img/ina-kuhn.jpg"
+         alt="Ina Kuhn – rakuhn"
+         style="width:100%; max-width:340px; aspect-ratio:3/4; object-fit:cover; border-radius:32px; display:block; margin:0 auto;">
+  </div>
 
-      <br>
-      Meine Geschichte ging weiter als die große Schwester 
-      meines damaligen Freundes ihr erstes Kind bekommen hat. 
-      Da habe ich meine Leidenschaft für das Nähen von 
-      Baby- und Kinderkleidung entdeckt.
-      Als dann meine beste Freundin Olga Kinder bekommen hat, 
-      konnte ich mich auch da austoben. 
-      Und mein Repertoire ist mit jedem Baby aus dem 
-      Freundeskreis mehr geworden. 
-      Mein Lieblingsgeschenk ist und bleibt dennoch die 
-      Pumphose, die schon viele von mir geschenkt und 
-      genäht bekommen haben. Damals habe ich noch mit 
-      gekaufte  Schnittmustern gearbeitet; 
-      heute entwerfe ich die Schnitte selbst, 
-      um sie an meinen beiden kleinen zu testen und zu ändern, 
-      um sie noch besser zu machen 🤭
-    </div><br>
-
-    <div class="about-card">
-    {#TODO KS: Kannst du das Wort rakuhn und racoon in Anführungszeichen setzen?#}
-    Wieso <em>rakuhn</em> als Name? <br>
-    <br>
-    Der Name rakuhn ist ein Wortspiel mit meinem Nachnamen. 
-    Das englische Wort <em>racoon</em> bedeutet Waschbär. 
-    Mein Mann hat ihn früher als Gaming Namen beim zocken 
-    verwendet. Da ich Waschbären total süß finde, war der Name
-    für meine Firma schnell gefunden. Das Logo habe ich 
-    übrigens selbst entworfen während einem Urlaub 
-    in Holland mit unseren besten Freunden. 
-    Zuhause habe ich es dann digitalisiert und finalisiert.
+  <!-- ROW 2: Versprechen – volle Breite -->
+  <div class="about-full">
+    <div class="section-label" style="text-align:center;">Über rakuhn</div>
+    <h2 class="section-title" style="text-align:center;">Mit <em>Herz</em> für die schönsten Momente</h2>
+    <p class="section-sub" style="text-align:center; max-width:600px; margin: 0 auto 0;">
+      Jedes kleine Wunder ist einzigartig. Jedes Stück wird persönlich ausgesucht
+      und mit viel Freude und Liebe genäht – ganz individuell für dein kleines Wunder.
+    </p>
+    <div class="about-features">
+      <div class="about-feature-card">
+        <div class="feature-icon">💌</div>
+        <strong>Persönliche Beratung</strong>
+        <span>Ich helfe dir gerne bei der Auswahl – für das perfekte Geschenk, ganz auf dein Budget zugeschnitten.</span>
+      </div>
+      <div class="about-feature-card">
+        <div class="feature-icon">🎁</div>
+        <strong>Fertig zum Verschenken</strong>
+        <span>Auf Wunsch kommen alle Geschenke liebevoll verpackt und mit persönlicher Nachricht – kein Stress, nur Freude.</span>
+      </div>
+      <div class="about-feature-card">
+        <div class="feature-icon">🌿</div>
+        <strong>Nachhaltige Qualität</strong>
+        <span>Ich setze auf OEKO-TEX-zertifizierte und schadstofffreie Materialien – gut für die Babyhaut und die Umwelt.</span>
+      </div>
     </div>
   </div>
 
-  <div class="about-right">
-    <div class="section-label">Über rakuhn</div>
-    <h2 class="section-title">Mit <em>Herz</em> für die<br>schönsten Momente</h2>
-    <p class="section-sub">Jedes kleines Wunder ist einzigartig. Darum wird jedes Stück persönlich ausgesucht und angefertigt. Der Stoff, der Schnitt, die Personalisierung - jedes Mal entsteht ein Einzelstück, das mit viel Freude und Liebe genäht wurde, ganz individuell für dein kleines Wunder.</p>
-    <ul class="promise-list">
-
-      <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
-          <strong>Persönliche Beratung</strong>
-          <span>Ich helfe dir gerne bei der Auswahl – für das perfekte Geschenk, ganz auf dein Budget zugeschnitten.</span>
+  <!-- ROW 3: Ablauf – volle Breite -->
+  <div class="about-full">
+    <div class="section-label" style="text-align:center;">Und jetzt du</div>
+    <h2 class="section-title" style="text-align:center;">Und so funktioniert's</h2>
+    <ol class="about-steps">
+      <li class="about-step">
+        <div class="about-step-num">01</div>
+        <div class="about-step-content">
+          <strong>Deine Auswahl</strong>
+          <span>Du stöberst auf meiner Seite und wirst fündig – oder du hast eine Idee, die du noch nicht siehst? Kein Problem, ich fertige auch individuelle Wünsche an.</span>
         </div>
       </li>
-
-      <li class="promise-item">
-        <div class="promise-icon">🎁</div>
-        <div class="promise-text">
-          <strong>Fertig zum Verschenken</strong>
-          <span>Auf Wunsch kommen alle Geschenke liebevoll verpackt und mit persönlicher Nachricht – kein Stress, nur Freude.</span>
-        </div>
-      </li>    
-
-      <li class="promise-item">
-        <div class="promise-icon">🌿</div>
-        <div class="promise-text">
-          <strong>Nachhaltige Qualität</strong>
-          <span>Ich setze auf OEKO-TEX-zertifizierte und schadstofffreie Materialien – gut für die Babyhaut und die Umwelt.</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-{#TODO KS: habe die Klasse von oben kopiert, braucht sie einen neuen, eindeutigen Namen?#}
-<div class="about-left">    
-  <div class="section-label">Und jetzt du</div>
-  <h2 class="section-title">Und so funktioniert's:</h2>
-  <ul class="promise-list">
-
-      <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
-          <strong>Deine Auswahl </strong>
-          <span>Du stöberst auf meiner Seite und wirst fündig. Oder du hast eine Idee was du schenken möchtest, aber findest es nicht auf meiner Seite? Perfekt und kein Problem!</span>
-        </div>
-      </li>
-            <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
+      <li class="about-step">
+        <div class="about-step-num">02</div>
+        <div class="about-step-content">
           <strong>Dein Kontakt zu rakuhn</strong>
-          <span>Du klickst auf <em>Produkt anfragen</em> oder kontaktierst mich direkt über das Kontaktformular unten auf der Seite. <br>
-          Oder du schreibst mir eine WhatsApp-Nachricht: 0159 05315261 <br>
-          Oder du besuchst meine Instagram-Seite: instagram.com/rakuhn.by.ina.kuhn <br>
-          oder meine facebook-Seite: facebook.com/rakuhn.by.ina.kuhn und kontaktierst mich dort.<br> 
-          Natürlich bin ich auch per Mail erreichbar: ina-kuhn@outlook.de <br>
-          Viele Möglichkeiten mit gleichem Ergebnis: Ich melde mich schnellstmöglich bei dir.</span>
-        </div>  
+          <span>Schreib mir über das <a href="/#kontakt-formular">Kontaktformular</a>, per <a href="https://wa.me/4915905315261" target="_blank" rel="noopener">WhatsApp</a> oder per <a href="mailto:ina-kuhn@outlook.de">E-Mail</a>. Ich melde mich schnellstmöglich zurück.</span>
+        </div>
       </li>
-            <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
+      <li class="about-step">
+        <div class="about-step-num">03</div>
+        <div class="about-step-content">
           <strong>Persönliche Beratung</strong>
-          <span>Zusammen finden wir das perfekte Geschenk. 
-          Gibt es dein Liebingsgeschenk noch nicht in meinem Repertoire, entwerfe ich es gerne für dich. 
-          Natürlich ohne Mehrkosten.
-          Dann suchen wir einen passenden Stoff dafür aus. 
-          Meistens findet sich was in meinem Stoff-Bestand. 
-          Sollte das nicht der Fall sein, ist meine erste Adresse der lokale Stoffladen vor Ort. 
-          Und wenn sich dort auch nichts findet, gibt es auch noch die Online-Stoffläden mit einem riesigen Angebot.
-          Zu guter Letzt entscheiden wir uns für eine passende Größe.
+          <span>Zusammen finden wir das perfekte Geschenk – Stoff, Farbe, Größe und Personalisierung. Gibt es deinen Wunsch noch nicht, entwerfe ich ihn gerne für dich, ohne Mehrkosten.</span>
         </div>
       </li>
-      <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
+      <li class="about-step">
+        <div class="about-step-num">04</div>
+        <div class="about-step-content">
           <strong>Die Umsetzung</strong>
-          <span>Nachdem wir alles besprochen haben, setze ich mich an die Nähmaschine und lege los. Wenn alles fertig ist, kann ich dir gerne ein Foto schicken. </span>
+          <span>Nachdem alles besprochen ist, setze ich mich an die Nähmaschine und lege los. Auf Wunsch schicke ich dir vor dem Versand ein Foto.</span>
         </div>
       </li>
-            </li>
-      <li class="promise-item">
-        <div class="promise-icon">💌</div>
-        <div class="promise-text">
+      <li class="about-step">
+        <div class="about-step-num">05</div>
+        <div class="about-step-content">
           <strong>Der Versand</strong>
-          <span>Das Geschenk wird liebevoll von mir verpackt. Wenn du es verschenkfertig haben möchtest, packe ich es in eine Geschenkverpackung und lege gerne eine handgeschriebene Nachricht dazu. Dann geht's ab zur Post. Entweder zu dir oder direkt zu dem Beschenkten mit dem kleinen Wunder.</span>
+          <span>Das Geschenk wird liebevoll verpackt – auf Wunsch mit Geschenkverpackung und handgeschriebener Nachricht. Dann geht's ab zur Post, direkt zu dir oder zum Beschenkten.</span>
         </div>
       </li>
-  </ul>
+    </ol>
+  </div>
 
 </section>
