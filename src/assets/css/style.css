@@ -849,6 +849,55 @@
     font-size: 0.82rem;
   }
 
+  /* ─── LEGAL PAGES ─── */
+  .legal-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .legal-block {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--accent);
+  }
+
+  .legal-block h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--heading-primary);
+    margin-bottom: 0.7rem;
+  }
+
+  .legal-block p,
+  .legal-block li {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-size: 0.95rem;
+  }
+
+  .legal-block ul,
+  .legal-block ol {
+    padding-left: 1.2rem;
+    margin-top: 0.4rem;
+  }
+
+  .legal-block li { margin-bottom: 0.3rem; }
+
+  .legal-block a {
+    color: var(--accent-dark);
+    text-decoration: none;
+  }
+  .legal-block a:hover { text-decoration: underline; }
+
+  .legal-faq-q {
+    font-weight: 600;
+    color: var(--heading-primary);
+    margin-bottom: 0.3rem;
+  }
+
   /* ─── BURGER ─── */
   .burger {
     display: none;
