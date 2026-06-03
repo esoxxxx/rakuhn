@@ -14,7 +14,14 @@ Die rakuhn Halstücher passen den kleinen sehr lange und sind dadruch ein Gesche
 <br>
 Das rakuhn Halstuch gibt es in zwei Ausführungen, entweder mit Rundung oder als Dreieckstuch.<br>
 
-<!-- <img src="/home/sebastian/Coding/rakuhn/rakuhn/src/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-fuchs-tuerkis-rund-dreieck.jpg"> -->
+<div class="description-img-row">
+  <img class="description-img"
+       src="/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-rund-schwan-rosa.jpeg"
+       alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
+  <img class="description-img"
+       src="/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-dreieck-fuchs-tuerkis.jpeg"
+       alt="Dreieckstuch mit Fuchs-Motiv in Türkis">
+</div>
 <br>
 Auch bei den Größen bleiben keine Wünsche offen:<br>
 0-6 Monate<br>

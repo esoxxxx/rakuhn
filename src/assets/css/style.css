@@ -433,6 +433,26 @@
     color: var(--accent);
   }
 
+  .description-img {
+    width: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .description-img-row {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 600px) {
+    .description-img-row { flex-direction: column; }
+    .description-img { width: 100%; }
+  }
+
   .section-sub {
     color: var(--text-secondary);
     font-size: 1rem;
