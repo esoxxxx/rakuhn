@@ -3,6 +3,7 @@ name: Windeltaschen
 layout: layouts/product-detail.njk
 price: 35,00 €
 icon: "/assets/img/products/windeltaschen/20250327_143628.jpg"
+order: 5
 tags:
   - product
 ---

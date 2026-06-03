@@ -3,6 +3,7 @@ name: Stickerei
 layout: layouts/product-detail.njk
 price: 8,00 €
 icon: "/assets/img/products/stickerei/rakuhn-baby-geschenk-stickerei-raphael-tuerkis-halstuch-dino-weiss.jpeg"
+order: 4
 tags:
   - product
 ---

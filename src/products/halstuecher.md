@@ -3,6 +3,7 @@ name: Halstücher
 layout: layouts/product-detail.njk
 price: 10,00 €
 icon: "/assets/img/products/halstuecher/rakuhn-baby-geschenk-halstuch-rund-dreieck-fuchs-tuerkis.jpeg"
+order: 1
 tags:
   - product
 ---
