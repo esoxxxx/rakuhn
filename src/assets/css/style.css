@@ -838,6 +838,12 @@
   }
   .footer-links a:hover { color: var(--text-primary); }
 
+  .footer-social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
   .footer-bottom {
     display: flex; justify-content: space-between; align-items: center;
     font-size: 0.82rem;

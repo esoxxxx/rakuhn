@@ -2,7 +2,8 @@
 name: Geschenkset "Geburt"
 layout: layouts/gift-detail.njk
 price: 35,00 €
-icon: "/assets/img/gifts/geschenkset-geburt/rakuhn-baby-geschenk-geschenkset-geburt-pumphose-halstuch-stickerei-dino-weiss.jpeg"
+icon: "/assets/img/gifts/geschenkset-geburt/005-rakuhn-baby-geschenk-geschenkset-geburt-pumphose-halstuch-stickerei-dino-weiss.jpeg"
+order: 1
 tags:
   - gift
 ---
