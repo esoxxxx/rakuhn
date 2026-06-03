@@ -8,7 +8,7 @@ tags:
   - product
 ---
 
-Halstücher sind ein super süßes Accessoire und ideal, wenn man nur eine Kleinigkeit schenken möchte. Aber auch als Ergänzung zur Pumphose ergeben beide ein harmonisches Set.<br>
+Halstücher sind ein super süßes Accessoire und ideal, wenn man nur eine Kleinigkeit schenken möchte. Aber auch als Ergänzung zur <a href="/products/hosen/">Pumphose</a> ergeben beide ein <a href="/#geschenke">harmonisches Set</a>.<br>
 <br>
 Die rakuhn Halstücher passen den kleinen sehr lange und sind dadruch ein Geschenk von dem die kleinen lange etwas haben. Auf Wunsch nähe ich das Halstuch eine Nummer größer und ergänze zwei weitere Druckknöpfe. So kann die Größe individuell geändert werden, wenn die kleinen größer werden.<br>
 <br>

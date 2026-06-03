@@ -19,7 +19,7 @@ Sebi Fragen:
 [x] "zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite
 [x] Wie aktiviere ich tailscale und greife auf Fotos zu? Zugriff nur über Browser oder kann man auch die Photos-App runterladen?
 [x] Produktseite mit einzelnen Fotos im Beschreibungstext gestalten und darunter erst die Galerie
-[] Verlinkungen im Beschreibungstext auf andere Seite (z.B. von Dreieckstuch zu Seite mit Geschenkset Geburt.)
+[x] Verlinkungen im Beschreibungstext auf andere Seite (z.B. von Dreieckstuch zu Seite mit Geschenkset Geburt.)
 [x] Reihenfolge der Produkte ändern: 1. Halstücher, 2. Pumphosen, 3. Haarbänder
 [x] Stöbern und Produkt anfragen Button tauschen
 [] Verweise auf Insta und facebook mit Links versehen
