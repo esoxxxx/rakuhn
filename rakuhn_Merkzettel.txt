@@ -5,12 +5,14 @@ bis
 
 
 ToDo Webseite:
-Stickerei als Produkt
-Individuelle Anfragen für Produkte die es noch nicht gibt
-Upcycling
-Erinnerungskuscheltier 
-FAQ
-Gutschein Bedingungen
+[x] Stickerei als Produkt
+[] Mützen
+[] Namens Türkranz
+[] Individuelle Anfragen für Produkte die es noch nicht gibt
+[] Upcycling
+[] Erinnerungskuscheltier 
+[] FAQ
+[] Gutschein Bedingungen
 [] Gutschein Bild erstellen mit Rakuhn logo und Text Professionell
 
 
@@ -30,10 +32,10 @@ Sebi Fragen:
 [x] About me section, gut aussehend machen Proportionen passen nicht
  
 Fragen HWK:
-
+AGB - Muss ich eine Gewährleistung geben? Muss ich auf diese hinweisen?
+Müssen AGB von Rechtsanwalt geprüft werden?
 Affiliate Links
 KI-generierte Inhalte kennzeichnen?
-Müssen AGB von Rechtsanwalt geprüft werden?
 Gutschein Bedingungen?
 
 Merken:
