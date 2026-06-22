@@ -1,7 +1,7 @@
 Fotozuordnung zu Album auf NAS 
 23.4.2026
 bis
-???
+26.03.25 ???
 
 
 
@@ -28,7 +28,9 @@ ToDo Webseite:
 
 
 Sebi Fragen:
-[] Schalter Wartungsmodus
+[] Schalter Wartungsmodusl
+[] Vorschau von webp Bildern inl Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) 6lassen
+[] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
 [x] Button auf der Produktseite selbst einbinden: "Produkt anfragen"
 [x] Zurück-button auch am Anfang der Produktseite oder ein eingeblendeter "zum Seitenanfang-Button" (wie bei Amazon)
 [x] "zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite

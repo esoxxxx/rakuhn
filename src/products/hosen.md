@@ -2,7 +2,7 @@
 name: Pumphosen
 layout: layouts/product-detail.njk
 price: 20,00 €
-icon: "/assets/img/products/hosen/rakuhn-baby-geschenk-pumphose-fuchs-tuerkis.webp"
+icon: "/assets/img/products/hosen/rakuhn-baby-geschenk-pumphose-fuchs-tuerkis.JPG"
 order: 2
 tags:
   - product
