@@ -2,7 +2,7 @@
 name: Windeltaschen
 layout: layouts/product-detail.njk
 price: 35,00 €
-icon: "/assets/img/products/windeltaschen/001-rakuhn-baby-geschenk-windeltasche-blumen-rosa.JPEG"
+icon: "/assets/img/products/windeltaschen/001-rakuhn-baby-geschenk-windeltasche-blumen-rosa.webp"
 order: 5
 tags:
   - product
