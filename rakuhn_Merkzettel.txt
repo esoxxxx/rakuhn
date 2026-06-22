@@ -1,10 +1,21 @@
 Fotozuordnung zu Album auf NAS 
 23.4.2026
 bis
-18.10.25
+???
+
+
+
+Über GitHub gehostet (Code auf GitHub veröffentlicht)
+Statische Webseite (ohne Server)
+Url (www.made-by-rakuhn.de) bei GitHub hinterlegt, Weiterleitung auf GitHub-Projekt
+Domain gekauft bei netcup (1 Jahr für 5 gemietet)
+
+
 
 
 ToDo Webseite:
+[] Aufbau der Webseite, Veröffentlichung zeigen lassen
+[] Wie Webp Skript laufen lassen
 [x] Stickerei als Produkt
 [] Mützen
 [] Namens Türkranz
@@ -17,6 +28,7 @@ ToDo Webseite:
 
 
 Sebi Fragen:
+[] Schalter Wartungsmodus
 [x] Button auf der Produktseite selbst einbinden: "Produkt anfragen"
 [x] Zurück-button auch am Anfang der Produktseite oder ein eingeblendeter "zum Seitenanfang-Button" (wie bei Amazon)
 [x] "zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite
@@ -32,6 +44,7 @@ Sebi Fragen:
 [x] About me section, gut aussehend machen Proportionen passen nicht
  
 Fragen HWK:
+Kurse anbieten
 AGB - Muss ich eine Gewährleistung geben? Muss ich auf diese hinweisen?
 Müssen AGB von Rechtsanwalt geprüft werden?
 Affiliate Links
@@ -39,6 +52,9 @@ KI-generierte Inhalte kennzeichnen?
 Gutschein Bedingungen?
 
 Merken:
+
+npm run start
+npm run 
 Bilder auf Webseite (https://www.seobility.net/de/wiki/Bilder_SEO)
 	Dateiname: wichtigsten Keywords enthalten, Kleinbuchstaben,Bindestriche statt Unterstrich
 	kleine Dateigröße
