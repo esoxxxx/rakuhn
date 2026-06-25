@@ -25,9 +25,11 @@ ToDo Soziale Medien (Ideen für Reels, Storys) -> Call to Action
 [] Näh-Kurse, Habt ihr Lust
 
 
-ToDo Webseite:
+ToDo Webseite (Ina):
+[] Bilder für Seite "Und so funktionierts machen und einfügen.
+[] Foto von Abikleid in "über mich" Seite
+[] Bilder von Ina an Nähmaschine einfügen auf Seite "Über rakuhn"
 [] Video aufnehmen & bearbeiten für Startseite
-[] Bilder einfügen auf Seite "Über rakuhn"
 [] Impressum überarbeiten (§ korrigieren)
 [] Paragraphen korrigieren (TMG, MStV), Erst Name dann Firmenname, WirtschaftsID, Streitschlichtung
 [] KI Hinweis bei Fotos hinzufügen
@@ -47,7 +49,8 @@ ToDo Webseite:
 [] Gutschein Bild erstellen mit Rakuhn logo und Text Professionell
 
 
-Sebi Fragen:
+ToDo Sebi Fragen:
+[] Schriftfarbe grün und Größe für Text "rakuhn" in Texten ändern (z.B. auf Unterseite " Über mich")
 [] Zeige deiner Frau wie man veröffentlicht
 [] Aufbau der Webseite erklären (ähnlich Zusammenfassung von Copilot)
 [] Schalter Wartungsmodul
