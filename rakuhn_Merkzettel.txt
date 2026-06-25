@@ -10,12 +10,32 @@ Statische Webseite (ohne Server)
 Url (www.made-by-rakuhn.de) bei GitHub hinterlegt, Weiterleitung auf GitHub-Projekt
 Domain gekauft bei netcup (1 Jahr für 5 gemietet)
 
+ToDo rakuhn
+[] Google-Eintrag (Fotos von Nähmashcine, von Ina mit Logo im Hintergrund, Schlagworte " Geschenke zur Geburt")
+[] Bing Einrrag
+[] Logo mit Zusatz " Geschenke zur Geburt, evtl auch mit Link oder Handynummer
+[] Flyer immer beidseitig, "Ina Kuhn" dazu schreiben, keine Preise auf Flyern, Alleinstellungsmerkmale hervorheben
+[] Alleinstellungsmerkmale herausarbeiten ("Geschenkideen", Mitwachsend 0-2 Jahre, Nachhaltigkeit "lokale Stoffe", personalisiert, Qualität)
 
+ToDo Soziale Medien (Ideen für Reels, Storys) -> Call to Action 
+[] Video vom nähen
+[] Tagesthema Nachhaltigkeit
+[] Tagesthema Pumphose
+[] Beratungsgespräch beschrieben/zeigen
+[] Näh-Kurse, Habt ihr Lust
 
 
 ToDo Webseite:
-[] Aufbau der Webseite, Veröffentlichung zeigen lassen
-[] Wie Webp Skript laufen lassen
+[] Video aufnehmen & bearbeiten für Startseite
+[] Bilder einfügen auf Seite "Über rakuhn"
+[] Impressum überarbeiten (§ korrigieren)
+[] Paragraphen korrigieren (TMG, MStV), Erst Name dann Firmenname, WirtschaftsID, Streitschlichtung
+[] KI Hinweis bei Fotos hinzufügen
+[] Babyborn Foto ersetzen!
+[] Actionfoto von Pumphose als kurze Hose
+[] Hinweis und Link auf Datenschutz bei Kontaktformular
+[] FAQs Rückfragen aus bisherigen Bestellungen zusammenfassen
+[x] Wie Webp Skript laufen lassen
 [x] Stickerei als Produkt
 [] Mützen
 [] Namens Türkranz
@@ -28,7 +48,13 @@ ToDo Webseite:
 
 
 Sebi Fragen:
+[] Zeige deiner Frau wie man veröffentlicht
+[] Aufbau der Webseite erklären (ähnlich Zusammenfassung von Copilot)
 [] Schalter Wartungsmodul
+[] Fotos bei Klick vergrößern (Fotogalerie öffnen)
+[] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
+[] FAQ auch in Kopfzeile?
+[] Video auf Startseite (Zeitlupe) (Bsp. Metzgerei Scherer)
 [] Vorschau von webp Bildern inl Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
 [] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
 [x] Button auf der Produktseite selbst einbinden: "Produkt anfragen"
@@ -56,7 +82,7 @@ Gutschein Bedingungen?
 Merken:
 
 npm run start
-npm run 
+npm run optimize-images
 
 Kommandozeile
 Strg + C  aktuelles Programm beenden
