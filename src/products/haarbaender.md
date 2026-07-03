@@ -23,3 +23,6 @@ Bei der Größe ist es natürlich immer am besten, wenn man den Kopfumfang weiß
 <br>
 **Geschenkset Haarband**<br>
 Ein besonderes Highlight sind die Mutter-Tochter und Vater-Sohn Haarband-Sets, bei dem die Eltern mit den kleinen im Partnerlook gehen können. Diese könnt ihr bei den Geschenksets finden.
+<br>
+<br>
+_Hinweis: Der Schutz von Babys und Kindern vor digitalem Missbrauch liegt mir sehr am Herzen. Aus diesem Grund sind alle Fotos mit Gesichtern von Kindern auf meiner Webseite mit KI generiert._
