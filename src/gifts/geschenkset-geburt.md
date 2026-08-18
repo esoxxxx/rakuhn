@@ -11,4 +11,4 @@ tags:
 Das beliebteste Geschenk meiner Kunden ist das Geschenkset "Geburt".<br>
 <br>
 Es enthält eine Pumphose und ein Halstuch. <br>
-Das Highlight dieses Geschenksets ist die Personalisierung mit dem Namen des Kindes, wahlweise auf dem Bündchen der Pumphose der auf dem Halstuch.
+Das Highlight dieses Geschenksets ist die Personalisierung mit dem Namen des Kindes, wahlweise auf dem Bündchen der Pumphose oder auf dem Halstuch.
