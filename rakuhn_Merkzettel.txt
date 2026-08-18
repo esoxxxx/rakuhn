@@ -12,7 +12,7 @@ Domain gekauft bei netcup (1 Jahr für 5 gemietet)
 
 ToDo rakuhn
 [] Google-Eintrag (Fotos von Nähmaschine, von Ina mit Logo im Hintergrund, Schlagworte " Geschenke zur Geburt")
-[] Bing Einrrag
+[] Bing Eintrag
 [] Logo mit Zusatz " Geschenke zur Geburt, evtl auch mit Link oder Handynummer
 [] Flyer immer beidseitig, "Ina Kuhn" dazu schreiben, keine Preise auf Flyern, Alleinstellungsmerkmale hervorheben
 [] Alleinstellungsmerkmale herausarbeiten ("Geschenkideen", Mitwachsend 0-2 Jahre, Nachhaltigkeit "lokale Stoffe", personalisiert, Qualität)
@@ -27,20 +27,20 @@ ToDo Soziale Medien (Ideen für Reels, Storys) -> Call to Action
 
 ToDo Webseite (Ina):
 [] Bilder für Seite "Und so funktionierts" machen und einfügen.
-[] Foto von Abikleid in "über mich" Seite
+[x] Foto von Abikleid in "über mich" Seite
 [] Bilder von Ina an Nähmaschine einfügen auf Seite "Über rakuhn"
 [] Video aufnehmen & bearbeiten für Startseite
 [] Impressum überarbeiten (§ korrigieren)
 [] Paragraphen korrigieren (TMG, MStV), Erst Name dann Firmenname, WirtschaftsID, Streitschlichtung
-[] KI Hinweis bei Fotos hinzufügen
+[x] KI Hinweis bei Fotos hinzufügen
 [] Babyborn Foto ersetzen!
 [] Actionfoto von Pumphose als kurze Hose
 [] Hinweis und Link auf Datenschutz bei Kontaktformular
 [] FAQs Rückfragen aus bisherigen Bestellungen zusammenfassen
 [x] Wie Webp Skript laufen lassen
 [x] Stickerei als Produkt
-[] Mützen
-[] Namens Türkranz
+[] Mützen als Produkt
+[] Namens Türkranz als Produkt
 [] Individuelle Anfragen für Produkte die es noch nicht gibt
 [] Upcycling
 [] Erinnerungskuscheltier 
@@ -50,16 +50,19 @@ ToDo Webseite (Ina):
 
 
 ToDo Sebi Fragen:
+[] Generell Schriftgröße für Text viel größer, Zielgruppe sind Omas, die sehen ja nicht mehr so gut *hehe*
+[] Fotos bei Klick vergrößern (Fotogalerie öffnen)
 [] Schriftfarbe grün und Größe für Text "rakuhn" in Texten ändern (z.B. auf Unterseite " Über mich")
+[] In Beschreibungstexten (z.B. Windeltasche) den zum Bild zugehörigen Text neben das Foto schreiben und umbrechen. Und nur bei responsive design darüber oder darunter anordnen.
+[] Vorschau von webp Bildern in Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
+[] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
+[] News-Blog einfügen, der ab und zu mit aktuellen Infos von mir gefüllt wird. (z.B. Ab sofort gibt es eine neue Mütze im Angebot)
 [] Zeige deiner Frau wie man veröffentlicht
 [] Aufbau der Webseite erklären (ähnlich Zusammenfassung von Copilot)
 [] Schalter Wartungsmodul
-[] Fotos bei Klick vergrößern (Fotogalerie öffnen)
 [] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
 [] FAQ auch in Kopfzeile?
 [] Video auf Startseite (Zeitlupe) (Bsp. Metzgerei Scherer)
-[] Vorschau von webp Bildern inl Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
-[] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
 [x] Button auf der Produktseite selbst einbinden: "Produkt anfragen"
 [x] Zurück-button auch am Anfang der Produktseite oder ein eingeblendeter "zum Seitenanfang-Button" (wie bei Amazon)
 [x] "zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite
