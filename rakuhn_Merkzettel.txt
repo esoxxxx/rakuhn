@@ -85,12 +85,11 @@ Affiliate Links
 KI-generierte Inhalte kennzeichnen?
 Gutschein Bedingungen?
 
-Merken:
+Merken (Kommandozeile):
 
 npm run start
 npm run optimize-images
 
-Kommandozeile
 Strg + C  aktuelles Programm beenden
 
 
