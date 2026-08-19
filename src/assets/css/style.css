@@ -1267,6 +1267,15 @@
   display: block;
   margin-bottom: 1rem;
 }
+  /* ─── HILFSKLASSE: rakuhn-Highlight ───
+     Optional per Hand setzbar, um einzelne Woerter oder Saetze hervorzuheben.
+     Beispiel: <span class="rakuhn-highlight">handgemacht</span>            */
+  .rakuhn-highlight {
+    color: var(--accent);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+
   /* ─── LIGHTBOX / BILDER-CAROUSSEL ─── */
 
   /* Galeriebilder als anklickbar kennzeichnen */
