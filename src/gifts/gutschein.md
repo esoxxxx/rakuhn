@@ -14,7 +14,7 @@ Dann schenk doch einfach einen rakuhn Gutschein in beliebiger Höhe.<br>
 <br>
 
 <div style="margin-top: 1.5rem;">
-  <div style="font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">Gutscheinbedingungen</div>
+  <div style="font-size:1.05rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem;">Gutscheinbedingungen</div>
 
   <div class="legal-block">
     <h2>Gültigkeit</h2>
