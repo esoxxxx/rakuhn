@@ -111,9 +111,18 @@ function closeModal() {
 
 // ─── LIGHTBOX / BILDER-CAROUSSEL (Produkt- und Geschenkset-Seiten) ───
 (() => {
-  const bilder = Array.from(document.querySelectorAll('.gallery-grid .gallery-item img'));
-  if (!bilder.length) return;
+  // Bildgruppen: die Galerie und die Bilder im Beschreibungstext werden
+  // getrennt durchgeblaettert, damit man nicht aus dem Thema faellt.
+  const gruppen = [];
+  document.querySelectorAll('.gallery-grid').forEach(grid => {
+    const imgs = Array.from(grid.querySelectorAll('.gallery-item img'));
+    if (imgs.length) gruppen.push(imgs);
+  });
+  const textbilder = Array.from(document.querySelectorAll('.description-img'));
+  if (textbilder.length) gruppen.push(textbilder);
+  if (!gruppen.length) return;
 
+  let bilder = [];          // aktuell geoeffnete Gruppe
   let aktuell = 0;
   let letzterAusloeser = null;
 
@@ -150,8 +159,6 @@ function closeModal() {
   const btnNext = box.querySelector('.lightbox-next');
   const btnClose = box.querySelector('.lightbox-close');
 
-  if (bilder.length === 1) box.classList.add('einzelbild');
-
   const zeige = (index) => {
     aktuell = (index + bilder.length) % bilder.length;  // umlaufend
     const quelle = bilder[aktuell];
@@ -165,7 +172,9 @@ function closeModal() {
     });
   };
 
-  const oeffne = (index, ausloeser) => {
+  const oeffne = (gruppe, index, ausloeser) => {
+    bilder = gruppe;
+    box.classList.toggle('einzelbild', bilder.length === 1);
     letzterAusloeser = ausloeser || null;
     zeige(index);
     box.classList.add('open');
@@ -180,18 +189,20 @@ function closeModal() {
     if (letzterAusloeser) letzterAusloeser.focus();
   };
 
-  // Galeriebilder klickbar und per Tastatur erreichbar machen
-  bilder.forEach((img, i) => {
-    const kachel = img.closest('.gallery-item');
-    kachel.setAttribute('tabindex', '0');
-    kachel.setAttribute('role', 'button');
-    kachel.setAttribute('aria-label', `Bild ${i + 1} von ${bilder.length} vergrößern`);
-    kachel.addEventListener('click', () => oeffne(i, kachel));
-    kachel.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        oeffne(i, kachel);
-      }
+  // Alle Bilder klickbar und per Tastatur erreichbar machen
+  gruppen.forEach(gruppe => {
+    gruppe.forEach((img, i) => {
+      const ziel = img.closest('.gallery-item') || img;   // Galeriekachel oder Bild im Text
+      ziel.setAttribute('tabindex', '0');
+      ziel.setAttribute('role', 'button');
+      ziel.setAttribute('aria-label', `Bild ${i + 1} von ${gruppe.length} vergrößern`);
+      ziel.addEventListener('click', () => oeffne(gruppe, i, ziel));
+      ziel.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          oeffne(gruppe, i, ziel);
+        }
+      });
     });
   });
 

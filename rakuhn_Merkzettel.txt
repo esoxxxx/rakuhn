@@ -52,8 +52,8 @@ ToDo Webseite (Ina):
 ToDo Sebi Fragen:
 [x] Generell Schriftgröße für Text viel größer, Zielgruppe sind Omas, die sehen ja nicht mehr so gut *hehe*
 [x] Fotos bei Klick vergrößern (Fotogalerie öffnen)
-[] Schriftfarbe grün und Größe für Text "rakuhn" in Texten ändern (z.B. auf Unterseite " Über mich")
-[] In Beschreibungstexten (z.B. Windeltasche) den zum Bild zugehörigen Text neben das Foto schreiben und umbrechen. Und nur bei responsive design darüber oder darunter anordnen.
+[x] Schriftfarbe grün und Größe für Text "rakuhn" in Texten ändern (z.B. auf Unterseite " Über mich")
+[x] In Beschreibungstexten (z.B. Windeltasche) den zum Bild zugehörigen Text neben das Foto schreiben und umbrechen. Und nur bei responsive design darüber oder darunter anordnen.
 [] Vorschau von webp Bildern in Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
 [] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
 [] News-Blog einfügen, der ab und zu mit aktuellen Infos von mir gefüllt wird. (z.B. Ab sofort gibt es eine neue Mütze im Angebot)

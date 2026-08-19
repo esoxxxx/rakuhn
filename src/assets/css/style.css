@@ -442,24 +442,105 @@
     color: var(--accent);
   }
 
+  /* ─── PRODUKTBESCHREIBUNG: TEXT & BILDER ─── */
+
+  /* Angenehme Lesebreite - lange Zeilen sind auf breiten Monitoren muehsam */
+  .gift-description {
+    max-width: 62rem;
+    margin: 0 auto;
+  }
+
+  /* Produkttitel buendig ueber dem Text, nicht am linken Seitenrand */
+  .produkt-titel {
+    max-width: 62rem;
+    margin: 0 auto 2rem;
+  }
+
+  /* Galerie an dieselbe Mitte wie der Text binden */
+  .gallery-grid {
+    max-width: 78rem;
+    margin-inline: auto;
+  }
+
+  /* Absatzabstaende - der globale Reset setzt margin ueberall auf 0 */
+  .gift-description p,
+  .description-split-text p {
+    margin-bottom: 1.1em;
+  }
+  .gift-description > :last-child,
+  .description-split-text > :last-child {
+    margin-bottom: 0;
+  }
+
   .description-img {
-    width: 180px;
-    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
     object-fit: cover;
     aspect-ratio: 4/3;
     display: block;
-    flex-shrink: 0;
+    cursor: zoom-in;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .description-img:hover,
+  .description-img:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  }
+  .description-img:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
   }
 
+  /* Reine Bildreihe: gleich grosse Kacheln, die die Breite ausfuellen */
   .description-img-row {
-    display: flex;
-    gap: 1rem;
-    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin: 2.5rem 0;
   }
 
-  @media (max-width: 600px) {
-    .description-img-row { flex-direction: column; }
-    .description-img { width: 100%; }
+  /* Text und Bild nebeneinander */
+  .description-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 3rem 0;
+  }
+  /* Bild rechts statt links */
+  .description-split.bild-rechts .description-split-text {
+    order: -1;
+  }
+  .description-split-text > :last-child {
+    margin-bottom: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .description-img { transition: none; }
+    .description-img:hover { transform: none; }
+  }
+
+  @media (max-width: 700px) {
+    .description-img-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .description-split {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin: 2.2rem 0;
+    }
+    /* Auf dem Handy immer dieselbe Reihenfolge: erst der Text, dann das Bild */
+    .description-split .description-split-text,
+    .description-split.bild-rechts .description-split-text {
+      order: 0;
+    }
+    .description-split .description-img {
+      order: 1;
+    }
   }
 
   .section-sub {
