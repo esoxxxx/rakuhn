@@ -60,12 +60,12 @@ ToDo Sebi Fragen:
 [] Zeige deiner Frau wie man veröffentlicht
 [] Aufbau der Webseite erklären (ähnlich Zusammenfassung von Copilot)
 [] Schalter Wartungsmodul
-[] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
+[x] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
 [] FAQ auch in Kopfzeile?
 [] Video auf Startseite (Zeitlupe) (Bsp. Metzgerei Scherer)
-[] rakuhn schriftzug oben links zu klein
-[] Rakuhn logo auf startseite hat fixe größe-> besser bissl dynamik
-[] Produkt-Titelfotos auf startseite (in den Cards). Cards nicht zu breit werden lassen sonst sieht man die bilder nicht mehr gut. mehr an 4:3 
+[x] rakuhn schriftzug oben links zu klein
+[x] Rakuhn logo auf startseite hat fixe größe-> besser bissl dynamik
+[x] Produkt-Titelfotos auf startseite (in den Cards). Cards nicht zu breit werden lassen sonst sieht man die bilder nicht mehr gut. mehr an 4:3 
 [x] Button auf der Produktseite selbst einbinden: "Produkt anfragen"
 [x] Zurück-button auch am Anfang der Produktseite oder ein eingeblendeter "zum Seitenanfang-Button" (wie bei Amazon)
 [x] "zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite

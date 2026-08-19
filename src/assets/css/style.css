@@ -572,6 +572,18 @@
     margin-top: 3.5rem;
   }
 
+  /* Auf breiten Monitoren wuerden die Karten sonst immer weiter auseinander
+     gezogen. Das Seitenpolster waechst stattdessen mit, sodass Ueberschrift
+     und Karten bei hoechstens 1400px Inhaltsbreite buendig stehen bleiben.
+     Nur ab Desktop-Breite - darunter gelten die schmalen Raender weiter
+     unten, die diese ID-Regel sonst nicht ueberschreiben koennten. */
+  @media (min-width: 1025px) {
+    #kategorien,
+    .gifts-section {
+      padding-inline: max(6rem, (100% - 1400px) / 2);
+    }
+  }
+
   .gift-card {
     background: #ffffff;
     border: 1px solid var(--border);
@@ -592,12 +604,18 @@
   }
   
 
+  /* Feste Hoehe ersetzt durch festes Seitenverhaeltnis: die Bildhoehe waechst
+     mit der Kartenbreite mit, der Bildausschnitt bleibt auf jeder Aufloesung
+     derselbe. 3:2 entspricht dem Format fast aller Produktfotos - sie werden
+     dadurch praktisch unbeschnitten gezeigt. */
   .gift-img {
-    height: 300px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 4rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+    display: block;
     background: linear-gradient(135deg, var(--bg-subtle), var(--border));
-    position: relative; overflow: hidden;
   }
 
   .gift-img::after {

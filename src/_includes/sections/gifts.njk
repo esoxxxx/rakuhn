@@ -8,7 +8,7 @@
 
   {% for gift in collections.gifts %}
     <div class="gift-card">
-      <img class="gift-img" src="{{ gift.data.icon }}" alt="{{ gift.data.name }}" style="width: 100%; object-fit: cover;" onclick="window.location.href='/gifts/{{ gift.fileSlug }}/';">
+      <img class="gift-img" src="{{ gift.data.icon }}" alt="{{ gift.data.name }}" style="object-position: {{ gift.data.iconPosition | default('center') }}" onclick="window.location.href='/gifts/{{ gift.fileSlug }}/';" loading="lazy">
       <div class="gift-info">
         <div class="gift-name">{{ gift.data.name }}</div>
         <div class="gift-price">{{ gift.data.price }}</div>
