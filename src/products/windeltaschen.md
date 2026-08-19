@@ -13,13 +13,13 @@ Am beliebtesten sind die Windeltaschen mit Waffelpiqué als Hauptstoff und einem
 
 <div class="description-img-row">
   <img class="description-img"
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geschlossen.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geschlossen.webp"
        alt="Windeltasche türkis mit Blumen">
   <img class="description-img"
        src="/assets/img/products/windeltaschen/description/005-rakuhn-baby-geschenk-windeltasche-blumen-rosa.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
     <img class="description-img"
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet.webp"
        alt="Windeltasche türkis mit Blumen">
        
 </div>
@@ -28,7 +28,7 @@ Am beliebtesten sind die Windeltaschen mit Waffelpiqué als Hauptstoff und einem
 <div class="description-img-row">
 Die Windeltasche hat auf der rechten Seite ein großes Fach in dem die Feuchttücher und eine Wickelunterlage Platz haben.<br>  
   <img class="description-img"
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet-feuchttuecher-wickelunterlage.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet-feuchttuecher-wickelunterlage.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
 </div>
 
@@ -36,7 +36,7 @@ Die Windeltasche hat auf der rechten Seite ein großes Fach in dem die Feuchttü
 <br>
 <div class="description-img-row">
   <img class="description-img"
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet-windeln.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet-windeln.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
 Auf der linken Seite ist ebenfalls ein großes Fach, hier kommen die Windeln rein. Die Größe der Windeltasche habe ich so gewählt, damit Windeln bis Größe 6 Platz finden. Daher wirkt dieses Fach für Windeln Größe 1 und 2 am Anfang etwas groß, aber später wird die Mama froh sein, dass sie die Windeln nicht reinstopfen muss. 
 Über dem großen Fach auf der linken Seite gibt es noch drei kleinere Fächer. Hier kann die Mama die Windelcreme, Taschentücher oder sonstige Dinge reinmachen.<br>
@@ -49,10 +49,10 @@ In der Mitte der Tasche ist eine Schlaufe mit Druckknopf angebracht, damit der "
        src="/assets/img/products/windeltaschen/description/015-rakuhn-baby-geschenk-windeltasche-blumen-rosa.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
   <img class="description-img".
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-schnuller.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-schnuller.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
   <img class="description-img".
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-schnullerband.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-schnullerband.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
 </div>
 
@@ -70,6 +70,6 @@ Als ganz besonderes Geschenke-Highlight kannst du die Windeltasche vorgefüllt k
 
 <div class="description-img-row">
   <img class="description-img"
-       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet.jpeg"
+       src="/assets/img/products/windeltaschen/description/rakuhn-baby-geschenk-windeltasche-blumen-tuerkis-befuellt-geoeffnet.webp"
        alt="Rundes Halstuch mit Schwan-Motiv in Rosa">
 </div>
