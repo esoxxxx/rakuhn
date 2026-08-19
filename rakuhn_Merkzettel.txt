@@ -50,8 +50,8 @@ ToDo Webseite (Ina):
 
 
 ToDo Sebi Fragen:
-[] Generell Schriftgröße für Text viel größer, Zielgruppe sind Omas, die sehen ja nicht mehr so gut *hehe*
-[] Fotos bei Klick vergrößern (Fotogalerie öffnen)
+[x] Generell Schriftgröße für Text viel größer, Zielgruppe sind Omas, die sehen ja nicht mehr so gut *hehe*
+[x] Fotos bei Klick vergrößern (Fotogalerie öffnen)
 [] Schriftfarbe grün und Größe für Text "rakuhn" in Texten ändern (z.B. auf Unterseite " Über mich")
 [] In Beschreibungstexten (z.B. Windeltasche) den zum Bild zugehörigen Text neben das Foto schreiben und umbrechen. Und nur bei responsive design darüber oder darunter anordnen.
 [] Vorschau von webp Bildern in Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
@@ -63,6 +63,9 @@ ToDo Sebi Fragen:
 [] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
 [] FAQ auch in Kopfzeile?
 [] Video auf Startseite (Zeitlupe) (Bsp. Metzgerei Scherer)
+[] rakuhn schriftzug oben links zu klein
+[] Rakuhn logo auf startseite hat fixe größe-> besser bissl dynamik
+[] Produkt-Titelfotos auf startseite (in den Cards). Cards nicht zu breit werden lassen sonst sieht man die bilder nicht mehr gut. mehr an 4:3 
 [x] Button auf der Produktseite selbst einbinden: "Produkt anfragen"
 [x] Zurück-button auch am Anfang der Produktseite oder ein eingeblendeter "zum Seitenanfang-Button" (wie bei Amazon)
 [x] "zurück zur Übersicht" Button springt bei Produkten bei Klick auf falsche Seite
