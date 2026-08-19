@@ -26,6 +26,10 @@
     <li><a href="/#ueber-mich" class="nav-link-item">Über mich</a></li>
     <li><a href="/#kategorien" class="nav-link-item">Sortiment</a></li>
     <li><a href="/#geschenke" class="nav-link-item">Geschenkesets</a></li>
+    <li>
+      {% set socialVariante = 'nav' %}
+      {% include "sections/social-icons.njk" %}
+    </li>
     <li><a href="/#kontakt" class="nav-cta nav-link-item">Kontakt</a></li>
   </ul>
   <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
@@ -39,4 +43,7 @@
   <a href="/#kategorien" class="nav-drawer-link">Sortiment</a>
   <a href="/#geschenke" class="nav-drawer-link">Geschenkesets</a>
   <a href="/#kontakt" class="nav-cta nav-drawer-link">Kontakt</a>
+  <div class="drawer-social-label">Folge mir</div>
+  {% set socialVariante = 'drawer' %}
+  {% include "sections/social-icons.njk" %}
 </div>

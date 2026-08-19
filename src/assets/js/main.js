@@ -6,7 +6,7 @@
     burger.classList.toggle('open', isOpen);
     burger.setAttribute('aria-expanded', isOpen);
   });
-  document.querySelectorAll('.nav-drawer-link').forEach(link => {
+  document.querySelectorAll('.nav-drawer-link, .nav-drawer .social-icon').forEach(link => {
     link.addEventListener('click', () => {
       drawer.classList.remove('open');
       burger.classList.remove('open');
