@@ -354,9 +354,9 @@
   /* Mascot SVG area */
   .mascot-wrap {
     position: relative;
-    /* Waechst mit dem Fenster, aber nie ueber die native Bildbreite (573px)
+    /* Waechst mit dem Fenster, aber nie ueber die native Bildbreite (695px)
        hinaus - darueber wuerde die Zeichnung unscharf. */
-    width: min(100%, 573px);
+    width: min(100%, 695px);
     margin: 0 auto;   /* Zentrierung */
   }
   /* 
