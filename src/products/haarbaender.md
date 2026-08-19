@@ -19,7 +19,7 @@ Blümchen-Haarband<br>
 Solltet ihr einen anderen Wunsch haben, schreibt mir einfach eure Vorstellung und ich entwerfe für euch individuell ein eigenes Modell.<br>
 <br>
 **Größe**<br>
-Bei der Größe ist es natürlich immer am besten, wenn man den Kopfumfang weiß. Da die rakuhn Haarbänder aber aus elastischem Jersey-Stoff genäht werden, passen sie fast immer. Aus eigener Erfahrung kann ich sogar sagen, dass sie eher auf dem Kopf bleiben, wenn sie ein bischen enger sind, weil sie dann nicht so schnell verrutschen. <br>
+Bei der Größe ist es natürlich immer am besten, wenn man den Kopfumfang weiß. Da die rakuhn Haarbänder aber aus elastischem Jersey-Stoff genäht werden, passen sie fast immer. Aus eigener Erfahrung kann ich sogar sagen, dass sie eher auf dem Kopf bleiben, wenn sie ein bisschen enger sind, weil sie dann nicht so schnell verrutschen. <br>
 <br>
 **Geschenkset Haarband**<br>
 Ein besonderes Highlight sind die Mutter-Tochter und Vater-Sohn Haarband-Sets, bei dem die Eltern mit den kleinen im Partnerlook gehen können. Diese könnt ihr bei den Geschenksets finden.
