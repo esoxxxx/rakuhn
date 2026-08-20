@@ -49,20 +49,16 @@ ToDo Webseite (Ina):
 [] Gutschein Bild erstellen mit Rakuhn logo und Text Professionell
 
 
-ToDo Sebi Fragen:
+ToDo Sebi Webseite:
+[] News-Blog einfügen, der ab und zu mit aktuellen Infos von mir gefüllt wird. (z.B. Ab sofort gibt es eine neue Mütze im Angebot)
+[] FAQ auch in Kopfzeile?
+[] Video auf Startseite (Zeitlupe) (Bsp. Metzgerei Scherer)
+[x] Schalter Wartungsmodul
+[x] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
 [x] Generell Schriftgröße für Text viel größer, Zielgruppe sind Omas, die sehen ja nicht mehr so gut *hehe*
 [x] Fotos bei Klick vergrößern (Fotogalerie öffnen)
 [x] Schriftfarbe grün und Größe für Text "rakuhn" in Texten ändern (z.B. auf Unterseite " Über mich")
 [x] In Beschreibungstexten (z.B. Windeltasche) den zum Bild zugehörigen Text neben das Foto schreiben und umbrechen. Und nur bei responsive design darüber oder darunter anordnen.
-[] Vorschau von webp Bildern in Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
-[] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
-[] News-Blog einfügen, der ab und zu mit aktuellen Infos von mir gefüllt wird. (z.B. Ab sofort gibt es eine neue Mütze im Angebot)
-[] Zeige deiner Frau wie man veröffentlicht
-[] Aufbau der Webseite erklären (ähnlich Zusammenfassung von Copilot)
-[] Schalter Wartungsmodul
-[x] Soziale Medien Links in Kopfzeile oder irgendwo anders präsenter
-[] FAQ auch in Kopfzeile?
-[] Video auf Startseite (Zeitlupe) (Bsp. Metzgerei Scherer)
 [x] rakuhn schriftzug oben links zu klein
 [x] Rakuhn logo auf startseite hat fixe größe-> besser bissl dynamik
 [x] Produkt-Titelfotos auf startseite (in den Cards). Cards nicht zu breit werden lassen sonst sieht man die bilder nicht mehr gut. mehr an 4:3 
@@ -79,6 +75,16 @@ ToDo Sebi Fragen:
 [x] Gutscheinbedingungen auf das Geschenkset Gutschein 
 [x] About me section, teilweise ausgliedern
 [x] About me section, gut aussehend machen Proportionen passen nicht
+---
+Sonstiges Fragen Sebi:
+[] Vorschau von webp Bildern in Dateiordner anzeigen (Paket webp-pixbuf-loader installieren) lassen
+[] Bildbearbeitungsprogramm installieren? (Zuschneiden und aufhellen)
+[] Zeige deiner Frau wie man veröffentlicht
+[] Aufbau der Webseite erklären (ähnlich Zusammenfassung von Copilot)
+
+
+
+
  
 Fragen HWK:
 Kurse anbieten
