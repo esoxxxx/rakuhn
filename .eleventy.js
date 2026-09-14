@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
   // Statische Ordner einfach kopieren
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
 
   eleventyConfig.addCollection("gifts", function(collection) {
     return collection
